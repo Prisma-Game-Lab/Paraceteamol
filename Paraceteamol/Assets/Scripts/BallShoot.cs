@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallAtraction : MonoBehaviour
+public class BallShoot : MonoBehaviour
 {
     public GameObject Ball;
     public Rigidbody2D BallBody;
-    public Rigidbody2D Player;
+    public Rigidbody2D Target;
     public float Speed;
     private Vector2 _ballPosition;
     private Vector2 _ballTarget;
@@ -42,7 +42,7 @@ public class BallAtraction : MonoBehaviour
       if (_ball != null) //Verifica se o raycast encontrou uma bola 
        {
             _ballPosition = Ball.transform.position;
-            _ballTarget = Player.transform.position;
+            _ballTarget = Target.transform.position;
            Vector2 _teste = Vector2.MoveTowards(_ballPosition,_ballTarget,Speed); //Cria um vetor que anda da direcao atual a direcao do jogador a uma velocidade determinada
             BallBody.AddForce(_teste,ForceMode2D.Impulse); //Pega o vetor criado acima e o usa com impulso
         }
@@ -58,7 +58,7 @@ public class BallAtraction : MonoBehaviour
             if (_ball != null) //Verifica se o raycast encontrou uma bola 
             {
                 _ballPosition = Ball.transform.position;
-                _ballTarget = Player.transform.position;
+                _ballTarget = Target.transform.position;
                 Vector2 _teste = Vector2.MoveTowards(_ballPosition, -_ballTarget, Speed); //Cria um vetor que anda da direcao contraria a direcao do jogador a uma velocidade determinada
                 BallBody.AddForce(_teste, ForceMode2D.Impulse); //Pega o vetor criado acima e o usa com impulso
             }

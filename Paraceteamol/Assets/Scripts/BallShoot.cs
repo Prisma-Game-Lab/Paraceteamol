@@ -54,8 +54,8 @@ public class BallShoot : MonoBehaviour
       
       if (_hitInfo && _hitInfo.collider.tag == "Ball")
       {
-
-          _ball = _hitInfo.transform.parent.GetComponent<Rigidbody2D>();
+            Debug.Log("fngrjgf");
+            _ball = _hitInfo.transform.parent.GetComponent<Rigidbody2D>();
                
       if (_ball != null) //Verifica se o raycast encontrou uma bola 
        {
@@ -110,7 +110,7 @@ public class BallShoot : MonoBehaviour
     void FreeTheBall() //serve para liberar a bola quando o jogador aperta o botao de empurrar
     {
             _ball.gameObject.SetActive(true);
-             _ball.transform.position = Target.transform.position;
+            _ball.transform.position = Target.transform.position;
             _hasball = false;
         
     }

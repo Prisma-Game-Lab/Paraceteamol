@@ -54,7 +54,6 @@ public class BallShoot : MonoBehaviour
       
       if (_hitInfo && _hitInfo.collider.tag == "Ball")
       {
-            Debug.Log("fngrjgf");
             _ball = _hitInfo.transform.parent.GetComponent<Rigidbody2D>();
                
       if (_ball != null) //Verifica se o raycast encontrou uma bola 

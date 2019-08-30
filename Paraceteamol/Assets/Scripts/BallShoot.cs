@@ -8,10 +8,13 @@ public class BallShoot : MonoBehaviour
     private Vector2 _ballTarget;
     private bool _hasball;
     private bool _ispulling; //verifica se o jogador está puxando a bola
+    private GameObject Target;
 
     public Rigidbody2D _ball;
     public Transform FirePoint; //Seta de onde a arma vai sair, por enquanto coloquei na frente do quadrado, mas quando tivermos sprites colocaremos na ponta do aspirador
-    public Rigidbody2D Target;
+    
+    
+
     public float Speed;
 
    
@@ -49,7 +52,7 @@ public class BallShoot : MonoBehaviour
         _ispulling = true; 
       RaycastHit2D _hitInfo=  Physics2D.Raycast(FirePoint.position, FirePoint.right); //Seta de onde e para onde o raycast vai
       
-      if (_hitInfo && _hitInfo.rigidbody.tag == "Ball")
+      if (_hitInfo && _hitInfo.collider.tag == "Ball")
       {
 
           _ball = _hitInfo.transform.parent.GetComponent<Rigidbody2D>();
@@ -57,11 +60,11 @@ public class BallShoot : MonoBehaviour
       if (_ball != null) //Verifica se o raycast encontrou uma bola 
        {
            Debug.DrawLine(FirePoint.position, _ball.transform.position, Color.blue); //serve para testar na cena se o raio esta saindo
-           
+           Target = GameObject.FindGameObjectWithTag("Player");
             _ballPosition = _ball.transform.position;
             _ballTarget = Target.transform.position;
-           Vector2 _teste = Vector2.MoveTowards(_ballPosition,_ballTarget,Speed); //Cria um vetor que anda da direcao atual a direcao do jogador a uma velocidade determinada
-            _ball.AddForce(_teste,ForceMode2D.Impulse); //Pega o vetor criado acima e o usa com impulso
+            _ball.transform.position = Vector2.MoveTowards(_ballPosition,_ballTarget,Speed*Time.deltaTime); //Cria um vetor que anda da direcao atual a direcao do jogador a uma velocidade determinada
+          //  _ball.AddForce(_teste,ForceMode2D.Impulse); //Pega o vetor criado acima e o usa com impulso
         }
 
       }
@@ -73,19 +76,20 @@ public class BallShoot : MonoBehaviour
          
         RaycastHit2D _hitInfo = Physics2D.Raycast(FirePoint.position, FirePoint.right); //Seta de onde e para onde o raycast vai
        
-        if (_hitInfo && _hitInfo.rigidbody.tag == "Ball")
+        if (_hitInfo && _hitInfo.collider.tag == "Ball")
         {
+           
 
             _ball = _hitInfo.transform.parent.GetComponent<Rigidbody2D>();
 
             if (_ball != null) //Verifica se o raycast encontrou uma bola 
             {
                 Debug.DrawLine(FirePoint.position, _ball.transform.position, Color.blue);
-
+                Target = GameObject.FindGameObjectWithTag("AntiPlayer");
                 _ballPosition = _ball.transform.position;
                 _ballTarget = Target.transform.position;
-                Vector2 _teste = Vector2.MoveTowards(_ballPosition, _ballTarget, Speed); //Cria um vetor que anda da direcao atual a direcao do jogador a uma velocidade determinada
-                _ball.AddForce(-_teste, ForceMode2D.Impulse); //Pega o vetor criado acima e o usa com impulso
+                _ball.transform.position = Vector2.MoveTowards(_ballPosition, _ballTarget, Speed*Time.deltaTime);//Cria um vetor que anda da direcao atual a direcao do jogador a uma velocidade determinada
+                // _ball.AddForce(-_teste, ForceMode2D.Impulse); //Pega o vetor criado acima e o usa com impulso
             }
 
         }

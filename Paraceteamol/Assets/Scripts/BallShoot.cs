@@ -6,9 +6,13 @@ public class BallShoot : MonoBehaviour
 {
 
     public Transform FirePoint;
+    
     public GameObject Bullet;
+    [Tooltip(" Distância da mira")]
     public float MaxDistance = 10;
+    [Tooltip("Força com que se puxa e empurra a bola")]
     public float strenght = 1;
+     
     public bool HasBall;
     public bool IsPulling;
      //Algumas das variaveis precisam ser publicas para outro script poder pegar

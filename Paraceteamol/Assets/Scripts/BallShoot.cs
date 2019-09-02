@@ -3,115 +3,94 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BallShoot : MonoBehaviour
-{ 
-    private Vector2 _ballPosition;
-    private Vector2 _ballTarget;
-    private bool _hasball;
-    private bool _ispulling; //verifica se o jogador está puxando a bola
-    private GameObject Target;
+{
 
-    public Rigidbody2D _ball;
-    public Transform FirePoint; //Seta de onde a arma vai sair, por enquanto coloquei na frente do quadrado, mas quando tivermos sprites colocaremos na ponta do aspirador
-    
-    
+    public Transform FirePoint;
+    public GameObject Bullet;
+    public float MaxDistance = 10;
+    public float strenght = 1;
+    public bool HasBall;
+    public bool IsPulling;
+     //Algumas das variaveis precisam ser publicas para outro script poder pegar
 
-    public float Speed;
+    private Rigidbody2D _ball;
+    private GameObject _antiFirePoint;
+     
 
    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    
+
 
     // Update is called once per frame
     void Update()
     {
+        _antiFirePoint = GameObject.FindGameObjectWithTag("AntiPlayer");
+
+
         if (Input.GetMouseButton(0))
         {
-            Pool();
+          PullRaycast();
+            IsPulling=true; 
             
         }
+
         else if (Input.GetMouseButton(1))
         {
-            Push();
-            if (_hasball) //verifica se o jogador ja possui a bola, caso possua, no momento que empurrar ela vai sair
-            {
-                FreeTheBall();
-            }
-           
+ 
+                PushRaycast();
+                if (HasBall) //testa se o jogador tem a bola para poder lancar caso tenha
+                {
+                    FreeBall();
+                   
+                }
+                HasBall = false;
         }
-        if (Input.GetMouseButtonUp(0)) {
-            _ispulling = false; // indica que parou de puxar
-
-        }
-         
+        else if (Input.GetMouseButtonUp(0)){
+            IsPulling=false;}
     }
-    void Pool()
+    
+    void FreeBall()
     {
-        _ispulling = true; 
-      RaycastHit2D _hitInfo=  Physics2D.Raycast(FirePoint.position, FirePoint.right); //Seta de onde e para onde o raycast vai
+        Instantiate(Bullet, FirePoint.position, FirePoint.rotation);//cria a bola
       
-      if (_hitInfo && _hitInfo.collider.tag == "Ball")
-      {
-            _ball = _hitInfo.transform.parent.GetComponent<Rigidbody2D>();
-               
-      if (_ball != null) //Verifica se o raycast encontrou uma bola 
-       {
-           Debug.DrawLine(FirePoint.position, _ball.transform.position, Color.blue); //serve para testar na cena se o raio esta saindo
-           Target = GameObject.FindGameObjectWithTag("Player");
-            _ballPosition = _ball.transform.position;
-            _ballTarget = Target.transform.position;
-            _ball.transform.position = Vector2.MoveTowards(_ballPosition,_ballTarget,Speed*Time.deltaTime); //Cria um vetor que anda da direcao atual a direcao do jogador a uma velocidade determinada
-          //  _ball.AddForce(_teste,ForceMode2D.Impulse); //Pega o vetor criado acima e o usa com impulso
         }
 
-      }
-
-       
-    }
-    void Push()
+    void PullRaycast()
     {
-         
-        RaycastHit2D _hitInfo = Physics2D.Raycast(FirePoint.position, FirePoint.right); //Seta de onde e para onde o raycast vai
-       
-        if (_hitInfo && _hitInfo.collider.tag == "Ball")
-        {
-           
-
-            _ball = _hitInfo.transform.parent.GetComponent<Rigidbody2D>();
-
-            if (_ball != null) //Verifica se o raycast encontrou uma bola 
-            {
-                Debug.DrawLine(FirePoint.position, _ball.transform.position, Color.blue);
-                Target = GameObject.FindGameObjectWithTag("AntiPlayer");
-                _ballPosition = _ball.transform.position;
-                _ballTarget = Target.transform.position;
-                _ball.transform.position = Vector2.MoveTowards(_ballPosition, _ballTarget, Speed*Time.deltaTime);//Cria um vetor que anda da direcao atual a direcao do jogador a uma velocidade determinada
-                // _ball.AddForce(-_teste, ForceMode2D.Impulse); //Pega o vetor criado acima e o usa com impulso
-            }
-
-        }
-         
-    }
-
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-     
-        if (col.gameObject.tag == "Ball" && _ispulling==true && _hasball==false) //essas condicoes sao necessarias pois ele verifica se o jogador esta puxando( se nao tivesse essa condicao, bastaria tocar na bola que ela sumiria) e se tem a bola( caso nao tenha, o objeto acoplado ao jogador ira sofrer as mudancas)
-        {
-             col.gameObject.SetActive(false); //faz com que o objeto suma
-             _hasball = true;  
-        } 
-    }
-
-    void FreeTheBall() //serve para liberar a bola quando o jogador aperta o botao de empurrar
-    {
-            _ball.gameObject.SetActive(true);
-            _ball.transform.position = Target.transform.position;
-            _hasball = false;
         
+         
+        RaycastHit2D hitInfo = Physics2D.Raycast(FirePoint.position, FirePoint.up*MaxDistance); //cria o raycast
+        if (hitInfo)
+        {
+            Debug.DrawRay(FirePoint.position, FirePoint.up * MaxDistance); //feito apenas para testar na scene se o raycast esta atingindo o alvo
+            _ball= hitInfo.transform.GetComponent<Rigidbody2D>();
+            if (_ball != null && _ball.tag == "Ball")
+            {
+                
+                _ball.transform.position = Vector2.MoveTowards(_ball.transform.position, transform.position,strenght);
+
+            }
+        }
+
     }
-     
+
+    void PushRaycast()
+    {
+        
+
+        RaycastHit2D hitInfo = Physics2D.Raycast(FirePoint.position, FirePoint.up * MaxDistance);
+        if (hitInfo)
+        {
+            Debug.DrawRay(FirePoint.position, FirePoint.up * MaxDistance);
+            _ball = hitInfo.transform.GetComponent<Rigidbody2D>();
+            if (_ball != null && _ball.tag == "Ball")
+            {
+
+                _ball.transform.position = Vector2.MoveTowards(_ball.transform.position, _antiFirePoint.transform.position, strenght);
+            }
+        }
+    }
+    
+    
 }

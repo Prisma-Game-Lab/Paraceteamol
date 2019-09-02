@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - AntiPlayer
   - Enemy
+  - BallCollider
   layers:
   - Default
   - TransparentFX

@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 		_obj.transform.position += tempVect;
 
 		Debug.DrawRay(transform.position, Vector2.down, Color.red);
-		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
+		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Jump"))
 		{
 			RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, this.GetComponent<Collider2D>().bounds.extents.y + 0.01f), Vector2.down, 0.1f);
 

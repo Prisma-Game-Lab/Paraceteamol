@@ -403,7 +403,7 @@ Transform:
   - {fileID: 1025230606}
   - {fileID: 1286518755}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &972706911
 GameObject:
@@ -835,7 +835,7 @@ Transform:
   m_Children:
   - {fileID: 2095193000}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1833597763 stripped
 Rigidbody2D:
@@ -1206,5 +1206,15 @@ PrefabInstance:
       propertyPath: _ball
       value: 
       objectReference: {fileID: 1833597763}
+    - target: {fileID: 4732135939977624652, guid: a8f3805900a8dd740b3d52dc47a8fdf2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732135939977624652, guid: a8f3805900a8dd740b3d52dc47a8fdf2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.53
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8f3805900a8dd740b3d52dc47a8fdf2, type: 3}

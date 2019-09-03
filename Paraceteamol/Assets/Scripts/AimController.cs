@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AimController : MonoBehaviour
 {
+    [Tooltip("Altera o angulo da mira.")]
     public float offset;
 
     private void FixedUpdate()

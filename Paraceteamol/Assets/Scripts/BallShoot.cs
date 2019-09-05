@@ -32,14 +32,14 @@ public class BallShoot : MonoBehaviour
         _antiFirePoint = GameObject.FindGameObjectWithTag("AntiPlayer");
 
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) || Input.GetButton("Fire1"))
         {
           PullRaycast();
             IsPulling=true; 
             
         }
 
-        else if (Input.GetMouseButton(1))
+        else if (Input.GetMouseButton(1) || Input.GetButton("Fire2"))
         {
  
                 PushRaycast();

@@ -1163,6 +1163,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1109614292018555314, guid: a8f3805900a8dd740b3d52dc47a8fdf2,
+        type: 3}
+      propertyPath: HasBall
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109614292393834176, guid: a8f3805900a8dd740b3d52dc47a8fdf2,
+        type: 3}
+      propertyPath: useController
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8f3805900a8dd740b3d52dc47a8fdf2, type: 3}
 --- !u!4 &1019974314 stripped

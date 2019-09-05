@@ -25,13 +25,6 @@ public class PlayerMovement : MonoBehaviour
 
         _horizontal = Input.GetAxis("Horizontal"); // Pega as configurações do projeto e usa como controle
 
-		/*if (Input.GetKey(KeyCode.A))
-			_horizontal = -1;
-		else if (Input.GetKey(KeyCode.D))
-			_horizontal = 1;
-		else
-			_horizontal = 0;*/
-
 		Vector3 tempVect = new Vector3(_horizontal, 0, 0);
 		tempVect = tempVect.normalized * MovementSpeed * Time.deltaTime;
 

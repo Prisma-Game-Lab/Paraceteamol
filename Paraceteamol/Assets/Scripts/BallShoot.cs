@@ -101,6 +101,7 @@ public class BallShoot : MonoBehaviour
             {
 
                 _ball.transform.position = Vector2.MoveTowards(_ball.transform.position, _antiFirePoint.transform.position, strenght);
+                _ballPhysics.Direction = new Vector2(_antiFirePoint.transform.position.x, _antiFirePoint.transform.position.y).normalized;
             }
         }
     }

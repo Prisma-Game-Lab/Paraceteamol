@@ -20,8 +20,7 @@ public class BallShoot : MonoBehaviour
     private BallPhysics _ballPhysics;
     private Rigidbody2D _ball;
     private GameObject _antiFirePoint;
-    private bool _hit; 
-
+  
 
 
  
@@ -42,10 +41,8 @@ public class BallShoot : MonoBehaviour
         {
           PullRaycast();
             IsPulling=true;
-            if (_hit)
-            {
-                _ballPhysics.Direction = new Vector2(transform.position.x, transform.position.y).normalized;
-            }
+            
+            
         }
 
         else if (Input.GetMouseButton(1))
@@ -80,12 +77,13 @@ public class BallShoot : MonoBehaviour
             _ball= hitInfo.transform.GetComponent<Rigidbody2D>();
             if (_ball != null && _ball.tag == "Ball")
             {
-                _hit = true;
+                
                 _ball.transform.position = Vector2.MoveTowards(_ball.transform.position, transform.position, strenght);
+                _ballPhysics.Direction = new Vector2(transform.position.x, transform.position.y).normalized;
 
 
             }
-            else { _hit = false; }
+            
         }
 
     }

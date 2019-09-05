@@ -9,6 +9,15 @@ public class AimController : MonoBehaviour
     [Tooltip("Ativa e desativa o uso do controle.")]
     public bool useController;
 
+    private Vector3 startPos;
+    private Transform thisTransform;
+
+    private void Start()
+    {
+        thisTransform = transform;
+        startPos = thisTransform.position;
+    }
+
     private void FixedUpdate()
     {
         if (!useController)
@@ -24,14 +33,11 @@ public class AimController : MonoBehaviour
         //Rotacionar com o controle
         if (useController)
         {
-            Vector3 playerDirection = Vector3.right * Input.GetAxisRaw("RHorizontal") + Vector3.forward * -Input.GetAxisRaw("RVertical");
-            //float rotZ = Mathf.Atan2(playerDirection.y, playerDirection.x) * Mathf.Rad2Deg;
-            if (playerDirection.sqrMagnitude > 0.0f)
-            {
-                transform.rotation = Quaternion.LookRotation(playerDirection, Vector3.up); //mudei de Up para right
-                //transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
-                //transform.rotation = Quaternion.AngleAxis(rotZ, playerDirection);
-            }
+            Vector3 inputDirection = Vector3.zero;
+            inputDirection.x = Input.GetAxis("RHorizontal");
+            inputDirection.y = -Input.GetAxis("RVertical");
+            float rotZ = Mathf.Atan2(inputDirection.y, inputDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
         }
 
     }

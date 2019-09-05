@@ -6,6 +6,7 @@ public class BulletScript : MonoBehaviour
 {
     [Tooltip("Velocidade com que a bola é lançada quando está com o player")]
     public float Speed = 20;
+    [HideInInspector]
     public Rigidbody2D Rb;
 
     private Rigidbody2D _target;

@@ -4,38 +4,44 @@ using UnityEngine;
 
 public class BallShoot : MonoBehaviour
 {
-
+    [HideInInspector]
     public Transform FirePoint;
-    
+    [HideInInspector]
     public GameObject Bullet;
     [Tooltip(" Distância da mira")]
     public float MaxDistance = 10;
     [Tooltip("Força com que se puxa e empurra a bola")]
     public float strenght = 1;
-     
+    [HideInInspector] 
     public bool HasBall;
+    [HideInInspector]
     public bool IsPulling;
      //Algumas das variaveis precisam ser publicas para outro script poder pegar
-
+    private BallPhysics _ballPhysics;
     private Rigidbody2D _ball;
     private GameObject _antiFirePoint;
-     
+  
 
-   
-    
-    
+
+ 
 
 
     // Update is called once per frame
     void Update()
     {
         _antiFirePoint = GameObject.FindGameObjectWithTag("AntiPlayer");
+        GameObject _ballRigidBody = GameObject.FindGameObjectWithTag("Ball");
+        if (_ballRigidBody != null)
+        {
+            _ballPhysics = _ballRigidBody.GetComponent<BallPhysics>();
+        }
 
 
         if (Input.GetMouseButton(0) || Input.GetButton("Fire1"))
         {
           PullRaycast();
-            IsPulling=true; 
+            IsPulling=true;
+            
             
         }
 
@@ -72,9 +78,12 @@ public class BallShoot : MonoBehaviour
             if (_ball != null && _ball.tag == "Ball")
             {
                 
-                _ball.transform.position = Vector2.MoveTowards(_ball.transform.position, transform.position,strenght);
+                _ball.transform.position = Vector2.MoveTowards(_ball.transform.position, transform.position, strenght);
+                _ballPhysics.Direction = new Vector2(transform.position.x, transform.position.y).normalized;
+
 
             }
+            
         }
 
     }
@@ -92,6 +101,7 @@ public class BallShoot : MonoBehaviour
             {
 
                 _ball.transform.position = Vector2.MoveTowards(_ball.transform.position, _antiFirePoint.transform.position, strenght);
+                _ballPhysics.Direction = new Vector2(_antiFirePoint.transform.position.x, _antiFirePoint.transform.position.y).normalized;
             }
         }
     }

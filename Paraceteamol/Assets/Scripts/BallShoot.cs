@@ -16,27 +16,35 @@ public class BallShoot : MonoBehaviour
     public bool HasBall;
     public bool IsPulling;
      //Algumas das variaveis precisam ser publicas para outro script poder pegar
-
+    public BallPhysics _ballPhysics;
     private Rigidbody2D _ball;
     private GameObject _antiFirePoint;
-     
+    private bool _hit; 
 
-   
-    
-    
+
+
+ 
 
 
     // Update is called once per frame
     void Update()
     {
         _antiFirePoint = GameObject.FindGameObjectWithTag("AntiPlayer");
+        GameObject _ballRigidBody = GameObject.FindGameObjectWithTag("Ball");
+        if (_ballRigidBody != null)
+        {
+            _ballPhysics = _ballRigidBody.GetComponent<BallPhysics>();
+        }
 
 
         if (Input.GetMouseButton(0))
         {
           PullRaycast();
-            IsPulling=true; 
-            
+            IsPulling=true;
+            if (_hit)
+            {
+                _ballPhysics.Direction = new Vector2(transform.position.x, transform.position.y).normalized;
+            }
         }
 
         else if (Input.GetMouseButton(1))
@@ -71,10 +79,12 @@ public class BallShoot : MonoBehaviour
             _ball= hitInfo.transform.GetComponent<Rigidbody2D>();
             if (_ball != null && _ball.tag == "Ball")
             {
-                
-                _ball.transform.position = Vector2.MoveTowards(_ball.transform.position, transform.position,strenght);
+                _hit = true;
+                _ball.transform.position = Vector2.MoveTowards(_ball.transform.position, transform.position, strenght);
+
 
             }
+            else { _hit = false; }
         }
 
     }

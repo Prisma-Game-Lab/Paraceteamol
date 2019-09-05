@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class BallShoot : MonoBehaviour
 {
-
+    [HideInInspector]
     public Transform FirePoint;
-    
+    [HideInInspector]
     public GameObject Bullet;
     [Tooltip(" Distância da mira")]
     public float MaxDistance = 10;
     [Tooltip("Força com que se puxa e empurra a bola")]
     public float strenght = 1;
-     
+    [HideInInspector] 
     public bool HasBall;
+    [HideInInspector]
     public bool IsPulling;
      //Algumas das variaveis precisam ser publicas para outro script poder pegar
-    public BallPhysics _ballPhysics;
+    private BallPhysics _ballPhysics;
     private Rigidbody2D _ball;
     private GameObject _antiFirePoint;
     private bool _hit; 

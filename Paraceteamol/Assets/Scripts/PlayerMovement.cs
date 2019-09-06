@@ -8,8 +8,10 @@ public class PlayerMovement : MonoBehaviour
 	public float MovementSpeed = 10;
 	public float JumpHeight = 1;
 	public float GravitySpeedModifier = 1;
+	[Tooltip("True if it's Player 1, false if Player 2.")]public bool PlayerOne = true;
+	public GameObject PlayerSprite;
 
-	private float _horizontal = 0;
+	private float _horizontal = 0;	
 	private Transform _obj;
 	private Rigidbody2D _rb;
 
@@ -23,15 +25,21 @@ public class PlayerMovement : MonoBehaviour
 	{
 		_rb.AddForce(new Vector2(0, -10 * GravitySpeedModifier));
 
-        _horizontal = Input.GetAxis("Horizontal"); // Pega as configurações do projeto e usa como controle
+		_horizontal = Input.GetAxis(PlayerOne ? "p1_horizontal" : "p2_horizontal");
 
 		Vector3 tempVect = new Vector3(_horizontal, 0, 0);
 		tempVect = tempVect.normalized * MovementSpeed * Time.deltaTime;
 
+		if (_horizontal < 0)
+			PlayerSprite.transform.rotation = new Quaternion(0, 180, 0, 0);
+		else if (_horizontal > 0)
+			PlayerSprite.transform.rotation = new Quaternion(0, 0, 0, 0);
+
 		_obj.transform.position += tempVect;
 
 		Debug.DrawRay(transform.position, Vector2.down, Color.red);
-		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Jump"))
+
+		if (Input.GetButtonDown(PlayerOne ? "p1_jump" : "p2_jump"))
 		{
 			RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, this.GetComponent<Collider2D>().bounds.extents.y + 0.01f), Vector2.down, 0.1f);
 

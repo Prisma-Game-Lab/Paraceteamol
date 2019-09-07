@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: 7471d1713799a67429b53a1b0803385f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3433918214351230375
+    second: Armfront
+  - first:
+      213: -1846784345090356148
+    second: head
+  - first:
+      213: -5599357602070021419
+    second: Aspirador
+  - first:
+      213: -2773777849393729618
+    second: scarf
+  - first:
+      213: 233227185538982242
+    second: body
+  - first:
+      213: 2235819870994560496
+    second: Armback
+  - first:
+      213: -8872863950351920458
+    second: Feetfront
+  - first:
+      213: -965597594713482946
+    second: Feetback
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Armfront
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 171
+        width: 182
+        height: 103
+      alignment: 9
+      pivot: {x: 0.90352225, y: 0.0982986}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1087ef6d83858374aacc5612be5eaf91
+      internalID: -3433918214351230375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: head
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 169
+        width: 195
+        height: 114
+      alignment: 9
+      pivot: {x: 0.407171, y: 0.09622848}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3983f59f5ea309b489f2dc46c2e11ff5
+      internalID: -1846784345090356148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aspirador
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 198
+        width: 156
+        height: 118
+      alignment: 9
+      pivot: {x: 0.072323136, y: 0.09676672}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7ef2c20387d1b49a278befeb8307a9
+      internalID: -5599357602070021419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scarf
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 279
+        height: 70
+      alignment: 9
+      pivot: {x: 0.9541638, y: 0.4187269}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a30a30d3b8321c4a915218100b044a7
+      internalID: -2773777849393729618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: body
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 77
+        width: 114
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19149995}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3acfd54871ca8aa488e0e3b2c0780ae8
+      internalID: 233227185538982242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armback
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 63
+        width: 115
+        height: 85
+      alignment: 9
+      pivot: {x: 0.06376104, y: 0.0984165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088cf617078cd9147ab0c69a45f59a37
+      internalID: 2235819870994560496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feetfront
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 5
+        width: 58
+        height: 31
+      alignment: 9
+      pivot: {x: 0.45541435, y: 0.7669365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1ab1a041d59ac458d1eb2a2a002665
+      internalID: -8872863950351920458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feetback
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 0
+        width: 57
+        height: 35
+      alignment: 9
+      pivot: {x: 0.3638975, y: 0.7807605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b304226493c40f4fac7fb7f9e977632
+      internalID: -965597594713482946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1c80502ac84e4e64c873fad9e4f413c5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

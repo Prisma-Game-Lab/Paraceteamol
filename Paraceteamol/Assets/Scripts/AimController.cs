@@ -3,39 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 public class AimController : MonoBehaviour
 {
-	[Tooltip("Altera o angulo da mira.")]
-	public float offset;
-	[Tooltip("Ativa e desativa o uso do controle.")]
-	public bool useController;
+	public float Strenght = 5f;
 
-	private Vector3 startPos;
-	private Transform thisTransform;
+	[HideInInspector]
+	public bool IsPulling = false;
+
 	private bool _playerOne;
+	private float _horizontal;
 
 	private void Start()
 	{
-		thisTransform = transform;
-		startPos = thisTransform.position;
 		_playerOne = GetComponentInParent<PlayerMovement>().PlayerOne;
 	}
 	private void FixedUpdate()
+	{if (Input.GetAxis(_playerOne ? "p1_horizontal" : "p2_horizontal") > 0)
+			_horizontal = 0;
+		else if (Input.GetAxis(_playerOne ? "p1_horizontal" : "p2_horizontal") < 0)
+			_horizontal = 180;
+
+		if (Input.GetAxis(_playerOne ? "p1_vertical" : "p2_vertical") > 0)
+			transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+		else if (Input.GetAxis(_playerOne ? "p1_vertical" : "p2_vertical") < 0)
+			transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
+		else
+			transform.rotation = Quaternion.Euler(new Vector3(0, _horizontal, 0));
+	}
+	
+	private void OnTriggerStay2D(Collider2D col)
 	{
-		if (!useController)
+		if (col.gameObject.tag == "Ball" && (Input.GetButton(_playerOne ? "p1_fire" : "p2_fire")))
 		{
-			//Calcula a direção da arma até o local aonde está o cursor do mouse
-			Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-			// calcula a rotacao que a arma do jogador deve fazer para ir até o local do cursor do mouse
-			float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
-		}
-		//Rotacionar com o controle
-		if (useController)
-		{
-			Vector3 inputDirection = Vector3.zero;
-			inputDirection.x = Input.GetAxis(_playerOne ? "p1_mousex" : "p2_mousex");
-			inputDirection.y = -Input.GetAxis(_playerOne ? "p1_mousey" : "p2_mousey");
-			float rotZ = Mathf.Atan2(inputDirection.y, inputDirection.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+			Debug.DrawRay(transform.position, col.transform.position - transform.position, Color.red);
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, col.transform.position - transform.position);
+			if (hit && hit.transform.tag == "Ball")
+			{
+				IsPulling = true;
+				hit.transform.GetComponent<Rigidbody2D>().AddForce(transform.position.normalized);
+			}
+
 		}
 	}
 }

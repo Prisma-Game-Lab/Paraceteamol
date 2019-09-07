@@ -28,6 +28,7 @@ public class BallShoot : MonoBehaviour
 		_playerOne = GetComponent<PlayerMovement>().PlayerOne;
 		_antiFirePoint = GameObject.FindGameObjectWithTag("AntiPlayer");
 		GameObject _ballRigidBody = GameObject.FindGameObjectWithTag("Ball");
+
 		if (_ballRigidBody != null)
 		{
 			_ballPhysics = _ballRigidBody.GetComponent<BallPhysics>();
@@ -57,24 +58,22 @@ public class BallShoot : MonoBehaviour
 
 	void FreeBall()
 	{
-		Instantiate(Bullet, FirePoint.position, FirePoint.rotation);//cria a bola
+		Instantiate(Bullet, FirePoint.position, FirePoint.rotation);    //cria a bola
 	}
 
 	void PullRaycast()
 	{
-		RaycastHit2D hitInfo = Physics2D.Raycast(FirePoint.position, FirePoint.up * MaxDistance); //cria o raycast
+		RaycastHit2D hitInfo = Physics2D.Raycast(FirePoint.position, FirePoint.up * MaxDistance);   //cria o raycast
 		if (hitInfo)
 		{
-			Debug.DrawRay(FirePoint.position, FirePoint.up * MaxDistance); //feito apenas para testar na scene se o raycast esta atingindo o alvo
+			Debug.DrawRay(FirePoint.position, FirePoint.up * MaxDistance, Color.red);   //feito apenas para testar na scene se o raycast esta atingindo o alvo
 			_ball = hitInfo.transform.GetComponent<Rigidbody2D>();
 			if (_ball != null && _ball.tag == "Ball")
 			{
 				_ball.transform.position = Vector2.MoveTowards(_ball.transform.position, transform.position, strenght);
 				_ballPhysics.Direction = new Vector2(transform.position.x, transform.position.y).normalized;
 			}
-
 		}
-
 	}
 
 	void PushRaycast()

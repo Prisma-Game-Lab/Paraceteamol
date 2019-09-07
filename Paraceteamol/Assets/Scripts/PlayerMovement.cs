@@ -8,10 +8,10 @@ public class PlayerMovement : MonoBehaviour
 	public float MovementSpeed = 10;
 	public float JumpHeight = 1;
 	public float GravitySpeedModifier = 1;
-	[Tooltip("True if it's Player 1, false if Player 2.")]public bool PlayerOne = true;
+	[Tooltip("True if it's Player 1, false if Player 2.")] public bool PlayerOne = true;
 	public GameObject PlayerSprite;
 
-	private float _horizontal = 0;	
+	private float _horizontal = 0;
 	private Transform _obj;
 	private Rigidbody2D _rb;
 

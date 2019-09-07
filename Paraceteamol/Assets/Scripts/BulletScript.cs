@@ -8,25 +8,18 @@ public class BulletScript : MonoBehaviour
 	public float Speed = 20;
 	[HideInInspector]
 	public Rigidbody2D Rb;
-
-	private Rigidbody2D _target;
-	private BallShoot ShootScript; //Usamos isso para poder setar no outro codigo que o jogador tem a bola
-
+	
 	void Start()
 	{
-		Rb.velocity = transform.up * Speed;
-
-		GameObject _player = GameObject.FindGameObjectWithTag("Player"); //ele pega o jogador para poder referenciar o script
-		ShootScript = _player.GetComponent<BallShoot>();
+		//Rb.velocity = transform.up * Speed;
 	}
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		if (col.gameObject.tag == "Player" && ShootScript.IsPulling == true)
+		if (col.gameObject.tag == "Player" && col.gameObject.GetComponent<AimController>().IsPulling)
 		{
-			ShootScript.HasBall = true;
-			Destroy(gameObject);
-
+			//AimScript.HasBall = true;
+			Destroy(this);
 		}
 	}
 

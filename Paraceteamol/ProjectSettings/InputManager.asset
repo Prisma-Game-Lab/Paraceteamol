@@ -74,7 +74,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: c
+    positiveButton: x
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -90,6 +90,38 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
+    positiveButton: ','
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.19
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: p1_fire1
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: c
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.19
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: p2_fire1
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
     positiveButton: .
     altNegativeButton: 
     altPositiveButton: 
@@ -102,7 +134,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: p1_fire
+    m_Name: p1_fire2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -118,7 +150,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: p2_fire
+    m_Name: p2_fire2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

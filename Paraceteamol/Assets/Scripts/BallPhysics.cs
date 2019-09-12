@@ -6,7 +6,9 @@ public class BallPhysics : MonoBehaviour
 {
 	public float StartSpeed = 1;
 	[HideInInspector]
-	public  Vector2 Direction;
+	public Vector2 Direction;
+
+	private Vector2 _oldDirection;
 
 	private void Start()
 	{

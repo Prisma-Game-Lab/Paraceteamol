@@ -37,13 +37,20 @@ public class PlayerMovement : MonoBehaviour
 
 		_obj.transform.position += tempVect;
 
-		Debug.DrawRay(transform.position, Vector2.down, Color.red);
+		Collider2D colBounds = GetComponent<Collider2D>();
+		Debug.DrawRay(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, Color.red);
+		Debug.DrawRay(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, Color.green);
+		Debug.DrawRay(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, Color.blue);
 
-		if (Input.GetButtonDown(PlayerOne ? "p1_jump" : "p2_jump"))
+		Debug.Log("can jump");
+
+		if (Input.GetButton(PlayerOne ? "p1_jump" : "p2_jump"))
 		{
-			RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, this.GetComponent<Collider2D>().bounds.extents.y + 0.01f), Vector2.down, 0.1f);
-
-			if (hit && hit.transform.tag == "Ground")
+			RaycastHit2D hit1 = Physics2D.Raycast(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, 0.1f);
+			RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, 0.1f);
+			RaycastHit2D hit3 = Physics2D.Raycast(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, 0.1f);
+			
+			if ((hit1 || hit2 || hit3) && (hit1.transform.tag == "Ground" || hit2.transform.tag == "Ground" || hit3.transform.tag == "Ground"))
 			{
 				_rb.AddForce(new Vector2(0, 1) * JumpHeight * 10);
 			}

@@ -6,7 +6,7 @@ public class AimController : MonoBehaviour
 	[Space]
 	[SerializeField] private ParticleSystem InhaleParticles;
 	[SerializeField] private ParticleSystem ExhaleParticles;
-	//[Tooltip("Colocar aqui o prefab da bola")] public GameObject BallPrefab;
+	[Tooltip("Colocar aqui o prefab da bola")] public GameObject BallPrefab;
 
 	[HideInInspector]
 	public bool IsPulling = false;
@@ -59,14 +59,15 @@ public class AimController : MonoBehaviour
 		if (col.gameObject.tag == "Ball")
 		{
 			if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1"))
-			{
+            {
+                Debug.DrawLine(transform.position, col.transform.position);
 				col.transform.position = Vector3.MoveTowards(col.transform.position, transform.position, Strenght);
-				col.GetComponent<BallPhysics>().Direction = transform.position.normalized;
+				//col.GetComponent<BallPhysics>().Direction = transform.position.normalized;
 			}
 			else if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
 			{
 				col.transform.position = Vector2.MoveTowards(col.transform.position, -transform.position, Strenght);
-				col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
+				//col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
 			}
 		}
 	}

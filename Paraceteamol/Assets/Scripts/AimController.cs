@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 public class AimController : MonoBehaviour
 {
 	public float Strenght = 5f;
@@ -67,7 +66,7 @@ public class AimController : MonoBehaviour
 			else if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
 			{
 				col.transform.position = Vector2.MoveTowards(col.transform.position, -transform.position, Strenght);
-				col.GetComponent<BallPhysics>().Direction = -transform.position.normalized;
+				col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
 			}
 		}
 	}

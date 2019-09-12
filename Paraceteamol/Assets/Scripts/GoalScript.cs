@@ -36,7 +36,7 @@ public class GoalScript : MonoBehaviour
         {
 
             AddScore(1);
-            other.transform.position = new Vector2(0, 0);
+            other.transform.position =  new Vector2(0, 0);
             
             return;
 

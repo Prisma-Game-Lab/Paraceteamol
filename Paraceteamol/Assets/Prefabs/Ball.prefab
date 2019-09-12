@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 1619751977}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 7867437370227208479}
   m_Layer: 0
   m_Name: VerticalCollider
-  m_TagString: Ball
+  m_TagString: BallCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 6836261363664639900}
   m_Layer: 0
   m_Name: HorizontalCollider
-  m_TagString: Ball
+  m_TagString: BallCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

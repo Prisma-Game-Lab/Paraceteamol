@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
@@ -12,10 +10,6 @@ public class BulletScript : MonoBehaviour
 	[HideInInspector]
 	public bool PlayerIsPulling = false;
 	
-
-	private Vector2 _oldDirection;
-	private Vector2 _oldPosition;
-
 	void OnCollisionStay2D(Collision2D col)
 	{
 		if (col.gameObject.tag == "Player")
@@ -25,23 +19,10 @@ public class BulletScript : MonoBehaviour
 			{
 				Debug.Log(col.gameObject.name + " touched ball");
 
-				//transform.position = col.gameObject.transform.position + new Vector3(0, 1, 0);
-
-				//GetComponent<Rigidbody2D>().isKinematic = false;
-				
-				//_oldDirection = GetComponent<BallPhysics>().Direction;  // Get old direction
-				//GetComponent<BallPhysics>().Direction = Vector2.zero;   // Set direction to zero.
-
 				// O player não segura mais a bola
 				//col.gameObject.GetComponentInChildren<AimController>().HasBall = true;
 				//AimScript.HasBall = true;
 				//Destroy(this.gameObject);
-			}
-			else
-			{
-				Debug.Log(col.gameObject.name + " released ball");
-				//GetComponent<BallPhysics>().Direction = new Vector2(1, 0);
-				//GetComponent<Rigidbody2D>().isKinematic = true;
 			}
 		}
 	}

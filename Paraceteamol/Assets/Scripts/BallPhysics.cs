@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BallPhysics : MonoBehaviour
 {
@@ -12,17 +10,6 @@ public class BallPhysics : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		_playerIsPulling = GetComponent<BulletScript>().PlayerIsPulling;
-		if (_playerIsPulling)
-		{
-			//Direction = Vector2.zero;
-			GetComponent<Rigidbody2D>().simulated = false;
-		}
-		else
-		{
-			GetComponent<Rigidbody2D>().simulated = true;
-		}
-
 		transform.Translate(Direction * StartSpeed * Time.deltaTime);
 	}
 }

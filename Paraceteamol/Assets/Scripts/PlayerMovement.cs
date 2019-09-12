@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -17,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Start()
 	{
-		_obj = this.gameObject.transform;
-		_rb = this.GetComponent<Rigidbody2D>();
+		_obj = gameObject.transform;
+		_rb = GetComponent<Rigidbody2D>();
 	}
 
 	private void FixedUpdate()

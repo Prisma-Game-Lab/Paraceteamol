@@ -16,10 +16,12 @@ public class BulletScript : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		if (col.gameObject.tag == "Player" && col.gameObject.GetComponent<AimController>().IsPulling)
+		if (col.gameObject.tag == "Player" && col.gameObject.GetComponentInChildren<AimController>().IsPulling)
 		{
+			Debug.Log(col.gameObject.name + " touched ball");
+			//col.gameObject.GetComponentInChildren<AimController>().HasBall = true;
 			//AimScript.HasBall = true;
-			Destroy(this);
+			//Destroy(this.gameObject);
 		}
 	}
 

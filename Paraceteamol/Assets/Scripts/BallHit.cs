@@ -9,7 +9,7 @@ public class BallHit : MonoBehaviour
 
 	private BallPhysics _ballPhysicsScript;
 
-	private void Start()
+	private void Awake()
 	{
 		_ballPhysicsScript = GetComponentInParent<BallPhysics>();
 	}

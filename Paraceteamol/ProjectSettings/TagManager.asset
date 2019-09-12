@@ -10,6 +10,7 @@ TagManager:
   - AntiPlayer
   - Enemy
   - BallCollider
+  - Aim
   layers:
   - Default
   - TransparentFX

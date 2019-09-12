@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartSpeed: 10
-  Direction: {x: 0, y: 0}
+  Direction: {x: 1, y: 1}
 --- !u!114 &-909842521346542491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 20
   Rb: {fileID: 7867437369187820324}
+  PlayerIsPulling: 0
 --- !u!96 &1619751977
 TrailRenderer:
   serializedVersion: 2

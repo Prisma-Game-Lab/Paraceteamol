@@ -8,7 +8,7 @@ public class GoalScript : MonoBehaviour
 {
 
     public Text scoreText;
-    private int score;
+    public int score;
     [Tooltip("Colocar aqui os prefab da bola")]
     public GameObject BallPrefab;
 

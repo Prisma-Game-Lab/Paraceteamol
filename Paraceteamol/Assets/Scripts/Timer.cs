@@ -18,11 +18,15 @@ public class Timer : MonoBehaviour
     private bool canCount = true;
     private bool doOnce = false;
 
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject FinalScore;
+
     // Start is called before the first frame update
     void Start()
     {
-        /*timer = mainTimer;*/
         timer = startTime;
+        FinalScore.SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,8 +44,9 @@ public class Timer : MonoBehaviour
         else if(timer <= 0.0f && !doOnce)
         {
             canCount = false;
-            /*iText.text = ("0.00");
-            timer = 0.0f;*/
+            FinalScore.SetActive(true);
+            Time.timeScale = 0f;
+
         }
     }
 }

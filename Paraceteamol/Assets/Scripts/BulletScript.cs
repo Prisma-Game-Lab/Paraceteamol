@@ -17,14 +17,20 @@ public class BulletScript : MonoBehaviour
 			PlayerIsPulling = col.gameObject.GetComponentInChildren<AimController>().IsPulling;
 			if (PlayerIsPulling)
 			{
-                Rb.AddForce(-col.transform.position,ForceMode2D.Impulse);
-				Debug.Log(col.gameObject.name + " touched ball");
+
+                this.transform.position = GameObject.FindGameObjectWithTag("Seta").transform.position;
+               
+                Debug.Log(col.gameObject.name + " touched ball");
 
 				// O player não segura mais a bola
 				//col.gameObject.GetComponentInChildren<AimController>().HasBall = true;
 				//AimScript.HasBall = true;
 				//Destroy(this.gameObject);
 			}
+             
+            { 
+            }
+
 		}
 	}
 }

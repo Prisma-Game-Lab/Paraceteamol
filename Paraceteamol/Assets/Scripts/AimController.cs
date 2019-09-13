@@ -6,7 +6,7 @@ public class AimController : MonoBehaviour
 	[Space]
 	[SerializeField] private ParticleSystem InhaleParticles;
 	[SerializeField] private ParticleSystem ExhaleParticles;
-	[Tooltip("Colocar aqui o prefab da bola")] public GameObject BallPrefab;
+	//[Tooltip("Colocar aqui o prefab da bola")] public GameObject BallPrefab;
 
 	[HideInInspector]
 	public bool IsPulling = false;
@@ -70,6 +70,8 @@ public class AimController : MonoBehaviour
 				col.transform.position = Vector3.MoveTowards(col.transform.position, -transform.position, Strenght);
 				col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
 			}
+
+            
 		}
 	}
      

@@ -68,7 +68,7 @@ public class AimController : MonoBehaviour
 			else if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
 			{
 				col.transform.position = Vector3.MoveTowards(col.transform.position, -transform.position, Strenght);
-				col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
+				//col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
 			}
 
             

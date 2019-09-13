@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  BallPrefab: {fileID: 7867437369187820323, guid: 9590f955c9980cc4c83b1ea019d125e7,
+    type: 3}
   score: 0
 --- !u!1 &163783305547696985
 GameObject:
@@ -319,4 +321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  BallPrefab: {fileID: 7867437369187820323, guid: 9590f955c9980cc4c83b1ea019d125e7,
+    type: 3}
   score: 0

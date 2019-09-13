@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 public class AimController : MonoBehaviour
 {
 	public float Strenght = 5f;
 	[Space]
-	[Header("GameObjects")]
-	[Tooltip("Colocar aqui os prefab da bola")] public GameObject BallPrefab;
+	[SerializeField] private ParticleSystem InhaleParticles;
+	[SerializeField] private ParticleSystem ExhaleParticles;
+	[Tooltip("Colocar aqui o prefab da bola")] public GameObject BallPrefab;
 
 	[HideInInspector]
 	public bool IsPulling = false;
@@ -40,8 +40,18 @@ public class AimController : MonoBehaviour
 		else
 			IsPulling = false;
 
-		if (HasBall && Input.GetButtonDown(_playerOne ? "p1_fire2" : "p2_fire2"))
-			ShootBall();
+		if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1"))
+			InhaleParticles.Play();
+		else if (!Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1"))
+			InhaleParticles.Stop();
+
+		if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
+			ExhaleParticles.Play();
+		else if (!Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
+			ExhaleParticles.Stop();
+
+		//if (HasBall && Input.GetButtonDown(_playerOne ? "p1_fire2" : "p2_fire2"))
+		//	ShootBall();
 	}
 
 	private void OnTriggerStay2D(Collider2D col)
@@ -49,22 +59,23 @@ public class AimController : MonoBehaviour
 		if (col.gameObject.tag == "Ball")
 		{
 			if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1"))
-			{
+            {
+                Debug.DrawLine(transform.position, col.transform.position);
 				col.transform.position = Vector3.MoveTowards(col.transform.position, transform.position, Strenght);
-				//col.GetComponent<BallPhysics>().Direction = transform.position;
+				//col.GetComponent<BallPhysics>().Direction = transform.position.normalized;
 			}
 			else if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
 			{
 				col.transform.position = Vector2.MoveTowards(col.transform.position, -transform.position, Strenght);
-				col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
+				//col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
 			}
 		}
 	}
 
-	private void ShootBall()
-	{
-		// Criar a bola
-		Debug.Log("shot ball");
-		Instantiate(BallPrefab, transform.position, transform.rotation);
-	}
+	//private void ShootBall()
+	//{
+	//	// Criar a bola
+	//	Debug.Log("shot ball");
+	//	Instantiate(BallPrefab, transform.position, transform.rotation);
+	//}
 }

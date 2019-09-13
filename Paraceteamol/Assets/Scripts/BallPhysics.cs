@@ -1,19 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BallPhysics : MonoBehaviour
 {
-	public float StartSpeed = 1;
-	[HideInInspector]
-	public Vector2 Direction;
+	public float StartSpeed = 10;
+	//[HideInInspector]
+	public Vector2 Direction = Vector2.one;
 
-	private Vector2 _oldDirection;
-
-	private void Start()
-	{
-		Direction = Vector2.one.normalized;    // Direction (1,1) normalized - going top right
-	}
+	private bool _playerIsPulling;
 
 	private void FixedUpdate()
 	{

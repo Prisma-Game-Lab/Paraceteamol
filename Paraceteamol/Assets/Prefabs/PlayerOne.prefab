@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 1438188848657424437}
   m_Layer: 0
   m_Name: Mira
-  m_TagString: Untagged
+  m_TagString: Aim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,9 +221,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0}
+    - - {x: 0, y: 0.3}
       - {x: 15, y: 5}
       - {x: 15, y: -5}
+      - {x: 0, y: -0.3}
 --- !u!114 &1438188848657424437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,6 +730,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerOne
       objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
       propertyPath: m_Enabled
@@ -759,16 +770,6 @@ PrefabInstance:
       propertyPath: PlayerSprite
       value: 
       objectReference: {fileID: 9008687973832237991}
-    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13194f14cb42d19499fd99a1234ceea9, type: 3}
 --- !u!4 &4732135939977624652 stripped

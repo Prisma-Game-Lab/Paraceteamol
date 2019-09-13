@@ -11,7 +11,10 @@ public class Timer : MonoBehaviour
     private bool canCount = true;
     private bool doOnce = false;*/
 
+    [Tooltip("Tempo restante.")]
     [SerializeField] private Text uiText;
+    [Tooltip("Pontuação")]
+    [SerializeField] private Text endScore;
     public float startTime;
 
     private float timer;
@@ -20,13 +23,13 @@ public class Timer : MonoBehaviour
 
     public GameObject player1;
     public GameObject player2;
-    public GameObject FinalScore;
+    public GameObject EndGame;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = startTime;
-        FinalScore.SetActive(false);
+        EndGame.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,9 +47,22 @@ public class Timer : MonoBehaviour
         else if(timer <= 0.0f && !doOnce)
         {
             canCount = false;
-            FinalScore.SetActive(true);
+            EndGame.SetActive(true);
             Time.timeScale = 0f;
-
+            int scorePlayer1 = player1.GetComponent<GoalScript>().score;
+            int scorePlayer2 = player2.GetComponent<GoalScript>().score;
+            if(scorePlayer1 > scorePlayer2)
+            {
+                endScore.text = "Player 1 won";
+            }
+            else if (scorePlayer1 < scorePlayer2)
+            {
+                endScore.text = "Player 2 won";
+            }
+            else
+            {
+                endScore.text = "Empate";
+            }
         }
     }
 }

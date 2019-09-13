@@ -49,7 +49,7 @@ public class AimController : MonoBehaviour
 			ExhaleParticles.Play();
 		else if (!Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
 			ExhaleParticles.Stop();
-
+        
 		//if (HasBall && Input.GetButtonDown(_playerOne ? "p1_fire2" : "p2_fire2"))
 		//	ShootBall();
 	}
@@ -60,17 +60,19 @@ public class AimController : MonoBehaviour
 		{
 			if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1"))
             {
-                Debug.DrawLine(transform.position, col.transform.position);
+               
 				col.transform.position = Vector3.MoveTowards(col.transform.position, transform.position, Strenght);
-				//col.GetComponent<BallPhysics>().Direction = transform.position.normalized;
+               
+				col.GetComponent<BallPhysics>().Direction = transform.position.normalized;
 			}
 			else if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
 			{
-				col.transform.position = Vector2.MoveTowards(col.transform.position, -transform.position, Strenght);
-				//col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
+				col.transform.position = Vector3.MoveTowards(col.transform.position, -transform.position, Strenght);
+				col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
 			}
 		}
 	}
+     
 
 	//private void ShootBall()
 	//{

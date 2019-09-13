@@ -12,9 +12,9 @@ public class Timer : MonoBehaviour
     private bool doOnce = false;*/
 
     [Tooltip("Tempo restante.")]
-    [SerializeField] private Text uiText;
-    [Tooltip("Pontuação")]
-    [SerializeField] private Text endScore;
+    [SerializeField] private Text uiTimer;
+    [Tooltip("Pontuação de game over")]
+    [SerializeField] private Text resultado;
     public float startTime;
 
     private float timer;
@@ -42,7 +42,7 @@ public class Timer : MonoBehaviour
             string minutes = ((int)timer / 60).ToString();
             string seconds = (timer % 60).ToString("f2");
 
-            uiText.text = minutes + ":" + seconds;
+            uiTimer.text = minutes + ":" + seconds;
         }
         else if(timer <= 0.0f && !doOnce)
         {
@@ -53,15 +53,15 @@ public class Timer : MonoBehaviour
             int scorePlayer2 = player2.GetComponent<GoalScript>().score;
             if(scorePlayer1 > scorePlayer2)
             {
-                endScore.text = "Player 1 won";
+                resultado.text = "Player 1 won";
             }
             else if (scorePlayer1 < scorePlayer2)
             {
-                endScore.text = "Player 2 won";
+                resultado.text = "Player 2 won";
             }
             else
             {
-                endScore.text = "Empate";
+                resultado.text = "Empate";
             }
         }
     }

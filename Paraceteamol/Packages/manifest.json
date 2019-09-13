@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "com.unity.2d.animation": "2.2.0-preview.5",
+<<<<<<< HEAD
+    "com.unity.2d.ik": "1.2.0-preview.2",
+=======
+>>>>>>> 569eb47ed9a7a4c5eb47da262206d8db27dd844c
     "com.unity.2d.psdimporter": "1.2.0-preview.3",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "1.2.16",

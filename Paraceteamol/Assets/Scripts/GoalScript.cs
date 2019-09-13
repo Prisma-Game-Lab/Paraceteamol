@@ -1,35 +1,46 @@
-﻿using UnityEngine.UI;
+﻿using System.Collections;
+using UnityEngine.UI;
+using System.Collections.Generic;
 using UnityEngine;
+
 
 public class GoalScript : MonoBehaviour
 {
-	public Text scoreText;
-	public GameObject BallPrefab;
 
-	[HideInInspector]
-	public int score = 0;
-	
-	void Start()
+    public Text scoreText;
+    public int score;
+    [Tooltip("Colocar aqui os prefab da bola")]
+    public GameObject BallPrefab;
+
+    void Start()
+    {
+        score = 0;
+        UpdateScore();
+    }
+
+
+    public void AddScore(int newScoreValue)
+    {
+        score += newScoreValue;
+        UpdateScore();
+    }
+
+    void UpdateScore()
+    {
+        scoreText.text = "Gols: " + score;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
 	{
-		score = 0;
-		scoreText.text = "Gols: " + score;
-	}
 
-	public void AddScore(int newScoreValue, GameObject target)
-	{
-		score += newScoreValue;
-		scoreText.text = "Gols: " + score;
+        if (other.gameObject.tag == "Ball")
+        {
 
-		Destroy(target);
-		Instantiate(BallPrefab, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
-	}
+            AddScore(1);
+            other.transform.position =  new Vector2(0, 0);
+ 
+        }
 
-	private void OnTriggerEnter2D(Collider2D col)
-	{
-		if (col.gameObject.tag == "Ball")
-		{
-			AddScore(1, col.gameObject);
-			//other.transform.position = new Vector2(0, 0);
-		}
-	}
-}
+        }
+
+    }

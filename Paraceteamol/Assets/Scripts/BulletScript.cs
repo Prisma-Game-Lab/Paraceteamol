@@ -9,25 +9,31 @@ public class BulletScript : MonoBehaviour
 	public Rigidbody2D Rb;
 	[HideInInspector]
 	public bool PlayerIsPulling = false;
-	
-	void OnCollisionStay2D(Collision2D col)
+    private BallPhysics _ballPhysics; 
+
+   private float _speed;
+    
+ 
+	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (col.gameObject.tag == "Player")
 		{
 			PlayerIsPulling = col.gameObject.GetComponentInChildren<AimController>().IsPulling;
-			if (PlayerIsPulling)
-			{
+            if (PlayerIsPulling)
+            {
                 transform.position = GameObject.FindGameObjectWithTag("Aim").transform.position;
+               
+               
+                 
+
+
 
                 Debug.Log(col.gameObject.name + " touched ball");
 
-				// O player não segura mais a bola
-				//col.gameObject.GetComponentInChildren<AimController>().HasBall = true;
-				//AimScript.HasBall = true;
-				//Destroy(this.gameObject);
-			}
-             
-            { 
+                // O player não segura mais a bola
+                //col.gameObject.GetComponentInChildren<AimController>().HasBall = true;
+                //AimScript.HasBall = true;
+                //Destroy(this.gameObject);
             }
 
 		}

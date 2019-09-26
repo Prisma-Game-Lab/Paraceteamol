@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationCode : MonoBehaviour
-{
+
+   {
     private Animator animator;
-    public bool movendo = false;
-    public bool pulando = false;
+     
 
     void Start()
     {

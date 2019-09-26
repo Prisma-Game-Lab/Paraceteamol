@@ -12,12 +12,13 @@ public class PlayerMovement : MonoBehaviour
 	private float _horizontal = 0;
 	private Transform _obj;
 	private Rigidbody2D _rb;
-
+    private AnimationCode _anim;
 	private void Start()
 	{
 		_obj = gameObject.transform;
 		_rb = GetComponent<Rigidbody2D>();
-	}
+        _anim = GetComponentInChildren<AnimationCode>();
+        	}
 
 	private void FixedUpdate()
 	{
@@ -27,11 +28,19 @@ public class PlayerMovement : MonoBehaviour
 
 		Vector3 tempVect = new Vector3(_horizontal, 0, 0);
 		tempVect = tempVect.normalized * MovementSpeed * Time.deltaTime;
+        _anim.PararDeAndar();
 
-		if (_horizontal < 0)
-			PlayerSprite.transform.rotation = new Quaternion(0, 180, 0, 0);
-		else if (_horizontal > 0)
-			PlayerSprite.transform.rotation = new Quaternion(0, 0, 0, 0);
+
+        if (_horizontal < 0)
+        {
+            PlayerSprite.transform.rotation = new Quaternion(0, 180, 0, 0);
+            _anim.Andar();
+        }
+        else if (_horizontal > 0)
+        {
+            PlayerSprite.transform.rotation = new Quaternion(0, 0, 0, 0);
+            _anim.Andar();
+        }
 
 		_obj.transform.position += tempVect;
 
@@ -51,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
 			if ((hit1 || hit2 || hit3) && (hit1.transform.tag == "Ground" || hit2.transform.tag == "Ground" || hit3.transform.tag == "Ground"))
 			{
 				_rb.AddForce(new Vector2(0, 1) * JumpHeight * 10);
+                _anim.Pular();
 			}
 		}
 	}

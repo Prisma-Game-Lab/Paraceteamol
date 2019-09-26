@@ -499,12 +499,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc5819e9a851e314bac78061a5242be4, type: 3}
---- !u!1 &9008687973832237991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5670331120966644188, guid: cc5819e9a851e314bac78061a5242be4,
-    type: 3}
-  m_PrefabInstance: {fileID: 3725701643846914683}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3756899010160180188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -817,7 +811,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerSprite
       value: 
-      objectReference: {fileID: 9008687973832237991}
+      objectReference: {fileID: 7900619208822127835}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13194f14cb42d19499fd99a1234ceea9, type: 3}
 --- !u!4 &4732135939977624652 stripped

@@ -242,6 +242,18 @@ MonoBehaviour:
   ExhaleParticles: {fileID: 6099579386529611550}
   IsPulling: 0
   HasBall: 0
+--- !u!114 &2866180568642553851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900619208822127835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d5d10d6701c6b4e92ca7449db6b818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &331641960251761617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -693,6 +705,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da47f30cc9514ce41846a9d6501a23af, type: 3}
+--- !u!1 &7900619208822127835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1143465142787843893, guid: da47f30cc9514ce41846a9d6501a23af,
+    type: 3}
+  m_PrefabInstance: {fileID: 7096199884445932526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8142452187741682836
 PrefabInstance:
   m_ObjectHideFlags: 0

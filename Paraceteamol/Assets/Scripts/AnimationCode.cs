@@ -5,23 +5,23 @@ using UnityEngine;
 public class AnimationCode : MonoBehaviour
 
    {
-    private Animator animator;
+    private Animator _animator;
      
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     public void Andar()
     {
 
-        animator.SetBool("movendo", true);
+        _animator.SetBool("movendo", true);
 
     }
     public void PararDeAndar()
     {
-        animator.SetBool("movendo", false);
+       _animator.SetBool("movendo", false);
     }
 
 
@@ -29,12 +29,12 @@ public class AnimationCode : MonoBehaviour
     public void Pular()
     {
 
-        animator.SetTrigger("pulando");
+        _animator.SetTrigger("pulando");
 
     }
     public void PararDePular()
     {
-        animator.ResetTrigger("pulando");
+        _animator.ResetTrigger("pulando");
 
     }
 }

@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 107776208685757930}
   - component: {fileID: 107776208685757935}
-  - component: {fileID: 107776208685757928}
   - component: {fileID: 107776208685757929}
   m_Layer: 0
-  m_Name: Platform
+  m_Name: Horizontal Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,27 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &107776208685757928
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107776208685757931}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 3a528b3001c7b0748a52de86dc7b5bd5, type: 2}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!61 &107776208685757929
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1187,7 +1187,7 @@ PrefabInstance:
     - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: MovementSpeed
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
@@ -1237,6 +1237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Strenght
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: CooldownTimer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1408836977108728314, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}

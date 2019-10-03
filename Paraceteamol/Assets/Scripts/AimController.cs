@@ -18,13 +18,15 @@ public class AimController : MonoBehaviour
 
 	private bool _playerOne;
 	private float _horizontal;
-	private bool _canShoot = true;
+	public bool _canShoot = true;
 
 	private IEnumerator Cooldown()
 	{
 		Debug.Log("começa cooldown");
-		yield return new WaitForSeconds(CooldownTimer);
-		_canShoot = true;
+		yield return new WaitForSeconds(0.1f);
+        _canShoot = false;
+        yield return new WaitForSeconds(CooldownTimer);
+        _canShoot = true;
 		Debug.Log("termina cooldown");
 	}
 
@@ -32,8 +34,9 @@ public class AimController : MonoBehaviour
 	{
 		_playerOne = GetComponentInParent<PlayerMovement>().PlayerOne;
 	}
-
-	private void FixedUpdate()
+    private void Uptade() { 
+    }
+	private void Update()
 	{
 		if (Input.GetAxis(_playerOne ? "p1_horizontal" : "p2_horizontal") > 0)
 			_horizontal = 0;
@@ -67,7 +70,7 @@ public class AimController : MonoBehaviour
 
 			if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1") || Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2")){
 				StartCoroutine(Cooldown());
-				_canShoot = false;
+				
 			}
 		}
 
@@ -82,12 +85,13 @@ public class AimController : MonoBehaviour
 			if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1"))
 			{
 				col.transform.position = Vector3.MoveTowards(col.transform.position, GameObject.FindGameObjectWithTag("Aim").transform.position, Strenght);
-				//col.GetComponent<BallPhysics>().Direction = transform.position.normalized;
-			}
+
+                col.GetComponent<BallPhysics>().Direction = new Vector2(transform.position.x, transform.position.y).normalized;
+            }
 			else if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
 			{
 				col.transform.position = Vector3.MoveTowards(col.transform.position, -transform.position, Strenght);
-				//col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
+				col.GetComponent<BallPhysics>().Direction = new Vector2(-transform.position.x, -transform.position.y).normalized;
 			}
 		}
 	}

@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 	public float GravitySpeedModifier = 1;
 	[Tooltip("True if it's Player 1, false if Player 2.")] public bool PlayerOne = true;
 	public GameObject PlayerSprite;
-
+    public float Pointer;
 	private float _horizontal = 0;
 	private Transform _obj;
 	private Rigidbody2D _rb;
@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 		_obj = gameObject.transform;
 		_rb = GetComponent<Rigidbody2D>();
         _anim = GetComponentInChildren<AnimationCode>();
+        GameObject.FindGameObjectWithTag("Aim").transform.position = new Vector3(GameObject.FindGameObjectWithTag("Aim").transform.position.x + Pointer, GameObject.FindGameObjectWithTag("Aim").transform.position.y, 0);
         	}
 
 	private void FixedUpdate()
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 		Debug.DrawRay(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, Color.green);
 		Debug.DrawRay(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, Color.blue);
 
-		Debug.Log("can jump");
+	//	Debug.Log("can jump");
 
 		if (Input.GetButton(PlayerOne ? "p1_jump" : "p2_jump"))
 		{

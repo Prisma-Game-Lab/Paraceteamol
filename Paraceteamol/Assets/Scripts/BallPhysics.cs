@@ -10,6 +10,6 @@ public class BallPhysics : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		transform.Translate(Direction * StartSpeed * Time.deltaTime);
+		 transform.Translate(Direction * StartSpeed * Time.deltaTime);
 	}
 }

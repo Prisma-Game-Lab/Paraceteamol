@@ -10,6 +10,7 @@ public class BallHit : MonoBehaviour
 	private void Awake()
 	{
 		_ballPhysicsScript = GetComponentInParent<BallPhysics>();
+         
 	}
 
 	private void OnTriggerEnter2D(Collider2D col)

@@ -576,6 +576,26 @@ PrefabInstance:
       propertyPath: PlayerSprite
       value: 
       objectReference: {fileID: 614926018}
+    - target: {fileID: 4732135939977624653, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
+        type: 3}
+      propertyPath: horizontalControl
+      value: p2_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732135939977624653, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
+        type: 3}
+      propertyPath: jumpButton
+      value: p2_jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732135939977624653, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
+        type: 3}
+      propertyPath: joystickHorizontal
+      value: p2_ps4_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732135939977624653, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
+        type: 3}
+      propertyPath: teclado
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1438188848657424437, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
         type: 3}
       propertyPath: BallPrefab
@@ -585,6 +605,26 @@ PrefabInstance:
         type: 3}
       propertyPath: Strenght
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
+        type: 3}
+      propertyPath: horizontalControl
+      value: p2_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
+        type: 3}
+      propertyPath: joystickHorizontal
+      value: p2_ps4_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
+        type: 3}
+      propertyPath: joystickVertical
+      value: p2_ps4_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
+        type: 3}
+      propertyPath: verticalControl
+      value: p2_vertical
       objectReference: {fileID: 0}
     - target: {fileID: 1457685889107493424, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
         type: 3}
@@ -1214,6 +1254,26 @@ PrefabInstance:
       propertyPath: Pointer
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: horizontalControl
+      value: p1_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: jumpButton
+      value: p1_jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: joystickHorizontal
+      value: p1_ps4_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: teclado
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8079678354830760878, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: m_RootOrder
@@ -1256,6 +1316,31 @@ PrefabInstance:
     - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: CooldownTimer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: horizontalControl
+      value: p1_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: joystickHorizontal
+      value: p1_ps4_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: verticalControl
+      value: p1_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: joystickVertical
+      value: p1_ps4_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: teclado
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1408836977108728314, guid: bf9a32f6ab3fad44d9c2bba018445886,

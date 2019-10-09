@@ -20,6 +20,12 @@ public class AimController : MonoBehaviour
 	private float _horizontal;
 	public bool _canShoot = true;
 
+	public string horizontalControl;
+	public string verticalControl;
+	public string joystickHorizontal;
+	public string joystickVertical;
+	public bool teclado;
+
 	private IEnumerator Cooldown()
 	{
 		Debug.Log("começa cooldown");
@@ -38,17 +44,45 @@ public class AimController : MonoBehaviour
     }
 	private void Update()
 	{
-		if (Input.GetAxis(_playerOne ? "p1_horizontal" : "p2_horizontal") > 0)
+		/*if (Input.GetAxis(_playerOne ? "p1_horizontal" : "p2_horizontal") > 0)
 			_horizontal = 0;
 		else if (Input.GetAxis(_playerOne ? "p1_horizontal" : "p2_horizontal") < 0)
-			_horizontal = 180;
-
-		if (Input.GetAxis(_playerOne ? "p1_vertical" : "p2_vertical") > 0)
+			_horizontal = 180;*/
+		if(teclado == true){
+			if (Input.GetAxis(horizontalControl) > 0)
+				_horizontal = 0;
+			else if (Input.GetAxis(horizontalControl) < 0)
+				_horizontal = 180;
+		}
+		else{
+			if (Input.GetAxis(joystickHorizontal) > 0)
+				_horizontal = 0;
+			else if (Input.GetAxis(joystickHorizontal) < 0)
+				_horizontal = 180;
+		}
+		/*if (Input.GetAxis(_playerOne ? "p1_vertical" : "p2_vertical") > 0)
 			transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
 		else if (Input.GetAxis(_playerOne ? "p1_vertical" : "p2_vertical") < 0)
 			transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
 		else
-			transform.rotation = Quaternion.Euler(new Vector3(0, _horizontal, 0));
+			transform.rotation = Quaternion.Euler(new Vector3(0, _horizontal, 0));*/
+
+		if(teclado == true){
+			if (Input.GetAxis(verticalControl) > 0)
+				transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+			else if (Input.GetAxis(verticalControl) < 0)
+				transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
+			else
+				transform.rotation = Quaternion.Euler(new Vector3(0, _horizontal, 0));
+		}
+		else{
+			if (Input.GetAxis(joystickVertical) > 0)
+				transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+			else if (Input.GetAxis(joystickVertical) < 0)
+				transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
+			else
+				transform.rotation = Quaternion.Euler(new Vector3(0, _horizontal, 0));
+		}
 
 		if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1") && _canShoot)
 			InhaleParticles.Play();

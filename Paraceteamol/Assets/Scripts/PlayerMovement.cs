@@ -8,11 +8,19 @@ public class PlayerMovement : MonoBehaviour
 	public float GravitySpeedModifier = 1;
 	[Tooltip("True if it's Player 1, false if Player 2.")] public bool PlayerOne = true;
 	public GameObject PlayerSprite;
+
     public float Pointer;
 	private float _horizontal = 0;
+
 	private Transform _obj;
 	private Rigidbody2D _rb;
     private AnimationCode _anim;
+
+	public string horizontalControl;
+	public string joystickHorizontal;
+	public string jumpButton;
+	public bool teclado;
+
 	private void Start()
 	{
 		_obj = gameObject.transform;
@@ -25,7 +33,13 @@ public class PlayerMovement : MonoBehaviour
 	{
 		_rb.AddForce(new Vector2(0, -10 * GravitySpeedModifier));
 
-		_horizontal = Input.GetAxis(PlayerOne ? "p1_horizontal" : "p2_horizontal");
+		//_horizontal = Input.GetAxis(PlayerOne ? "p1_horizontal" : "p2_horizontal");
+		if(teclado == true){
+			_horizontal = Input.GetAxis(horizontalControl);
+		}
+		else{
+			_horizontal = Input.GetAxis(joystickHorizontal);
+		}
 
 		Vector3 tempVect = new Vector3(_horizontal, 0, 0);
 		tempVect = tempVect.normalized * MovementSpeed * Time.deltaTime;
@@ -52,7 +66,8 @@ public class PlayerMovement : MonoBehaviour
 
 	//	Debug.Log("can jump");
 
-		if (Input.GetButton(PlayerOne ? "p1_jump" : "p2_jump"))
+	//if (Input.GetButton(PlayerOne ? "p1_jump" : "p2_jump"))
+		if (Input.GetButton(jumpButton))
 		{
 			RaycastHit2D hit1 = Physics2D.Raycast(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, 0.1f);
 			RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, 0.1f);

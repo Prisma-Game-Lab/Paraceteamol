@@ -238,10 +238,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Strenght: 2
+  CooldownTimer: 0
   InhaleParticles: {fileID: 1946507676277496475}
   ExhaleParticles: {fileID: 6099579386529611550}
   IsPulling: 0
   HasBall: 0
+  _canShoot: 1
+  horizontalControl: 
+  verticalControl: 
+  joystickHorizontal: 
+  joystickVertical: 
+  teclado: 0
 --- !u!114 &2866180568642553851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +268,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4325341497234234308}
     m_Modifications:
+    - target: {fileID: 331641961168108235, guid: 7e5c11ef20b74d64880f368308fbeaec,
+        type: 3}
+      propertyPath: m_Name
+      value: Triangle
+      objectReference: {fileID: 0}
+    - target: {fileID: 331641961168108235, guid: 7e5c11ef20b74d64880f368308fbeaec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 331641961168108228, guid: 7e5c11ef20b74d64880f368308fbeaec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -315,16 +332,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 331641961168108235, guid: 7e5c11ef20b74d64880f368308fbeaec,
-        type: 3}
-      propertyPath: m_Name
-      value: Triangle
-      objectReference: {fileID: 0}
-    - target: {fileID: 331641961168108235, guid: 7e5c11ef20b74d64880f368308fbeaec,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e5c11ef20b74d64880f368308fbeaec, type: 3}
@@ -772,6 +779,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322648, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322648, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322648, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.60978997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.3133748
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.88322926
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.2288418
+      objectReference: {fileID: 0}
     - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
       propertyPath: m_Enabled
@@ -796,26 +838,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.18137793
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.60978997
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3.3133748
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.88322926
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2.2288418
       objectReference: {fileID: 0}
     - target: {fileID: 3554502904130322649, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}

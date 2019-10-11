@@ -478,6 +478,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 235478419}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1114864556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8430402299152588225, guid: 7fe700a91d4c11e43a764de677ff3252,
+    type: 3}
+  m_PrefabInstance: {fileID: 1485572942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b9bf34cd7d70844baade4565eec468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1131266584 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3211116795527367965, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
@@ -594,7 +606,7 @@ PrefabInstance:
     - target: {fileID: 4732135939977624653, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
         type: 3}
       propertyPath: teclado
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1438188848657424437, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
         type: 3}
@@ -625,6 +637,16 @@ PrefabInstance:
         type: 3}
       propertyPath: verticalControl
       value: p2_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
+        type: 3}
+      propertyPath: rJoystickHorizontal
+      value: p2_ps4_R_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
+        type: 3}
+      propertyPath: rJoystickVertical
+      value: p2_ps4_R_vertical
       objectReference: {fileID: 0}
     - target: {fileID: 1457685889107493424, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
         type: 3}
@@ -1067,6 +1089,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 9202829804518869848, guid: 0ff5b8e6bfee31748922f3b433c3b90d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202829804518869848, guid: 0ff5b8e6bfee31748922f3b433c3b90d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202829804518869848, guid: 0ff5b8e6bfee31748922f3b433c3b90d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202829804518869848, guid: 0ff5b8e6bfee31748922f3b433c3b90d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1114864556}
+    - target: {fileID: 9202829804518869848, guid: 0ff5b8e6bfee31748922f3b433c3b90d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202829804518869848, guid: 0ff5b8e6bfee31748922f3b433c3b90d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff5b8e6bfee31748922f3b433c3b90d, type: 3}
 --- !u!114 &1345029563 stripped
@@ -1272,7 +1324,7 @@ PrefabInstance:
     - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: teclado
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8079678354830760878, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
@@ -1301,7 +1353,7 @@ PrefabInstance:
     - target: {fileID: 7963905359860709160, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.031691503
+      value: 0.031691495
       objectReference: {fileID: 0}
     - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
@@ -1341,12 +1393,22 @@ PrefabInstance:
     - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: teclado
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: rJoystickHorizontal
+      value: p1_ps4_R_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: rJoystickVertical
+      value: p1_ps4_R_vertical
       objectReference: {fileID: 0}
     - target: {fileID: 1408836977108728314, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.041461132
+      value: 0.041461144
       objectReference: {fileID: 0}
     - target: {fileID: 1457685889107493424, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
@@ -1356,7 +1418,7 @@ PrefabInstance:
     - target: {fileID: 3162965973622346199, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0642488
+      value: -0.06424881
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9a32f6ab3fad44d9c2bba018445886, type: 3}

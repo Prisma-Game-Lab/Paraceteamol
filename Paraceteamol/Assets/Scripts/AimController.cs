@@ -103,11 +103,11 @@ public class AimController : MonoBehaviour
 		else
 			InhaleParticles.Stop();
 
-		if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2") && _canShoot)
+		/*if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2") && _canShoot)
 			ExhaleParticles.Play();
 		else
 			ExhaleParticles.Stop();
-
+            */
 		if (_canShoot)
 		{
 			if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1"))
@@ -116,10 +116,10 @@ public class AimController : MonoBehaviour
 				IsPulling = false;
 
 
-			if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1") || Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2")){
+			/*if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1") || Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2")){
 				StartCoroutine(Cooldown());
 				
-			}
+			}*/
 		}
 
 		//if (HasBall && Input.GetButtonDown(_playerOne ? "p1_fire2" : "p2_fire2"))
@@ -137,12 +137,12 @@ public class AimController : MonoBehaviour
 
                 col.GetComponent<BallPhysics>().Direction = new Vector2(GameObject.FindGameObjectWithTag("Aim").transform.position.x, GameObject.FindGameObjectWithTag("Aim").transform.position.y).normalized;
             }
-			else if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
+			/*else if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
 			{
 				col.transform.position = Vector3.MoveTowards(col.transform.position, -transform.position, Strenght);
 
                 col.GetComponent<BallPhysics>().Direction = new Vector2(-GameObject.FindGameObjectWithTag("Aim").transform.position.x, -GameObject.FindGameObjectWithTag("Aim").transform.position.y).normalized;
-			}
+			}*/
 		}
 	}
 

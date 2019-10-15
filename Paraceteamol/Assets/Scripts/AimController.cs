@@ -70,10 +70,10 @@ public class AimController : MonoBehaviour
 		else{
 			rightStickInput = new Vector2(Input.GetAxis(rJoystickHorizontal), Input.GetAxis(rJoystickVertical));
 
-			if(rightStickInput.magnitude > 0f){
-				Vector3 curRotation = Vector3.left  * rightStickInput.x + Vector3.up*rightStickInput.y;
-				Quaternion aimRotation = Quaternion.LookRotation(curRotation, Vector3.up);
-				transform.rotation = aimRotation;
+			if(rightStickInput.magnitude > 0.19f){
+				Vector3 curRotation = Vector3.left  * rightStickInput.x + Vector3.up * rightStickInput.y;
+                Quaternion aimRotation = Quaternion.FromToRotation(new Vector3(transform.rotation.x, transform.position.y, transform.position.z), curRotation);
+				transform.SetPositionAndRotation(transform.position, aimRotation);
 			}
 
 

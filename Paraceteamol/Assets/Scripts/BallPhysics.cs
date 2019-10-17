@@ -14,7 +14,7 @@ public class BallPhysics : MonoBehaviour
     private void Start()
     {
         //transform.Translate(Direction * StartSpeed * Time.deltaTime);
-        GetComponent<Rigidbody2D>().AddForce(Direction * Strenght * StartSpeed, ForceMode2D.Impulse);
+        GetComponent<Rigidbody2D>().AddForce(Direction  * StartSpeed, ForceMode2D.Impulse);
     }
 
 }

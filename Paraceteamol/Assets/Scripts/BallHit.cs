@@ -12,7 +12,7 @@ public class BallHit : MonoBehaviour
     private float _previous_y_position;
     private float _dif_y_position; //Serve para verificar se a bola está na diagonal ou nao
     private float _previous_x_position;
-    public float _dif_x_position; //Serve para verificar se a bola está na diagonal ou nao
+    private float _dif_x_position; //Serve para verificar se a bola está na diagonal ou nao
    
 
     private void Awake()
@@ -39,15 +39,15 @@ public class BallHit : MonoBehaviour
         {
           
                 _ballPhysicsScript.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                _ballPhysicsScript.GetComponent<Rigidbody2D>().AddForce(new Vector2(_dif_x_position, -_dif_y_position) *_strenght/2, ForceMode2D.Impulse); //o dividido por 2 é porque como os dois colliders vao encostar, ele vai ativar a força duas vezes, uma para cada collider
-           //Nesse caso como é uma parede, dif x sempre vai ser diferente de 0 porque a bola vai estar se mexendo na horizontal então sempre vai aplicar uma força horizontal. O que pode acontecer é dif y ser diferente de 0 se ser aplicada uma força diagonal
+                _ballPhysicsScript.GetComponent<Rigidbody2D>().AddForce(new Vector2(_dif_x_position, -_dif_y_position) *_strenght, ForceMode2D.Impulse); 
+            //Nesse caso como é uma parede, dif x sempre vai ser diferente de 0 porque a bola vai estar se mexendo na horizontal então sempre vai aplicar uma força horizontal. O que pode acontecer é dif y ser diferente de 0 se ser aplicada uma força diagonal
 
         }
         if (col.gameObject.tag == "Ground")
         {
           
                 _ballPhysicsScript.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                _ballPhysicsScript.GetComponent<Rigidbody2D>().AddForce(new Vector2(-_dif_x_position, _dif_y_position) * _strenght/2, ForceMode2D.Impulse);
+                _ballPhysicsScript.GetComponent<Rigidbody2D>().AddForce(new Vector2(-_dif_x_position, _dif_y_position) * _strenght, ForceMode2D.Impulse);
             //Nesse caso como é um chao ou um teto, dif y sempre vai ser diferente de 0 porque a bola vai estar se mexendo na vertical então sempre vai aplicar uma força vertical. O que pode acontecer é dif x ser diferente de 0 se ser aplicada uma força diagonal
             
         }
@@ -55,7 +55,7 @@ public class BallHit : MonoBehaviour
         {
 
             _ballPhysicsScript.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            _ballPhysicsScript.GetComponent<Rigidbody2D>().AddForce(new Vector2(_dif_x_position, _dif_y_position) * _strenght / 2, ForceMode2D.Impulse);
+            _ballPhysicsScript.GetComponent<Rigidbody2D>().AddForce(new Vector2(_dif_x_position, _dif_y_position) * _strenght , ForceMode2D.Impulse);
             //Nesse caso como é um chao ou um teto, dif y sempre vai ser diferente de 0 porque a bola vai estar se mexendo na vertical então sempre vai aplicar uma força vertical. O que pode acontecer é dif x ser diferente de 0 se ser aplicada uma força diagonal
 
         }

@@ -34,6 +34,8 @@ public class BallHit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        _previous_x_position = transform.position.x;
+        _previous_y_position = transform.position.y;
 
         if (col.gameObject.tag == "Wall")
         {

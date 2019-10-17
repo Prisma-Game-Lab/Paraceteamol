@@ -75,29 +75,9 @@ public class AimController : MonoBehaviour
                 Quaternion aimRotation = Quaternion.FromToRotation(new Vector3(transform.rotation.x, transform.position.y, transform.position.z), curRotation);
 				transform.SetPositionAndRotation(transform.position, aimRotation);
 			}
-
-
-			/*if (Input.GetAxis(joystickHorizontal) > 0)
-				_horizontal = 0;
-			else if (Input.GetAxis(joystickHorizontal) < 0)
-				_horizontal = 180;*/
+            
 		}
-		/*if (Input.GetAxis(_playerOne ? "p1_vertical" : "p2_vertical") > 0)
-			transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
-		else if (Input.GetAxis(_playerOne ? "p1_vertical" : "p2_vertical") < 0)
-			transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
-		else
-			transform.rotation = Quaternion.Euler(new Vector3(0, _horizontal, 0));
-			
-		else{
-			if (Input.GetAxis(oystickVertical) > 0)
-				transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
-			else if (Input.GetAxis(joystickVertical) < 0)
-				transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
-			else
-				transform.rotation = Quaternion.Euler(new Vector3(0, _horizontal, 0));
-		}*/
-
+		
 		if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1") && _canShoot)
 			InhaleParticles.Play();
 		else

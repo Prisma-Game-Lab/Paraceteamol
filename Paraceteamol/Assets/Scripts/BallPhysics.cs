@@ -2,14 +2,19 @@
 
 public class BallPhysics : MonoBehaviour
 {
-	public float StartSpeed = 10;
-	//[HideInInspector]
-	public Vector2 Direction = Vector2.one;
+    [Tooltip("Forca com que a bola vai ser ricocheteada ")]
+    public float Strenght;
+    public float StartSpeed;
+    [Tooltip("Direcao inicial da sua bola")]
 
-	private bool _playerIsPulling;
+    public Vector2 Direction;
 
-	private void FixedUpdate()
-	{
-		 transform.Translate(Direction * StartSpeed * Time.deltaTime);
-	}
+    private bool _playerIsPulling;
+
+    private void Start()
+    {
+        //transform.Translate(Direction * StartSpeed * Time.deltaTime);
+        GetComponent<Rigidbody2D>().AddForce(Direction * Strenght * StartSpeed, ForceMode2D.Impulse);
+    }
+
 }

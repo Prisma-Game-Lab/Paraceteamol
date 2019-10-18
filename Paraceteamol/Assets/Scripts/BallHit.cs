@@ -5,7 +5,6 @@ public class BallHit : MonoBehaviour
 	public Vector2 Velocity;
 
 	private BallPhysics _ballPhysicsScript;
-	private float _strenght;
 	private Rigidbody2D _rb;
 	private ContactPoint2D[] _contacts = new ContactPoint2D[1];
 	private float _speed;
@@ -13,7 +12,6 @@ public class BallHit : MonoBehaviour
 	private void Awake()
 	{
 		_ballPhysicsScript = GetComponentInParent<BallPhysics>();
-		_strenght = _ballPhysicsScript.Strenght;
 		_rb = _ballPhysicsScript.GetComponent<Rigidbody2D>();
 		_rb.AddForce(Velocity, ForceMode2D.Impulse);
 		_speed = GetComponentInParent<BallPhysics>().StartSpeed;

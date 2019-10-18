@@ -10,42 +10,50 @@ public class AimController : MonoBehaviour
 	[Space]
 	public float Strenght = .5f;
 	public float CooldownTimer = 0;
-
-	[Space]
-	[Header("Analogico esquerdo")]
-	public string horizontalControl = "p1_horizontal";
-	public string verticalControl = "p1_vertical";
-	public string joystickHorizontal = "p1_ps4_horizontal";
-	public string joystickVertical = "p1_ps4_vertical";
-	[Space]
-	[Header("Analogico direito")]
-	public Vector2 rightStickInput;
-	public string rJoystickHorizontal = "p1_ps4_R_horizontal";
-	public string rJoystickVertical = "p1_ps4_R_vertical";
+	public float InhaleTime = 2;
+	public float InhaleCooldownTime = 3;
 
 	[HideInInspector]
 	public bool IsPulling = false;
 	[HideInInspector]
 	public bool _canShoot = true;
 
-	private bool _playerOne;
+	[Header("Analogico esquerdo")]
+	public string _horizontalControl = "p1_horizontal";
+	public string _verticalControl = "p1_vertical";
+
+	[Header("Analogico direito")]
+	public string _joystickHorizontal = "p1_ps4_R_horizontal";
+	public string _joystickVertical = "p1_ps4_R_vertical";
+
+	[Header("Buttons")]
+	public string _inhaleBtn = "p1_fire1";
+
+	private Vector2 _rightStickInput;
 	private float _horizontal;
 	private bool teclado;
+	private bool _canInhale = true;
+	private bool _isExhaling = false;
+	private GameObject _ball;
 
-	private IEnumerator Cooldown()
+	private IEnumerator InhaleTimer()
 	{
-		Debug.Log("começa cooldown");
-		yield return new WaitForSeconds(0.1f);
-		_canShoot = false;
-		yield return new WaitForSeconds(CooldownTimer);
-		_canShoot = true;
-		Debug.Log("termina cooldown");
+		yield return new WaitForSeconds(InhaleTime);
+		_canInhale = false;
+		_isExhaling = true;
+		InhaleParticles.Stop();
+	}
+
+	private IEnumerator InhaleCooldown()
+	{
+		yield return new WaitForSeconds(InhaleCooldownTime);
+		_canInhale = true;
 	}
 
 	private void Start()
 	{
-		_playerOne = GetComponentInParent<PlayerMovement>().PlayerOne;
 		teclado = GetComponentInParent<PlayerMovement>().teclado;
+		_ball = GameObject.FindGameObjectWithTag("Ball");
 	}
 
 	private void Update()
@@ -53,48 +61,47 @@ public class AimController : MonoBehaviour
 		if (teclado == true)
 		{
 			//Inputs horizontais
-			if (Input.GetAxis(horizontalControl) > 0)
+			if (Input.GetAxis(_horizontalControl) > 0)
 				_horizontal = 0;
-			else if (Input.GetAxis(horizontalControl) < 0)
+			else if (Input.GetAxis(_horizontalControl) < 0)
 				_horizontal = 180;
 
 			//Inputs Verticais
-			if (Input.GetAxis(verticalControl) > 0)
+			if (Input.GetAxis(_verticalControl) > 0)
 				transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
-			else if (Input.GetAxis(verticalControl) < 0)
+			else if (Input.GetAxis(_verticalControl) < 0)
 				transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
 			else
 				transform.rotation = Quaternion.Euler(new Vector3(0, _horizontal, 0));
-
 		}
 		else
 		{
-			rightStickInput = new Vector2(Input.GetAxis(rJoystickHorizontal), Input.GetAxis(rJoystickVertical));
+			_rightStickInput = new Vector2(Input.GetAxis(_joystickHorizontal), Input.GetAxis(_joystickVertical));
 
-			if (rightStickInput.magnitude > 0.19f)
+			if (_rightStickInput.magnitude > 0.19f)
 			{
-				Vector3 curRotation = Vector3.left * rightStickInput.x + Vector3.up * rightStickInput.y;
+				Vector3 curRotation = Vector3.left * _rightStickInput.x + Vector3.up * _rightStickInput.y;
 				Quaternion aimRotation = Quaternion.FromToRotation(new Vector3(transform.rotation.x, transform.position.y, transform.position.z), curRotation);
 				transform.SetPositionAndRotation(transform.position, aimRotation);
 			}
 		}
-
-		if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1") && _canShoot)
-			InhaleParticles.Play();
-		else
-			InhaleParticles.Stop();
-
-		if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2") && _canShoot)
-			ExhaleParticles.Play();
-		else
-			ExhaleParticles.Stop();
-
+		
 		if (_canShoot)
 		{
-			if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1"))
+			if (Input.GetButton(_inhaleBtn))
 				IsPulling = true;
 			else
 				IsPulling = false;
+		}
+	}
+
+	private void FixedUpdate()
+	{
+		if (_isExhaling)
+		{
+			ExhaleParticles.Play();
+			_ball.GetComponentInChildren<BallHit>().Velocity = Vector2.left * -1;
+			_isExhaling = false;
 		}
 	}
 
@@ -102,15 +109,22 @@ public class AimController : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Ball" && _canShoot)
 		{
-			if (Input.GetButton(_playerOne ? "p1_fire1" : "p2_fire1"))
-			{
+			if(Input.GetButtonDown(_inhaleBtn))
+				InhaleParticles.Play();
 
+			if (Input.GetButton(_inhaleBtn) && _canInhale)
+			{
+				Debug.Log("click");
+				col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.zero;
+				col.transform.position = Vector3.MoveTowards(col.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
 			}
-			else if (Input.GetButton(_playerOne ? "p1_fire2" : "p2_fire2"))
-			{
-				col.transform.position = Vector3.MoveTowards(col.transform.position, -transform.position, Strenght);
 
-				col.GetComponent<BallPhysics>().Direction = new Vector2(-GameObject.FindGameObjectWithTag("Aim").transform.position.x, -GameObject.FindGameObjectWithTag("Aim").transform.position.y).normalized;
+			if (Input.GetButtonUp(_inhaleBtn))
+			{
+				InhaleParticles.Stop();
+				StopCoroutine(InhaleTimer());
+				_canInhale = false;
+				_isExhaling = true;
 			}
 		}
 	}

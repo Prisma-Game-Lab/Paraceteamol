@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457685889107493424}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4325341497234234308}
@@ -186,7 +186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768554627774725862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8498283345491740367}
@@ -241,15 +241,15 @@ MonoBehaviour:
   ExhaleParticles: {fileID: 7801345635766286080}
   Strenght: 0.5
   CooldownTimer: 0
-  horizontalControl: p1_horizontal
-  verticalControl: p1_vertical
-  joystickHorizontal: p1_ps4_horizontal
-  joystickVertical: p1_ps4_vertical
-  rightStickInput: {x: 0, y: 0}
-  rJoystickHorizontal: p1_ps4_R_horizontal
-  rJoystickVertical: p1_ps4_R_vertical
+  InhaleTime: 2
+  InhaleCooldownTime: 3
   IsPulling: 0
   _canShoot: 1
+  _horizontalControl: p1_horizontal
+  _verticalControl: p1_vertical
+  _joystickHorizontal: p1_ps4_R_horizontal
+  _joystickVertical: p1_ps4_R_vertical
+  _inhaleBtn: p1_fire1
 --- !u!114 &2866180568642553851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,12 +532,12 @@ PrefabInstance:
     - target: {fileID: 1322383275893243968, guid: da47f30cc9514ce41846a9d6501a23af,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.65
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1322383275893243968, guid: da47f30cc9514ce41846a9d6501a23af,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.25
+      value: -3.9
       objectReference: {fileID: 0}
     - target: {fileID: 1322383275893243968, guid: da47f30cc9514ce41846a9d6501a23af,
         type: 3}
@@ -613,6 +613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.06424881
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305197453949602361, guid: da47f30cc9514ce41846a9d6501a23af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9979339
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da47f30cc9514ce41846a9d6501a23af, type: 3}
@@ -808,12 +813,12 @@ PrefabInstance:
     - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.88322926
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.60978997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}

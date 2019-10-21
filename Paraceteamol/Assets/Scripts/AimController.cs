@@ -36,7 +36,6 @@ public class AimController : MonoBehaviour
 	private bool _isExhaling = false;
 	private GameObject _ball;
 
-	private Vector3 AtualRotation;
 
 	private IEnumerator InhaleTimer()
 	{

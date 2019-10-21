@@ -29,12 +29,14 @@ public class AimController : MonoBehaviour
 	[Header("Buttons")]
 	public string _inhaleBtn = "p1_fire1";
 
-	private Vector2 _rightStickInput;
+	public Vector2 _rightStickInput;
 	private float _horizontal;
 	private bool teclado;
 	private bool _canInhale = true;
 	private bool _isExhaling = false;
 	private GameObject _ball;
+
+	private Vector3 AtualRotation;
 
 	private IEnumerator InhaleTimer()
 	{
@@ -56,8 +58,15 @@ public class AimController : MonoBehaviour
 		_ball = GameObject.FindGameObjectWithTag("Ball");
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
+		if (_isExhaling)
+		{
+			ExhaleParticles.Play();
+			_ball.GetComponentInChildren<BallHit>().Velocity = Vector2.left * -1;
+			_isExhaling = false;
+		}
+
 		if (teclado == true)
 		{
 			//Inputs horizontais
@@ -78,11 +87,11 @@ public class AimController : MonoBehaviour
 		{
 			_rightStickInput = new Vector2(Input.GetAxis(_joystickHorizontal), Input.GetAxis(_joystickVertical));
 
-			if (_rightStickInput.magnitude > 0.19f)
+			if (_rightStickInput.magnitude > 0.1f)
 			{
 				Vector3 curRotation = Vector3.left * _rightStickInput.x + Vector3.up * _rightStickInput.y;
-				Quaternion aimRotation = Quaternion.FromToRotation(new Vector3(transform.rotation.x, transform.position.y, transform.position.z), curRotation);
-				transform.SetPositionAndRotation(transform.position, aimRotation);
+				Quaternion aimRotation = Quaternion.FromToRotation(new Vector3(-16f, 0, 0), curRotation);
+				transform.rotation = aimRotation;
 			}
 		}
 		
@@ -92,16 +101,6 @@ public class AimController : MonoBehaviour
 				IsPulling = true;
 			else
 				IsPulling = false;
-		}
-	}
-
-	private void FixedUpdate()
-	{
-		if (_isExhaling)
-		{
-			ExhaleParticles.Play();
-			_ball.GetComponentInChildren<BallHit>().Velocity = Vector2.left * -1;
-			_isExhaling = false;
 		}
 	}
 

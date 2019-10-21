@@ -30,8 +30,6 @@ public class PlayerMovement : MonoBehaviour
 		_obj = gameObject.transform;
 		_rb = GetComponent<Rigidbody2D>();
 		_anim = GetComponentInChildren<AnimationCode>();
-		GameObject.FindGameObjectWithTag("Aim").transform.position = new Vector3(GameObject.FindGameObjectWithTag("Aim").transform.position.x + Pointer,
-			GameObject.FindGameObjectWithTag("Aim").transform.position.y, 0);
 	}
 
 	private void FixedUpdate()

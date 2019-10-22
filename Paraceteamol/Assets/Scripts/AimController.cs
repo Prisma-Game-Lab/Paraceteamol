@@ -93,7 +93,7 @@ public class AimController : MonoBehaviour
 				transform.rotation = aimRotation;
 			}
 		}
-		
+
 		if (_canShoot)
 		{
 			if (Input.GetButton(_inhaleBtn))
@@ -107,14 +107,18 @@ public class AimController : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Ball" && _canShoot)
 		{
-			if(Input.GetButtonDown(_inhaleBtn))
+			if (Input.GetButtonDown(_inhaleBtn))
 				InhaleParticles.Play();
 
 			if (Input.GetButton(_inhaleBtn) && _canInhale)
 			{
 				Debug.Log("click");
 				col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.zero;
-				col.transform.position = Vector3.MoveTowards(col.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
+
+				if (Vector2.Distance(gameObject.transform.Find("seta").transform.position, col.transform.position) > .5f)
+					col.transform.position = Vector3.MoveTowards(col.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
+				else
+					col.transform.position = gameObject.transform.Find("seta").transform.position;
 			}
 
 			if (Input.GetButtonUp(_inhaleBtn))

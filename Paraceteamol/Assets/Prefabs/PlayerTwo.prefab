@@ -155,11 +155,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a43dd0dbfda3ab488bcd12b6377776a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Strenght: 2
   InhaleParticles: {fileID: 1712969240483186972}
   ExhaleParticles: {fileID: 6955001054422535851}
+  Strenght: 2
+  CooldownTimer: 0
+  InhaleTime: 2
+  InhaleCooldownTime: 3
   IsPulling: 0
-  HasBall: 0
+  _canShoot: 1
+  _horizontalControl: p2_horizontal
+  _verticalControl: p2_vertical
+  _joystickHorizontal: p2_ps4_R_horizontal
+  _joystickVertical: p2_ps4_R_vertical
+  _inhaleBtn: p2_fire1
+  _rightStickInput: {x: 0, y: 0}
 --- !u!95 &8693957096384444952
 Animator:
   serializedVersion: 3
@@ -457,6 +466,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30a912bafdcdf0a44a98aced4a6a2699, type: 3}
+--- !u!1 &3211116795527367965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1864356935923520373, guid: 30a912bafdcdf0a44a98aced4a6a2699,
+    type: 3}
+  m_PrefabInstance: {fileID: 3841477535799107176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8142452187741682836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -524,26 +539,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.6784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.15686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.18137793
-      objectReference: {fileID: 0}
     - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
       propertyPath: m_Offset.y
@@ -564,6 +559,26 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 3.5026865
       objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.15686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.18137793
+      objectReference: {fileID: 0}
     - target: {fileID: 3554502904130322649, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
       propertyPath: PlayerOne
@@ -573,7 +588,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerSprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3211116795527367965}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13194f14cb42d19499fd99a1234ceea9, type: 3}
 --- !u!1 &4732135939977624655 stripped

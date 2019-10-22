@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
 	{
 		_rb.AddForce(new Vector2(0, -10 * GravitySpeedModifier));
 
-		//_horizontal = Input.GetAxis(PlayerOne ? "p1_horizontal" : "p2_horizontal");
 		if (teclado == true)
 			_horizontal = Input.GetAxis(horizontalControl);
 		else

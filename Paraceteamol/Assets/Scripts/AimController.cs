@@ -33,39 +33,30 @@ public class AimController : MonoBehaviour
 	private float _horizontal;
 	private bool teclado;
 	private bool _canInhale = true;
-	private bool _isExhaling = false;
-	private GameObject _ball;
-
+	private bool _ballCheck = true;
 
 	private IEnumerator InhaleTimer()
 	{
 		yield return new WaitForSeconds(InhaleTime);
 		_canInhale = false;
-		_isExhaling = true;
 		InhaleParticles.Stop();
+		ExhaleParticles.Play();
 	}
 
 	private IEnumerator InhaleCooldown()
 	{
 		yield return new WaitForSeconds(InhaleCooldownTime);
 		_canInhale = true;
+		Debug.Log("Can Inhale");
 	}
 
 	private void Start()
 	{
 		teclado = GetComponentInParent<PlayerMovement>().teclado;
-		_ball = GameObject.FindGameObjectWithTag("Ball");
 	}
 
 	private void FixedUpdate()
 	{
-		if (_isExhaling)
-		{
-			ExhaleParticles.Play();
-			_ball.GetComponentInChildren<BallHit>().Velocity = Vector2.left * -1;
-			_isExhaling = false;
-		}
-
 		if (teclado == true)
 		{
 			//Inputs horizontais
@@ -118,15 +109,21 @@ public class AimController : MonoBehaviour
 				if (Vector2.Distance(gameObject.transform.Find("seta").transform.position, col.transform.position) > .5f)
 					col.transform.position = Vector3.MoveTowards(col.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
 				else
+				{
 					col.transform.position = gameObject.transform.Find("seta").transform.position;
+					_ballCheck = true;
+				}
 			}
 
 			if (Input.GetButtonUp(_inhaleBtn))
 			{
+				if (_ballCheck)
+					col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector3.left * -1;
+				_ballCheck = false;
 				InhaleParticles.Stop();
 				StopCoroutine(InhaleTimer());
 				_canInhale = false;
-				_isExhaling = true;
+				ExhaleParticles.Play();
 			}
 		}
 	}

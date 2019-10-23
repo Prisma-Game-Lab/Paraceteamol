@@ -27,6 +27,7 @@ public class BallHit : MonoBehaviour
 	{
 		if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
 		{
+			//Debug.Log("Bola bateu em " + col.gameObject.tag);
 			col.GetContacts(_contacts);
 			Vector2 normal = _contacts[0].normal;
 			ReflectProjectile(_rb, normal);

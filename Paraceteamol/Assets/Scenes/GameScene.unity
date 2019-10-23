@@ -1315,7 +1315,7 @@ PrefabInstance:
     - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: teclado
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8079678354830760878, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
@@ -1513,7 +1513,7 @@ PrefabInstance:
     - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: startTime
-      value: 10
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}

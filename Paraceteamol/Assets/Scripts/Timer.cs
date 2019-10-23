@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
     [Tooltip("Pontuação de game over")]
     [SerializeField] private Text resultado;
     public float startTime;
-
+    private PauseMenu _pauseMenu;
     private float timer;
     private bool canCount = true;
     private bool doOnce = false;
@@ -29,7 +29,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timer = startTime;
-        EndGame.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -48,6 +48,7 @@ public class Timer : MonoBehaviour
         {
             canCount = false;
             EndGame.SetActive(true);
+             
             Time.timeScale = 0f;
             int scorePlayer1 = player1.GetComponent<GoalScript>().score;
             int scorePlayer2 = player2.GetComponent<GoalScript>().score;
@@ -61,8 +62,11 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                resultado.text = "Empate";
+                resultado.text = "Empate"; 
             }
         }
+        Time.timeScale = 1f;
     }
+
+    
 }

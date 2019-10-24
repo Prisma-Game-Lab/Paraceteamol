@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
     public void Load()
     {
         Debug.Log("Loading scene...");
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Map_Selection");
     }
     public void QuitGame()
     {

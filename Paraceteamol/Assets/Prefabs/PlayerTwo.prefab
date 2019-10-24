@@ -169,36 +169,6 @@ MonoBehaviour:
   _joystickVertical: p2_ps4_R_vertical
   _inhaleBtn: p2_fire1
   _rightStickInput: {x: 0, y: 0}
---- !u!1 &3388151233557708052
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8755281956639741117}
-  m_Layer: 0
-  m_Name: arm target
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8755281956639741117
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3388151233557708052}
-  m_LocalRotation: {x: -0, y: -0, z: -0.029884312, w: 0.9995534}
-  m_LocalPosition: {x: 2.07, y: -0.56, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4046602134321609905}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -180, y: -180, z: -183.425}
 --- !u!95 &98284520247507683
 Animator:
   serializedVersion: 3
@@ -245,6 +215,36 @@ MonoBehaviour:
   m_Solvers:
   - {fileID: 4058091321461046343}
   m_Weight: 1
+--- !u!1 &3388151233557708052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8755281956639741117}
+  m_Layer: 0
+  m_Name: arm target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8755281956639741117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388151233557708052}
+  m_LocalRotation: {x: -0, y: -0, z: -0.029884312, w: 0.9995534}
+  m_LocalPosition: {x: 2.07, y: -0.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4046602134321609905}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -180, y: -180, z: -183.425}
 --- !u!95 &8693957096384444952
 Animator:
   serializedVersion: 3
@@ -559,6 +559,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4732135939977624652}
     m_Modifications:
+    - target: {fileID: 2830591185027147420, guid: 30a912bafdcdf0a44a98aced4a6a2699,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07207168
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830591185027147420, guid: 30a912bafdcdf0a44a98aced4a6a2699,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9973995
+      objectReference: {fileID: 0}
     - target: {fileID: 1864356935923520373, guid: 30a912bafdcdf0a44a98aced4a6a2699,
         type: 3}
       propertyPath: m_Name
@@ -633,16 +643,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.51417416
-      objectReference: {fileID: 0}
-    - target: {fileID: 2830591185027147420, guid: 30a912bafdcdf0a44a98aced4a6a2699,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.07207168
-      objectReference: {fileID: 0}
-    - target: {fileID: 2830591185027147420, guid: 30a912bafdcdf0a44a98aced4a6a2699,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9973995
       objectReference: {fileID: 0}
     - target: {fileID: 965952046444405465, guid: 30a912bafdcdf0a44a98aced4a6a2699,
         type: 3}
@@ -812,6 +812,16 @@ PrefabInstance:
       propertyPath: PlayerSprite
       value: 
       objectReference: {fileID: 3211116795527367965}
+    - target: {fileID: 3554502904130322649, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: MovementSpeed
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322649, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: JumpHeight
+      value: 240
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13194f14cb42d19499fd99a1234ceea9, type: 3}
 --- !u!4 &4732135939977624652 stripped

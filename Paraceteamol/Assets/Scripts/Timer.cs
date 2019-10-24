@@ -29,6 +29,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timer = startTime;
+        Time.timeScale = 1f;
         
     }
 
@@ -65,7 +66,7 @@ public class Timer : MonoBehaviour
                 resultado.text = "Empate"; 
             }
         }
-        Time.timeScale = 1f;
+       
     }
 
     

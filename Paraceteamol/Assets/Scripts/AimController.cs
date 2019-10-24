@@ -117,13 +117,17 @@ public class AimController : MonoBehaviour
 
 			if (Input.GetButtonUp(_inhaleBtn))
 			{
-				if (_ballCheck)
-					col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector3.left * -1;
-				_ballCheck = false;
-				InhaleParticles.Stop();
-				StopCoroutine(InhaleTimer());
-				_canInhale = false;
-				ExhaleParticles.Play();
+                if (_ballCheck)
+                {
+                    col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.left * -1;
+                    col.GetComponent<Rigidbody2D>().AddForce(Vector2.left * -1 * col.GetComponent<BallPhysics>().StartSpeed, ForceMode2D.Impulse);
+                }
+                    _ballCheck = false;
+                    InhaleParticles.Stop();
+                    StopCoroutine(InhaleTimer());
+                    _canInhale = false;
+                   ExhaleParticles.Play();
+                
 			}
 		}
 	}

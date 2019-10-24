@@ -579,7 +579,7 @@ PrefabInstance:
     - target: {fileID: 4046602134321609905, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.13171984
+      value: 0.13171986
       objectReference: {fileID: 0}
     - target: {fileID: 1438188848657424437, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
         type: 3}
@@ -604,17 +604,17 @@ PrefabInstance:
     - target: {fileID: 8755281956639741117, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.030360885
+      value: -0.029884312
       objectReference: {fileID: 0}
     - target: {fileID: 8755281956639741117, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9995391
+      value: 0.9995534
       objectReference: {fileID: 0}
     - target: {fileID: 8755281956639741117, guid: 5d895bfeb5c68df4dabd867ffb1f683b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -3.4800003
+      value: -183.425
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d895bfeb5c68df4dabd867ffb1f683b, type: 3}
@@ -1559,6 +1559,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6346706912026402896, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346706912026402896, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.51
+      objectReference: {fileID: 0}
     - target: {fileID: 4705131446926430499, guid: a7bd272d6650dc24ab04856c2e885ebc,
         type: 3}
       propertyPath: scoreText
@@ -1569,6 +1579,12 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1345029563}
+    - target: {fileID: 3757779426315426267, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4dbe940263f4a384894b52ca2f160b02,
+        type: 3}
     - target: {fileID: 8711279634108469969, guid: a7bd272d6650dc24ab04856c2e885ebc,
         type: 3}
       propertyPath: BallPrefab

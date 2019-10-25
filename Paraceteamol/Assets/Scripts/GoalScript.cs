@@ -29,7 +29,7 @@ public class GoalScript : MonoBehaviour
 
     void UpdateScore()
     {
-        scoreText.text = "Gols: " + score;
+        scoreText.text = "" + score;
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -86,28 +86,6 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Timer copiar
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 623
-      width: 404
-      height: 313
-    spriteID: c8d3368d3aab48f4db50aac0fa1d348e
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -1525, y: -862}
   - name: "pontua\xE7\xE3o 3"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -115,7 +93,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 453
+      x: 4
       y: 4
       width: 335
       height: 219
@@ -129,125 +107,31 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -305, y: -854}
-  - name: "pontua\xE7\xE3o 4"
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 453
-      y: 231
-      width: 336
-      height: 211
-    spriteID: d2ec3d82e325f1341a7c05b9736ab2ad
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -1833, y: -635}
-  - name: "pontua\xE7\xE3o 2"
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 308
-      width: 421
-      height: 307
-    spriteID: b7f7a4937f54d72419a030e59bb1aff6
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -2256, y: -1029}
-  - name: "pontua\xE7\xE3o 1"
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 441
-      height: 296
-    spriteID: b445e267b250e184a90be10fc99ead97
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -717, y: -1333}
+    uvTransform: {x: -1264, y: -1126}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
   importedTextureWidth: 1024
-  importedTextureHeight: 1024
+  importedTextureHeight: 512
   documentSize: {x: 3508, y: 2480}
   paperDollMode: 0
   spriteCategoryList:
     categories: []
   textureActualWidth: 1024
-  textureActualHeight: 1024
+  textureActualHeight: 512
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Timer copiar
-    spriteName: Timer copiar
-    isGroup: 0
-    parentIndex: -1
-    spriteID: c8d3368d3aab48f4db50aac0fa1d348e
-    layerID: 13
-    mosaicPosition: {x: 4, y: 623}
   - name: "pontua\xE7\xE3o 3"
     spriteName: "pontua\xE7\xE3o 3"
     isGroup: 0
     parentIndex: -1
     spriteID: ed89154d7c46537458789b014be29d44
     layerID: 15
-    mosaicPosition: {x: 453, y: 4}
-  - name: "pontua\xE7\xE3o 4"
-    spriteName: "pontua\xE7\xE3o 4"
-    isGroup: 0
-    parentIndex: -1
-    spriteID: d2ec3d82e325f1341a7c05b9736ab2ad
-    layerID: 17
-    mosaicPosition: {x: 453, y: 231}
-  - name: "pontua\xE7\xE3o 2"
-    spriteName: "pontua\xE7\xE3o 2"
-    isGroup: 0
-    parentIndex: -1
-    spriteID: b7f7a4937f54d72419a030e59bb1aff6
-    layerID: 9
-    mosaicPosition: {x: 4, y: 308}
-  - name: "pontua\xE7\xE3o 1"
-    spriteName: "pontua\xE7\xE3o 1"
-    isGroup: 0
-    parentIndex: -1
-    spriteID: b445e267b250e184a90be10fc99ead97
-    layerID: 7
     mosaicPosition: {x: 4, y: 4}
   characterData:
     bones: []

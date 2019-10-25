@@ -318,6 +318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManeger
       objectReference: {fileID: 0}
+    - target: {fileID: 3836860997848890509, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: PauseMenuUI
+      value: 
+      objectReference: {fileID: 1856353735}
     - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -373,11 +378,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890509, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: PauseMenuUI
-      value: 
-      objectReference: {fileID: 1856353735}
     - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: uiTimer
@@ -427,6 +427,69 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TestArena1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705131446926430499, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705131446926430499, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: Confetti
+      value: 
+      objectReference: {fileID: 8024124115904289997, guid: 3e1c2795a506776429e328d78faad893,
+        type: 3}
+    - target: {fileID: 4705131446926430499, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: rightGool
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705131447368391524, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 2128267537}
+    - target: {fileID: 4705131447368391524, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: Confetti
+      value: 
+      objectReference: {fileID: 1598527847611773908, guid: c8cf6b594b500e04d9a65062bfc68d98,
+        type: 3}
+    - target: {fileID: 4464020800461967984, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464020800461967987, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464020801504401360, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705131446926430498, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -51.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705131446926430502, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85e4ef1ec1b66254a9b86b6f1d91c97f,
+        type: 3}
+    - target: {fileID: 4705131446926430502, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705131447368391547, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6439230475401239144, guid: a7bd272d6650dc24ab04856c2e885ebc,
         type: 3}
@@ -488,11 +551,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4464020800461967984, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6743159072411194318, guid: a7bd272d6650dc24ab04856c2e885ebc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -538,64 +596,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 5.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4705131446926430498, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -51.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464020800461967987, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4464020801504401360, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705131446926430502, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 85e4ef1ec1b66254a9b86b6f1d91c97f,
-        type: 3}
-    - target: {fileID: 4705131446926430502, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705131446926430499, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705131446926430499, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: Confetti
-      value: 
-      objectReference: {fileID: 8024124115904289997, guid: 3e1c2795a506776429e328d78faad893,
-        type: 3}
-    - target: {fileID: 4705131446926430499, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: rightGool
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705131447368391547, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4705131447368391524, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 2128267537}
-    - target: {fileID: 4705131447368391524, guid: a7bd272d6650dc24ab04856c2e885ebc,
-        type: 3}
-      propertyPath: Confetti
-      value: 
-      objectReference: {fileID: 1598527847611773908, guid: c8cf6b594b500e04d9a65062bfc68d98,
-        type: 3}
     - target: {fileID: 3757779426315426267, guid: a7bd272d6650dc24ab04856c2e885ebc,
         type: 3}
       propertyPath: m_Sprite
@@ -1905,7 +1905,7 @@ PrefabInstance:
     - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: teclado
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7963905359860709160, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}

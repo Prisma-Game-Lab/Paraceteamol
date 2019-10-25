@@ -1172,7 +1172,7 @@ PrefabInstance:
     - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: teclado
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7963905359860709160, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
@@ -1742,6 +1742,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManeger
       objectReference: {fileID: 0}
+    - target: {fileID: 3836860997848890509, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: PauseMenuUI
+      value: 
+      objectReference: {fileID: 437471980}
     - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1797,11 +1802,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890509, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: PauseMenuUI
-      value: 
-      objectReference: {fileID: 437471980}
     - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: uiTimer

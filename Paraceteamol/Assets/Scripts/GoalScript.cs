@@ -11,6 +11,7 @@ public class GoalScript : MonoBehaviour
     public int score;
     [Tooltip("Colocar aqui os prefab da bola")]
     public GameObject BallPrefab;
+    public AudioSource Goal;
     private ParticleSystem Confetti;
     
     void Start()
@@ -42,6 +43,7 @@ public class GoalScript : MonoBehaviour
             other.transform.position = new Vector2(0, 0);
             other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1) * 10, ForceMode2D.Impulse);
             Confetti.Play();
+            Goal.Play();
         }
 
     }

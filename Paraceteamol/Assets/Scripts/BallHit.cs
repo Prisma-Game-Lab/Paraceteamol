@@ -3,7 +3,7 @@
 public class BallHit : MonoBehaviour
 {
 	public Vector2 Velocity;
-
+    public AudioSource BallSound;
 	private BallPhysics _ballPhysicsScript;
 	private Rigidbody2D _rb;
 	private ContactPoint2D[] _contacts = new ContactPoint2D[1];
@@ -21,6 +21,7 @@ public class BallHit : MonoBehaviour
 	{
 		Velocity = Vector2.Reflect(Velocity, reflectVector);
 		_rb.velocity = Velocity * _speed;
+        BallSound.Play();
 	}
 
 	private void OnTriggerEnter2D(Collider2D col)	

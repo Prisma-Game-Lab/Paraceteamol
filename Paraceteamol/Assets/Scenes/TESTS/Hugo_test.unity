@@ -1359,6 +1359,16 @@ PrefabInstance:
       propertyPath: InhaleParticles
       value: 
       objectReference: {fileID: 1498764020}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: CooldownTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: Strenght
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9a32f6ab3fad44d9c2bba018445886, type: 3}
 --- !u!4 &1498764019 stripped

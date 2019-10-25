@@ -11,13 +11,13 @@ public class GoalScript : MonoBehaviour
     public int score;
     [Tooltip("Colocar aqui os prefab da bola")]
     public GameObject BallPrefab;
-    private GameObject Confetti;
+    private ParticleSystem Confetti;
     
     void Start()
     {
         score = 0;
         UpdateScore();
-        Confetti = gameObject.GetComponentInChildren<ParticleSystem>();
+		Confetti = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
 

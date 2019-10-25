@@ -28,35 +28,104 @@ public class AimController : MonoBehaviour
 
 	[Header("Buttons")]
 	public string _inhaleBtn = "p1_fire1";
-
 	public Vector2 _rightStickInput;
+
 	private float _horizontal;
 	private bool teclado;
-	private bool _canInhale = true;
-	private bool _ballCheck = false;
+	private bool _ballInRange = false;
+	private GameObject _ballGO;
+
+	#region State
+
+	// Here you name the states
+	public enum State
+	{
+		Idle,
+		Cooldown,
+		Inhale,
+		Exhale,
+	}
+	public State state;
+
+	IEnumerator IdleState()
+	{
+		while (state == State.Idle)
+		{
+			yield return 0;
+		}
+		NextState();
+	}
+
+	IEnumerator CooldownState()
+	{
+		while (state == State.Cooldown)
+		{
+			yield return 0;
+		}
+		NextState();
+	}
+
+	IEnumerator InhaleState()
+	{
+		while (state == State.Inhale)
+		{
+			yield return 0;
+		}
+		NextState();
+	}
+
+	IEnumerator ExhaleState()
+	{
+		while (state == State.Exhale)
+		{
+			yield return 0;
+		}
+		NextState();
+	}
+
+	void NextState()
+	{
+		string methodName = state.ToString() + "State";
+		System.Reflection.MethodInfo info =
+			GetType().GetMethod(methodName,
+								System.Reflection.BindingFlags.NonPublic |
+								System.Reflection.BindingFlags.Instance);
+		StartCoroutine((IEnumerator)info.Invoke(this, null));
+	}
+	#endregion
+	/* 
+     * States:
+     *  Idle
+	 *  Cooldown
+	 *  Inhale
+	 *  Exhale
+    */
 
 	private IEnumerator InhaleTimer()
 	{
 		yield return new WaitForSeconds(InhaleTime);
-		_canInhale = false;
 		InhaleParticles.Stop();
 		ExhaleParticles.Play();
+		state = State.Exhale;
 	}
 
 	private IEnumerator InhaleCooldown()
 	{
 		yield return new WaitForSeconds(InhaleCooldownTime);
-		_canInhale = true;
+		state = State.Idle;
 		Debug.Log("Can Inhale");
 	}
 
 	private void Start()
 	{
 		teclado = GetComponentInParent<PlayerMovement>().teclado;
+		//_ballGO = GameObject.FindGameObjectWithTag("Ball");
+		state = State.Idle;
 	}
 
 	private void FixedUpdate()
 	{
+		// Testa se vai usar teclado ou controle
 		if (teclado == true)
 		{
 			//Inputs horizontais
@@ -85,50 +154,66 @@ public class AimController : MonoBehaviour
 			}
 		}
 
-		if (_canShoot)
+		if (state == State.Idle && Input.GetButton(_inhaleBtn))
+			InhaleParticles.Play();
+		else
+			InhaleParticles.Stop();
+
+		if (state == State.Inhale && _ballInRange)
 		{
-			if (Input.GetButton(_inhaleBtn))
-				IsPulling = true;
+			if (Vector2.Distance(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position) > .5f)
+			{
+				_ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
+			}
 			else
-				IsPulling = false;
+			{
+				_ballGO.transform.position = gameObject.transform.Find("seta").transform.position;
+			}
+		}
+		else if (state == State.Exhale)
+		{
+			float angle = gameObject.transform.Find("seta").transform.rotation.z;
+			Vector2 dir = new Vector2(Mathf.Tan(angle), 1 / Mathf.Tan(angle));
+
+			Debug.Log(dir.normalized);
+
+			_ballGO.GetComponentInChildren<BallHit>().Velocity = dir.normalized;
+			_ballGO.GetComponent<Rigidbody2D>().AddForce(_ballGO.GetComponentInChildren<BallHit>().Velocity * _ballGO.GetComponent<BallPhysics>().StartSpeed, ForceMode2D.Impulse);
+
+			StartCoroutine(InhaleCooldown());
+			state = State.Cooldown;
 		}
 	}
 
 	private void OnTriggerStay2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "Ball" && _canShoot)
+		if (col.gameObject.tag == "Ball")
 		{
-			if (Input.GetButtonDown(_inhaleBtn))
-				InhaleParticles.Play();
-
-			if (Input.GetButton(_inhaleBtn) && _canInhale)
+			_ballGO = col.gameObject;
+			_ballInRange = true;
+			if (state == State.Idle)
 			{
-				Debug.Log("click");
-				col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.zero;
-
-				if (Vector2.Distance(gameObject.transform.Find("seta").transform.position, col.transform.position) > .5f)
-					col.transform.position = Vector3.MoveTowards(col.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
-				else
+				if (Input.GetButtonDown(_inhaleBtn))
 				{
-					col.transform.position = gameObject.transform.Find("seta").transform.position;
-					_ballCheck = true;
+					col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.zero;
+					StartCoroutine(InhaleTimer());
+					state = State.Inhale;
+				}
+				if (Input.GetButtonUp(_inhaleBtn))
+				{
+					StopCoroutine(InhaleTimer());
+					ExhaleParticles.Play();
+					state = State.Exhale;
 				}
 			}
+		}
+	}
 
-			if (Input.GetButtonUp(_inhaleBtn))
-			{
-                    _ballCheck = false;
-                    InhaleParticles.Stop();
-                    StopCoroutine(InhaleTimer());
-                    _canInhale = false;
-                   ExhaleParticles.Play();
-			}
-
-			if (_ballCheck)
-			{
-				col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.left * -1;
-				col.GetComponent<Rigidbody2D>().AddForce(Vector2.left * -1 * col.GetComponent<BallPhysics>().StartSpeed, ForceMode2D.Impulse);
-			}
+	private void OnTriggerExit2D(Collider2D col)
+	{
+		if (col.gameObject.tag == "Ball")
+		{
+			_ballInRange = false;
 		}
 	}
 }

@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 	public GameObject PlayerSprite;
 	[Space]
 	public float MovementSpeed = 18;
+    public AudioSource Steps;
 	public float JumpHeight = 240;
 	public float GravitySpeedModifier = 8;
 	public float Pointer = 1.5f;
@@ -44,17 +45,20 @@ public class PlayerMovement : MonoBehaviour
 		Vector3 tempVect = new Vector3(_horizontal, 0, 0);
 		tempVect = tempVect.normalized * MovementSpeed * Time.deltaTime;
 		_anim.PararDeAndar();
+        Steps.Pause();
 
 
 		if (_horizontal < 0)
 		{
 			PlayerSprite.transform.rotation = new Quaternion(0, 180, 0, 0);
 			_anim.Andar();
+            Steps.Play();
 		}
 		else if (_horizontal > 0)
 		{
 			PlayerSprite.transform.rotation = new Quaternion(0, 0, 0, 0);
 			_anim.Andar();
+            Steps.Play();
 		}
 
 		_obj.transform.position += tempVect;

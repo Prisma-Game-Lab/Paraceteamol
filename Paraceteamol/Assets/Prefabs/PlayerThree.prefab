@@ -242,15 +242,18 @@ MonoBehaviour:
   Strenght: 0.5
   CooldownTimer: 0
   InhaleTime: 2
-  InhaleCooldownTime: 3
+  InhaleCooldownTime: 1
+  dir: {x: 0, y: 0}
   IsPulling: 0
   _canShoot: 1
-  _horizontalControl: p1_horizontal
-  _verticalControl: p1_vertical
+  angle: 0
+  _horizontalControl: p3_horizontal
+  _verticalControl: p3_vertical
   _joystickHorizontal: p3_ps4_R_horizontal
   _joystickVertical: p3_ps4_R_vertical
   _inhaleBtn: p3_fire1
   _rightStickInput: {x: 0, y: 0}
+  state: 0
 --- !u!114 &2866180568642553851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +266,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d5d10d6701c6b4e92ca7449db6b818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &39127709210300793
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4732135939977624655}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a234bce6c98d320409fddae64bde02e4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &331641960251761617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -884,7 +983,7 @@ PrefabInstance:
     - target: {fileID: 3554502904130322649, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
       propertyPath: horizontalControl
-      value: p1_horizontal
+      value: p3_horizontal
       objectReference: {fileID: 0}
     - target: {fileID: 3554502904130322649, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
@@ -896,8 +995,19 @@ PrefabInstance:
       propertyPath: jumpButton
       value: p3_jump
       objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322649, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: Steps
+      value: 
+      objectReference: {fileID: 39127709210300793}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13194f14cb42d19499fd99a1234ceea9, type: 3}
+--- !u!1 &4732135939977624655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3554502904130322651, guid: 13194f14cb42d19499fd99a1234ceea9,
+    type: 3}
+  m_PrefabInstance: {fileID: 8142452187741682836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4732135939977624652 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3554502904130322648, guid: 13194f14cb42d19499fd99a1234ceea9,

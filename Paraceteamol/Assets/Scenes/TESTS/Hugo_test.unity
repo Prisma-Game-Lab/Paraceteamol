@@ -1369,6 +1369,16 @@ PrefabInstance:
       propertyPath: Strenght
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: InhaleCooldownTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: teclado
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9a32f6ab3fad44d9c2bba018445886, type: 3}
 --- !u!4 &1498764019 stripped
@@ -1636,18 +1646,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1674671270 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7752723710157752583, guid: 0ff5b8e6bfee31748922f3b433c3b90d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7752723711779863969}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1718179262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,7 +1915,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scoreText
       value: 
-      objectReference: {fileID: 1674671270}
+      objectReference: {fileID: 0}
     - target: {fileID: 163783305705614030, guid: 604abbb1354e7004a8417a3a27e4c972,
         type: 3}
       propertyPath: scoreText

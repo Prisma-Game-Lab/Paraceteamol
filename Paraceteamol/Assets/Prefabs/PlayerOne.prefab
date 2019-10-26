@@ -242,15 +242,18 @@ MonoBehaviour:
   Strenght: 0.5
   CooldownTimer: 0
   InhaleTime: 2
-  InhaleCooldownTime: 3
+  InhaleCooldownTime: 1
+  dir: {x: 0, y: 0}
   IsPulling: 0
   _canShoot: 1
+  angle: 0
   _horizontalControl: p1_horizontal
   _verticalControl: p1_vertical
   _joystickHorizontal: p1_ps4_R_horizontal
   _joystickVertical: p1_ps4_R_vertical
   _inhaleBtn: p1_fire1
   _rightStickInput: {x: 0, y: 0}
+  state: 0
 --- !u!114 &2866180568642553851
 MonoBehaviour:
   m_ObjectHideFlags: 0

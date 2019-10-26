@@ -29,10 +29,11 @@ public class AimController : MonoBehaviour
 	[Header("Buttons")]
 	public string _inhaleBtn = "p1_fire1";
 	public Vector2 _rightStickInput;
-
+    
 	private float _horizontal;
 	private bool teclado;
 	private bool _ballInRange = false;
+    private bool _canInhale=true;
 	private GameObject _ballGO;
     private ContactPoint2D[] _contacts = new ContactPoint2D[1];
     private Collider2D _ballcontact;
@@ -106,6 +107,7 @@ public class AimController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(InhaleTime);
         Debug.Log("cant inhale");
+        _canInhale = false;
 		InhaleParticles.Stop();
 		 
 		state = State.Exhale;
@@ -114,10 +116,11 @@ public class AimController : MonoBehaviour
 	private IEnumerator InhaleCooldown()
 	{
 		yield return new WaitForSeconds(InhaleCooldownTime);
-        //ExhaleParticles.Play();
+        ExhaleParticles.Play();
 		state = State.Idle;
+        _canInhale = true;
 		Debug.Log("Can Inhale");
-        //ExhaleParticles.Stop();
+        ExhaleParticles.Stop();
 	}
 
 	private void Start()
@@ -188,8 +191,9 @@ public class AimController : MonoBehaviour
 
             _ballGO.GetComponentInChildren<BallHit>().Velocity = dir;
             _ballGO.GetComponent<Rigidbody2D>().AddForce(_ballGO.GetComponentInChildren<BallHit>().Velocity * _ballGO.GetComponent<BallPhysics>().StartSpeed, ForceMode2D.Impulse);
-
+            InhaleParticles.Stop();
 			StartCoroutine(InhaleCooldown());
+            ExhaleParticles.Stop();
             state = State.Idle;
 		}
 	}
@@ -228,6 +232,7 @@ public class AimController : MonoBehaviour
 		if (col.gameObject.tag == "Ball")
 		{
 			_ballInRange = false;
+
 		}
 	}
 }

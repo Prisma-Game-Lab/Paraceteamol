@@ -791,7 +791,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 28396da55d382664da526033c2ad30c1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1624,6 +1624,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 163783305269911689, guid: 604abbb1354e7004a8417a3a27e4c972,
+        type: 3}
+      propertyPath: Goal
+      value: 
+      objectReference: {fileID: 3830982895552776113}
+    - target: {fileID: 163783305705614030, guid: 604abbb1354e7004a8417a3a27e4c972,
+        type: 3}
+      propertyPath: Goal
+      value: 
+      objectReference: {fileID: 5177263054546390505}
     - target: {fileID: 163783305705614031, guid: 604abbb1354e7004a8417a3a27e4c972,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1654,26 +1664,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 842651628643046435, guid: 604abbb1354e7004a8417a3a27e4c972,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4602986806433478782, guid: 604abbb1354e7004a8417a3a27e4c972,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 163783305705614030, guid: 604abbb1354e7004a8417a3a27e4c972,
+    - target: {fileID: 842651628643046435, guid: 604abbb1354e7004a8417a3a27e4c972,
         type: 3}
-      propertyPath: Goal
-      value: 
-      objectReference: {fileID: 5177263054546390505}
-    - target: {fileID: 163783305269911689, guid: 604abbb1354e7004a8417a3a27e4c972,
-        type: 3}
-      propertyPath: Goal
-      value: 
-      objectReference: {fileID: 3830982895552776113}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 604abbb1354e7004a8417a3a27e4c972, type: 3}
 --- !u!4 &5994038259334826795 stripped

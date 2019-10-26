@@ -12,12 +12,12 @@ public class AimController : MonoBehaviour
 	public float CooldownTimer = 0;
 	public float InhaleTime = 2;
 	public float InhaleCooldownTime = 3;
-
+    public Vector2 dir;
 	[HideInInspector]
 	public bool IsPulling = false;
 	[HideInInspector]
 	public bool _canShoot = true;
-
+    public float angle;
 	[Header("Analogico esquerdo")]
 	public string _horizontalControl = "p1_horizontal";
 	public string _verticalControl = "p1_vertical";
@@ -34,7 +34,8 @@ public class AimController : MonoBehaviour
 	private bool teclado;
 	private bool _ballInRange = false;
 	private GameObject _ballGO;
-
+    private ContactPoint2D[] _contacts = new ContactPoint2D[1];
+    private Collider2D _ballcontact;
 	#region State
 
 	// Here you name the states
@@ -104,27 +105,33 @@ public class AimController : MonoBehaviour
 	private IEnumerator InhaleTimer()
 	{
 		yield return new WaitForSeconds(InhaleTime);
+        Debug.Log("cant inhale");
 		InhaleParticles.Stop();
-		ExhaleParticles.Play();
+		 
 		state = State.Exhale;
 	}
 
 	private IEnumerator InhaleCooldown()
 	{
 		yield return new WaitForSeconds(InhaleCooldownTime);
+        //ExhaleParticles.Play();
 		state = State.Idle;
 		Debug.Log("Can Inhale");
+        //ExhaleParticles.Stop();
 	}
 
 	private void Start()
 	{
 		teclado = GetComponentInParent<PlayerMovement>().teclado;
-		//_ballGO = GameObject.FindGameObjectWithTag("Ball");
+		_ballGO = GameObject.FindGameObjectWithTag("Ball");
 		state = State.Idle;
+        
 	}
 
 	private void FixedUpdate()
 	{
+        angle = gameObject.transform.Find("seta").transform.rotation.z*100;
+        Vector2 dir = new Vector2(-Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle));
 		// Testa se vai usar teclado ou controle
 		if (teclado == true)
 		{
@@ -172,16 +179,18 @@ public class AimController : MonoBehaviour
 		}
 		else if (state == State.Exhale)
 		{
-			float angle = gameObject.transform.Find("seta").transform.rotation.z;
-			Vector2 dir = new Vector2(Mathf.Tan(angle), 1 / Mathf.Tan(angle));
+			 
+         
+			//Debug.Log(dir.normalized);
+             
+           
+           // Vector2 normal = _contacts[0].normal;
 
-			Debug.Log(dir.normalized);
-
-			_ballGO.GetComponentInChildren<BallHit>().Velocity = dir.normalized;
-			_ballGO.GetComponent<Rigidbody2D>().AddForce(_ballGO.GetComponentInChildren<BallHit>().Velocity * _ballGO.GetComponent<BallPhysics>().StartSpeed, ForceMode2D.Impulse);
+            _ballGO.GetComponentInChildren<BallHit>().Velocity = dir;
+            _ballGO.GetComponent<Rigidbody2D>().AddForce(_ballGO.GetComponentInChildren<BallHit>().Velocity * _ballGO.GetComponent<BallPhysics>().StartSpeed, ForceMode2D.Impulse);
 
 			StartCoroutine(InhaleCooldown());
-			state = State.Cooldown;
+            state = State.Idle;
 		}
 	}
 
@@ -189,12 +198,16 @@ public class AimController : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Ball")
 		{
+            _ballcontact = col;
 			_ballGO = col.gameObject;
 			_ballInRange = true;
+           
 			if (state == State.Idle)
 			{
+                
 				if (Input.GetButtonDown(_inhaleBtn))
-				{
+                {
+                    Debug.Log("or");
 					col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.zero;
 					StartCoroutine(InhaleTimer());
 					state = State.Inhale;
@@ -202,6 +215,7 @@ public class AimController : MonoBehaviour
 				if (Input.GetButtonUp(_inhaleBtn))
 				{
 					StopCoroutine(InhaleTimer());
+                    InhaleParticles.Stop();
 					ExhaleParticles.Play();
 					state = State.Exhale;
 				}

@@ -362,6 +362,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!70 &7418562725079636085
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4732135939977624655}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06180219, y: -0.16224869}
+  m_Size: {x: 1.4605542, y: 3.0456052}
+  m_Direction: 0
 --- !u!1001 &331641960251761617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -702,7 +718,7 @@ PrefabInstance:
     - target: {fileID: 936675641355594950, guid: da47f30cc9514ce41846a9d6501a23af,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.031691495
+      value: 0.031691406
       objectReference: {fileID: 0}
     - target: {fileID: 8212302885540684308, guid: da47f30cc9514ce41846a9d6501a23af,
         type: 3}
@@ -712,7 +728,7 @@ PrefabInstance:
     - target: {fileID: 5305197453949602361, guid: da47f30cc9514ce41846a9d6501a23af,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.06424881
+      value: -0.06424872
       objectReference: {fileID: 0}
     - target: {fileID: 5305197453949602361, guid: da47f30cc9514ce41846a9d6501a23af,
         type: 3}
@@ -1000,7 +1016,8 @@ PrefabInstance:
       propertyPath: Steps
       value: 
       objectReference: {fileID: 6376657024649443199}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 13194f14cb42d19499fd99a1234ceea9, type: 3}
 --- !u!1 &4732135939977624655 stripped
 GameObject:

@@ -887,26 +887,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.2594881
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 5.276167
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -1.6879668
-      objectReference: {fileID: 0}
-    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 3.5026865
-      objectReference: {fileID: 0}
     - target: {fileID: 3554502904130322654, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
       propertyPath: m_Enabled
@@ -940,7 +920,7 @@ PrefabInstance:
     - target: {fileID: 3554502904130322649, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
       propertyPath: MovementSpeed
-      value: 18
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3554502904130322649, guid: 13194f14cb42d19499fd99a1234ceea9,
         type: 3}
@@ -966,6 +946,31 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpButton
       value: p2_jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322649, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: GravitySpeedModifier
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2594881
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 5.276167
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -1.6879668
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.5026865
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3554502904130322652, guid: 13194f14cb42d19499fd99a1234ceea9, type: 3}

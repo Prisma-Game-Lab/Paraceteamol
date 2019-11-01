@@ -19,9 +19,10 @@ public class PlayerMovement : MonoBehaviour
 	public string jumpButton = "p1_jump";
 	[Tooltip("True if it's Player 1, false if Player 2.")] public bool PlayerOne = true;
 	[Tooltip("True if using keyboard")] public bool teclado;
+    [Tooltip("True if player is facing right")] public bool facingRight;
 
-	// Private variables
-	private float _horizontal = 0;
+    // Private variables
+    private float _horizontal = 0;
 	private Transform _obj;
 	private Rigidbody2D _rb;
 	private AnimationCode _anim;
@@ -47,41 +48,54 @@ public class PlayerMovement : MonoBehaviour
 		_anim.PararDeAndar();
         Steps.Pause();
 
+        if((_horizontal > 0 && !facingRight) || (_horizontal < 0 && facingRight)){
+            Flip();
+            _anim.Andar();
+            Steps.Play();
+        }
 
-		if (_horizontal < 0)
+		/*if (_horizontal < 0)
 		{
-			PlayerSprite.transform.rotation = new Quaternion(0, 180, 0, 0);
+			//PlayerSprite.transform.rotation = new Quaternion(0, 180, 0, 0);
+            Flip();
 			_anim.Andar();
             Steps.Play();
 		}
 		else if (_horizontal > 0)
 		{
-			PlayerSprite.transform.rotation = new Quaternion(0, 0, 0, 0);
+            //PlayerSprite.transform.rotation = new Quaternion(0, 0, 0, 0);
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); //Se o jogador estiver andando para a esquerda ele vai virar o personagem
 			_anim.Andar();
             Steps.Play();
-		}
+		}*/
 
 		_obj.transform.position += tempVect;
 
 		Collider2D colBounds = GetComponent<Collider2D>();
-		Debug.DrawRay(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, Color.red);
-		Debug.DrawRay(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, Color.green);
-		Debug.DrawRay(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, Color.blue);
+		Debug.DrawRay(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, Color.red);
+		Debug.DrawRay(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, Color.green);
+		Debug.DrawRay(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, Color.blue);
 
 		//	Debug.Log("can jump");
 
 		//if (Input.GetButton(PlayerOne ? "p1_jump" : "p2_jump"))
 		if (Input.GetButton(jumpButton))
 		{
-			RaycastHit2D hit1 = Physics2D.Raycast(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, 0.1f);
-			RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, 0.1f);
-			RaycastHit2D hit3 = Physics2D.Raycast(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.01f - colBounds.offset.y), Vector2.down, 0.1f);
+			RaycastHit2D hit1 = Physics2D.Raycast(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
+			RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
+			RaycastHit2D hit3 = Physics2D.Raycast(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
 
-			if (/*(hit1 || hit2 || hit3) && */(hit1.transform.tag == "Ground" || hit2.transform.tag == "Ground" || hit3.transform.tag == "Ground"))
+			if ((hit1 || hit2 || hit3) && (hit1.transform.tag == "Ground" || hit2.transform.tag == "Ground" || hit3.transform.tag == "Ground"))
 			{
 				_rb.AddForce(new Vector2(0, 1) * JumpHeight * 10);
 				_anim.Pular();
 			}
 		}
 	}
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
 }

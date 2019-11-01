@@ -34,9 +34,11 @@ public class AimController : MonoBehaviour
 	private bool teclado;
 	private bool _ballInRange = false;
     private bool _canInhale=true;
+    private bool _inhaleEffects;
 	private GameObject _ballGO;
     private ContactPoint2D[] _contacts = new ContactPoint2D[1];
     private Collider2D _ballcontact;
+    
 	#region State
 
 	// Here you name the states
@@ -105,9 +107,12 @@ public class AimController : MonoBehaviour
 
 	private IEnumerator InhaleTimer()
 	{
+        
 		yield return new WaitForSeconds(InhaleTime);
+
         Debug.Log("cant inhale");
         _canInhale = false;
+    
 		InhaleParticles.Stop();
 		 
 		state = State.Exhale;
@@ -115,13 +120,17 @@ public class AimController : MonoBehaviour
 
 	private IEnumerator InhaleCooldown()
 	{
+
+        
 		yield return new WaitForSeconds(InhaleCooldownTime);
         ExhaleParticles.Play();
 		state = State.Idle;
-        _canInhale = true;
+        _canInhale = false;
 		Debug.Log("Can Inhale");
         ExhaleParticles.Stop();
-	}
+	
+   
+    }
 
 	private void Start()
 	{
@@ -133,8 +142,11 @@ public class AimController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+        
         angle = gameObject.transform.Find("seta").transform.rotation.z*100;
-        Vector2 dir = new Vector2(-Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle));
+       
+             dir = new Vector2(-Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle));
+        
 		// Testa se vai usar teclado ou controle
 		if (teclado == true)
 		{
@@ -163,14 +175,15 @@ public class AimController : MonoBehaviour
 				transform.rotation = aimRotation;
 			}
 		}
-
+  
 		if (state == State.Idle && Input.GetButton(_inhaleBtn))
 			InhaleParticles.Play();
 		else
 			InhaleParticles.Stop();
 
-		if (state == State.Inhale && _ballInRange)
+		if (state == State.Inhale && _ballInRange &&_canInhale)
 		{
+            InhaleParticles.Stop();
 			if (Vector2.Distance(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position) > .5f)
 			{
 				_ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
@@ -179,8 +192,19 @@ public class AimController : MonoBehaviour
 			{
 				_ballGO.transform.position = gameObject.transform.Find("seta").transform.position;
 			}
+
+            if (Input.GetButtonUp(_inhaleBtn))
+            {
+
+                InhaleParticles.Stop();
+
+                state = State.Exhale;
+            }
+            
+
 		}
-		else if (state == State.Exhale)
+
+		 if (state == State.Exhale)
 		{
 			 
          
@@ -192,10 +216,13 @@ public class AimController : MonoBehaviour
             _ballGO.GetComponentInChildren<BallHit>().Velocity = dir;
             _ballGO.GetComponent<Rigidbody2D>().AddForce(_ballGO.GetComponentInChildren<BallHit>().Velocity * _ballGO.GetComponent<BallPhysics>().StartSpeed, ForceMode2D.Impulse);
             InhaleParticles.Stop();
-			StartCoroutine(InhaleCooldown());
+          
+
             ExhaleParticles.Stop();
             state = State.Idle;
 		}
+       
+       
 	}
 
 	private void OnTriggerStay2D(Collider2D col)
@@ -211,18 +238,20 @@ public class AimController : MonoBehaviour
                 
 				if (Input.GetButtonDown(_inhaleBtn))
                 {
-                    Debug.Log("or");
+                    
 					col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.zero;
-					StartCoroutine(InhaleTimer());
+                  //  StartCoroutine(InhaleCooldown());
+					//StartCoroutine(InhaleTimer());
 					state = State.Inhale;
 				}
-				if (Input.GetButtonUp(_inhaleBtn))
+				else if (Input.GetButtonUp(_inhaleBtn))
 				{
-					StopCoroutine(InhaleTimer());
+			//	StopCoroutine(InhaleTimer());
                     InhaleParticles.Stop();
-					ExhaleParticles.Play();
+					//ExhaleParticles.Play();
 					state = State.Exhale;
 				}
+                 
 			}
 		}
 	}
@@ -231,8 +260,10 @@ public class AimController : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Ball")
 		{
+
 			_ballInRange = false;
 
-		}
+            
+        }
 	}
 }

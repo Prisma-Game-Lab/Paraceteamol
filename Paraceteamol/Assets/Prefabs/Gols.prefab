@@ -129,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &163783305269911689
 MonoBehaviour:
@@ -147,6 +147,7 @@ MonoBehaviour:
   score: 0
   BallPrefab: {fileID: 7867437369187820323, guid: 9590f955c9980cc4c83b1ea019d125e7,
     type: 3}
+  Goal: {fileID: 0}
 --- !u!1 &163783305547696985
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +309,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &163783305705614030
 MonoBehaviour:
@@ -326,6 +327,7 @@ MonoBehaviour:
   score: 0
   BallPrefab: {fileID: 7867437369187820323, guid: 9590f955c9980cc4c83b1ea019d125e7,
     type: 3}
+  Goal: {fileID: 0}
 --- !u!1001 &2205441442748155182
 PrefabInstance:
   m_ObjectHideFlags: 0

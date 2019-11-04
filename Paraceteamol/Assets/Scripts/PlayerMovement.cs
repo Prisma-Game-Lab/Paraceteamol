@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
 	private Transform _obj;
 	private Rigidbody2D _rb;
 	private AnimationCode _anim;
+    private bool grounded = false;
+
+    public CharacterController controller;
 
 	private void Start()
 	{
@@ -79,9 +82,9 @@ public class PlayerMovement : MonoBehaviour
 		//	Debug.Log("can jump");
 
 		//if (Input.GetButton(PlayerOne ? "p1_jump" : "p2_jump"))
-		if (Input.GetButton(jumpButton))
+		if (Input.GetButton(jumpButton) && grounded)
 		{
-			RaycastHit2D hit1 = Physics2D.Raycast(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
+            /*ycastHit2D hit1 = Physics2D.Raycast(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
 			RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
 			RaycastHit2D hit3 = Physics2D.Raycast(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
 
@@ -89,9 +92,28 @@ public class PlayerMovement : MonoBehaviour
 			{
 				_rb.AddForce(new Vector2(0, 1) * JumpHeight * 10);
 				_anim.Pular();
-			}
-		}
+			}*/
+
+            _rb.AddForce(new Vector2(0, 1) * JumpHeight * 10f);
+            _anim.Pular();
+        }
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Ground")
+        {
+            grounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Ground")
+        {
+            grounded = false;
+        }
+    }
 
     void Flip()
     {

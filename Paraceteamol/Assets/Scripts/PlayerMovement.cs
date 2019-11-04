@@ -20,13 +20,14 @@ public class PlayerMovement : MonoBehaviour
 	[Tooltip("True if it's Player 1, false if Player 2.")] public bool PlayerOne = true;
 	[Tooltip("True if using keyboard")] public bool teclado;
     [Tooltip("True if player is facing right")] public bool facingRight;
+    public bool grounded = false;
 
     // Private variables
     private float _horizontal = 0;
 	private Transform _obj;
 	private Rigidbody2D _rb;
 	private AnimationCode _anim;
-    private bool grounded = false;
+    
 
     public CharacterController controller;
 
@@ -51,8 +52,26 @@ public class PlayerMovement : MonoBehaviour
 		_anim.PararDeAndar();
         Steps.Pause();
 
-        if((_horizontal > 0 && !facingRight) || (_horizontal < 0 && facingRight)){
+        /*if((_horizontal > 0 && !facingRight) || (_horizontal < 0 && facingRight)){
             Flip();
+            _anim.Andar();
+            Steps.Play();
+        }*/
+
+        if((_horizontal > 0 && !facingRight) || (_horizontal < 0 && facingRight))
+        {
+            Flip();
+        }
+
+
+        if(_horizontal < 0)
+        {
+            _anim.Andar();
+            Steps.Play();
+        }
+
+        if(_horizontal > 0)
+        {
             _anim.Andar();
             Steps.Play();
         }
@@ -82,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 		//	Debug.Log("can jump");
 
 		//if (Input.GetButton(PlayerOne ? "p1_jump" : "p2_jump"))
-		if (Input.GetButtonDown(jumpButton) && grounded)
+		if (Input.GetButton(jumpButton) && grounded)
 		{
             /*ycastHit2D hit1 = Physics2D.Raycast(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
 			RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
@@ -94,26 +113,11 @@ public class PlayerMovement : MonoBehaviour
 				_anim.Pular();
 			}*/
 
-            _rb.AddForce(new Vector2(0, 1) * JumpHeight * 10f);
+            _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
             _anim.Pular();
         }
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Ground")
-        {
-            grounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Ground")
-        {
-            grounded = false;
-        }
-    }
 
     void Flip()
     {

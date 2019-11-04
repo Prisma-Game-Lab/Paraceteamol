@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 	[Tooltip("True if it's Player 1, false if Player 2.")] public bool PlayerOne = true;
 	[Tooltip("True if using keyboard")] public bool teclado;
     [Tooltip("True if player is facing right")] public bool facingRight;
-    public bool grounded = false;
+    [HideInInspector]public bool grounded = false;
 
     // Private variables
     private float _horizontal = 0;

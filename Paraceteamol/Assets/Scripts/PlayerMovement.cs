@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
 		//	Debug.Log("can jump");
 
 		//if (Input.GetButton(PlayerOne ? "p1_jump" : "p2_jump"))
-		if (Input.GetButton(jumpButton) && grounded)
+		if (Input.GetButtonDown(jumpButton) && grounded)
 		{
             /*ycastHit2D hit1 = Physics2D.Raycast(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
 			RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);

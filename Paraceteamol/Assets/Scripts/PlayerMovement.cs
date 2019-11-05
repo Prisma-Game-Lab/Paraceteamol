@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
 	public string jumpButton = "p1_jump";
 	[Tooltip("True if it's Player 1, false if Player 2.")] public bool PlayerOne = true;
 	[Tooltip("True if using keyboard")] public bool teclado;
-    [Tooltip("True if player is facing right")] public bool facingRight;
     [HideInInspector]public bool grounded = false;
 
     // Private variables
@@ -52,44 +51,19 @@ public class PlayerMovement : MonoBehaviour
 		_anim.PararDeAndar();
         Steps.Pause();
 
-        /*if((_horizontal > 0 && !facingRight) || (_horizontal < 0 && facingRight)){
-            Flip();
-            _anim.Andar();
-            Steps.Play();
-        }*/
-
-        if((_horizontal > 0 && !facingRight) || (_horizontal < 0 && facingRight))
-        {
-            Flip();
-        }
-
-
         if(_horizontal < 0)
         {
+            transform.rotation = new Quaternion(0, 180, 0, 0);
             _anim.Andar();
             Steps.Play();
         }
 
-        if(_horizontal > 0)
+        else if(_horizontal > 0)
         {
+            transform.rotation = new Quaternion(0, 0, 0, 0);
             _anim.Andar();
             Steps.Play();
         }
-
-		/*if (_horizontal < 0)
-		{
-			//PlayerSprite.transform.rotation = new Quaternion(0, 180, 0, 0);
-            Flip();
-			_anim.Andar();
-            Steps.Play();
-		}
-		else if (_horizontal > 0)
-		{
-            //PlayerSprite.transform.rotation = new Quaternion(0, 0, 0, 0);
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); //Se o jogador estiver andando para a esquerda ele vai virar o personagem
-			_anim.Andar();
-            Steps.Play();
-		}*/
 
 		_obj.transform.position += tempVect;
 
@@ -118,10 +92,4 @@ public class PlayerMovement : MonoBehaviour
         }
 	}
 
-
-    void Flip()
-    {
-        facingRight = !facingRight;
-        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-    }
 }

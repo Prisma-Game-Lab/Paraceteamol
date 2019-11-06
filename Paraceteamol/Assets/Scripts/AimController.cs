@@ -9,7 +9,7 @@ public class AimController : MonoBehaviour
 	[SerializeField] private ParticleSystem ExhaleParticles;
 	[Space]
 	public float Strenght = .5f;
-	public float CooldownTimer = 0;
+	//public float CooldownTimer = 0;
 	public float InhaleTime = 2;
 	public float InhaleCooldownTime = 3;
     public Vector2 dir;
@@ -33,11 +33,12 @@ public class AimController : MonoBehaviour
 	private float _horizontal;
 	private bool teclado;
 	private bool _ballInRange = false;
-    private bool _canInhale=true;
+    public bool _canInhale=true;
     private bool _inhaleEffects;
 	private GameObject _ballGO;
     private ContactPoint2D[] _contacts = new ContactPoint2D[1];
     private Collider2D _ballcontact;
+    private BallPhysics ballphysics;
     
 	#region State
 
@@ -97,6 +98,33 @@ public class AimController : MonoBehaviour
 		StartCoroutine((IEnumerator)info.Invoke(this, null));
 	}
 	#endregion
+    #region BallState
+
+    // Here you name the states
+    public enum BallState
+    {
+        Free,
+        Held
+    }
+    public BallState Ballstate;
+    IEnumerator FreeState()
+    {
+        while (Ballstate == BallState.Free)
+        {
+            yield return 0;
+        }
+
+    }
+    IEnumerator HeldState()
+    {
+        while (Ballstate == BallState.Held)
+        {
+            yield return 0;
+        }
+
+    }
+
+    #endregion
 	/* 
      * States:
      *  Idle
@@ -121,15 +149,39 @@ public class AimController : MonoBehaviour
 	private IEnumerator InhaleCooldown()
 	{
 
-        
-		yield return new WaitForSeconds(InhaleCooldownTime);
+        yield return new WaitForSeconds(InhaleTime);
+		
         ExhaleParticles.Play();
-		state = State.Idle;
-        _canInhale = false;
+        state = State.Exhale;
+	
+         
 		Debug.Log("Can Inhale");
         ExhaleParticles.Stop();
+        yield return new WaitForSeconds(0.1f);
+        state = State.Cooldown;
+        yield return new WaitForSeconds(InhaleCooldownTime);
+        state = State.Idle;
 	
    
+    }
+
+    private IEnumerator InhaleCooldownWithoutWait()
+    {
+
+        yield return new WaitForSeconds(0.1f);
+
+        ExhaleParticles.Play();
+        state = State.Exhale;
+
+
+        Debug.Log("Can Inhale");
+        ExhaleParticles.Stop();
+        yield return new WaitForSeconds(0.1f);
+        state = State.Cooldown;
+        yield return new WaitForSeconds(InhaleCooldownTime);
+        state = State.Idle;
+
+
     }
 
 	private void Start()
@@ -137,11 +189,28 @@ public class AimController : MonoBehaviour
 		teclado = GetComponentInParent<PlayerMovement>().teclado;
 		_ballGO = GameObject.FindGameObjectWithTag("Ball");
 		state = State.Idle;
+        Ballstate = BallState.Free;
+        
         
 	}
 
 	private void FixedUpdate()
 	{
+        if (state == State.Cooldown) _canInhale = false;
+        else if (state == State.Idle) _canInhale = true;
+        if (Ballstate == BallState.Held)
+        {
+
+            if (Vector2.Distance(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position) > .5f)
+            {
+                _ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
+            }
+            else
+            {
+                _ballGO.transform.position = gameObject.transform.Find("seta").transform.position;
+            }
+
+        }
         
         angle = gameObject.transform.Find("seta").transform.rotation.z*100;
        
@@ -184,21 +253,14 @@ public class AimController : MonoBehaviour
 		if (state == State.Inhale && _ballInRange &&_canInhale)
 		{
             InhaleParticles.Stop();
-			if (Vector2.Distance(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position) > .5f)
-			{
-				_ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
-			}
-			else
-			{
-				_ballGO.transform.position = gameObject.transform.Find("seta").transform.position;
-			}
-
+			 
+            Ballstate= BallState.Held;
             if (Input.GetButtonUp(_inhaleBtn))
             {
 
                 InhaleParticles.Stop();
-
-                state = State.Exhale;
+              StartCoroutine(InhaleCooldownWithoutWait());
+               
             }
             
 
@@ -218,8 +280,11 @@ public class AimController : MonoBehaviour
             InhaleParticles.Stop();
           
 
-            ExhaleParticles.Stop();
+            ExhaleParticles.Play();
             state = State.Idle;
+            Ballstate = BallState.Free;
+            ExhaleParticles.Stop();
+
 		}
        
        
@@ -240,16 +305,18 @@ public class AimController : MonoBehaviour
                 {
                     
 					col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.zero;
-                  //  StartCoroutine(InhaleCooldown());
-					//StartCoroutine(InhaleTimer());
+                    
+                    StartCoroutine(InhaleCooldown());
+                    
+					
 					state = State.Inhale;
 				}
 				else if (Input.GetButtonUp(_inhaleBtn))
 				{
-			//	StopCoroutine(InhaleTimer());
+			
                     InhaleParticles.Stop();
 					//ExhaleParticles.Play();
-					state = State.Exhale;
+                    StartCoroutine(InhaleCooldownWithoutWait());
 				}
                  
 			}

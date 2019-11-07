@@ -240,7 +240,7 @@ public class AimController : MonoBehaviour
 			{
 				if (Input.GetButtonDown(_inhaleBtn))
 				{
-					col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.zero;
+					_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Held;
 
 					StartCoroutine(InhaleCooldown());
 					

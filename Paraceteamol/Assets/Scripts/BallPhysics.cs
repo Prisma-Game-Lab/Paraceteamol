@@ -12,6 +12,7 @@ public class BallPhysics : MonoBehaviour
 	private AudioSource BallSound;
 	private Rigidbody2D _rb;
 	private Collider2D _col;
+	private float _startingSpeed;
 
 	#region StateMachine
 	public enum State
@@ -57,13 +58,16 @@ public class BallPhysics : MonoBehaviour
 	{
 		if (state == State.Held)    // Disable Collider & RigidBody 2D
 		{
+			Speed = 0;
 			_rb.isKinematic = true;
 			_col.enabled = false;
 		}
 		if (state == State.Release)  // Enable Collider & RigidBody 2D
 		{
+			Speed = _startingSpeed;
 			_rb.isKinematic = false;
 			_col.enabled = true;
+			state = State.Idle;
 		}
 	}
 

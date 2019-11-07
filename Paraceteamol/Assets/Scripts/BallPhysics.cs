@@ -6,7 +6,7 @@ public class BallPhysics : MonoBehaviour
 	[Header("Physics")]
 	[Tooltip("Velocidade da bola")]
 	public float Speed = 50;
-	[Tooltip("Direcao inicial da sua bola")]
+	[Tooltip("Direcao inicial da bola")]
 	public Vector2 Direction = Vector2.one;
 
 	private AudioSource BallSound;

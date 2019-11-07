@@ -12,12 +12,12 @@ public class AimController : MonoBehaviour
 	//public float CooldownTimer = 0;
 	public float InhaleTime = 2;
 	public float InhaleCooldownTime = 3;
-    public Vector2 dir;
+	public Vector2 dir;
 	[HideInInspector]
 	public bool IsPulling = false;
 	[HideInInspector]
 	public bool _canShoot = true;
-    public float angle;
+	public float angle;
 	[Header("Analogico esquerdo")]
 	public string _horizontalControl = "p1_horizontal";
 	public string _verticalControl = "p1_vertical";
@@ -29,20 +29,18 @@ public class AimController : MonoBehaviour
 	[Header("Buttons")]
 	public string _inhaleBtn = "p1_fire1";
 	public Vector2 _rightStickInput;
-    
+
 	private float _horizontal;
 	private bool teclado;
 	private bool _ballInRange = false;
-    public bool _canInhale=true;
-    private bool _inhaleEffects;
+	public bool _canInhale = true;
+	private bool _inhaleEffects;
 	private GameObject _ballGO;
-    private ContactPoint2D[] _contacts = new ContactPoint2D[1];
-    private Collider2D _ballcontact;
-    private BallPhysics ballphysics;
-    
-	#region State
+	private ContactPoint2D[] _contacts = new ContactPoint2D[1];
+	private Collider2D _ballcontact;
+	private BallPhysics ballphysics;
 
-	// Here you name the states
+	#region State
 	public enum State
 	{
 		Idle,
@@ -98,33 +96,7 @@ public class AimController : MonoBehaviour
 		StartCoroutine((IEnumerator)info.Invoke(this, null));
 	}
 	#endregion
-    #region BallState
 
-    // Here you name the states
-    public enum BallState
-    {
-        Free,
-        Held
-    }
-    public BallState Ballstate;
-    IEnumerator FreeState()
-    {
-        while (Ballstate == BallState.Free)
-        {
-            yield return 0;
-        }
-
-    }
-    IEnumerator HeldState()
-    {
-        while (Ballstate == BallState.Held)
-        {
-            yield return 0;
-        }
-
-    }
-
-    #endregion
 	/* 
      * States:
      *  Idle
@@ -135,87 +107,55 @@ public class AimController : MonoBehaviour
 
 	private IEnumerator InhaleTimer()
 	{
-        
 		yield return new WaitForSeconds(InhaleTime);
 
-        Debug.Log("cant inhale");
-        _canInhale = false;
-    
+		Debug.Log("cant inhale");
+		_canInhale = false;
+
 		InhaleParticles.Stop();
-		 
+
 		state = State.Exhale;
 	}
 
 	private IEnumerator InhaleCooldown()
 	{
+		yield return new WaitForSeconds(InhaleTime);
 
-        yield return new WaitForSeconds(InhaleTime);
-		
-        ExhaleParticles.Play();
-        state = State.Exhale;
-	
-         
+		ExhaleParticles.Play();
+		state = State.Exhale;
+
 		Debug.Log("Can Inhale");
-        ExhaleParticles.Stop();
-        yield return new WaitForSeconds(0.1f);
-        state = State.Cooldown;
-        yield return new WaitForSeconds(InhaleCooldownTime);
-        state = State.Idle;
-	
-   
-    }
+		ExhaleParticles.Stop();
+		yield return new WaitForSeconds(0.1f);
+		state = State.Cooldown;
+		yield return new WaitForSeconds(InhaleCooldownTime);
+		state = State.Idle;
+	}
 
-    private IEnumerator InhaleCooldownWithoutWait()
-    {
+	private IEnumerator InhaleCooldownWithoutWait()
+	{
+		yield return new WaitForSeconds(0.1f);
 
-        yield return new WaitForSeconds(0.1f);
+		ExhaleParticles.Play();
+		state = State.Exhale;
 
-        ExhaleParticles.Play();
-        state = State.Exhale;
-
-
-        Debug.Log("Can Inhale");
-        ExhaleParticles.Stop();
-        yield return new WaitForSeconds(0.1f);
-        state = State.Cooldown;
-        yield return new WaitForSeconds(InhaleCooldownTime);
-        state = State.Idle;
-
-
-    }
+		Debug.Log("Can Inhale");
+		ExhaleParticles.Stop();
+		yield return new WaitForSeconds(0.1f);
+		state = State.Cooldown;
+		yield return new WaitForSeconds(InhaleCooldownTime);
+		state = State.Idle;
+	}
 
 	private void Start()
 	{
 		teclado = GetComponentInParent<PlayerMovement>().teclado;
 		_ballGO = GameObject.FindGameObjectWithTag("Ball");
 		state = State.Idle;
-        Ballstate = BallState.Free;
-        
-        
 	}
 
 	private void FixedUpdate()
 	{
-        if (state == State.Cooldown) _canInhale = false;
-        else if (state == State.Idle) _canInhale = true;
-        if (Ballstate == BallState.Held)
-        {
-
-            if (Vector2.Distance(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position) > .5f)
-            {
-                _ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
-            }
-            else
-            {
-                _ballGO.transform.position = gameObject.transform.Find("seta").transform.position;
-            }
-
-        }
-        
-        angle = gameObject.transform.Find("seta").transform.rotation.z*100;
-       
-             dir = new Vector2(-Mathf.Sin(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle));
-        
 		// Testa se vai usar teclado ou controle
 		if (teclado == true)
 		{
@@ -244,81 +184,73 @@ public class AimController : MonoBehaviour
 				transform.rotation = aimRotation;
 			}
 		}
-  
+
+		if (state == State.Cooldown) _canInhale = false;
+		else if (state == State.Idle) _canInhale = true;
+
 		if (state == State.Idle && Input.GetButton(_inhaleBtn))
 			InhaleParticles.Play();
 		else
 			InhaleParticles.Stop();
 
-		if (state == State.Inhale && _ballInRange &&_canInhale)
+		if (state == State.Inhale && _ballInRange && _canInhale)
 		{
-            InhaleParticles.Stop();
-			 
-            Ballstate= BallState.Held;
-            if (Input.GetButtonUp(_inhaleBtn))
-            {
+			InhaleParticles.Stop();
 
-                InhaleParticles.Stop();
-              StartCoroutine(InhaleCooldownWithoutWait());
-               
-            }
-            
-
+			if (Input.GetButtonUp(_inhaleBtn))
+			{
+				InhaleParticles.Stop();
+				StartCoroutine(InhaleCooldownWithoutWait());
+			}
 		}
 
-		 if (state == State.Exhale)
+		if (state == State.Exhale)
 		{
-			 
-         
 			//Debug.Log(dir.normalized);
-             
-           
-           // Vector2 normal = _contacts[0].normal;
 
-            _ballGO.GetComponentInChildren<BallHit>().Velocity = dir;
-            _ballGO.GetComponent<Rigidbody2D>().AddForce(_ballGO.GetComponentInChildren<BallHit>().Velocity * _ballGO.GetComponent<BallPhysics>().StartSpeed, ForceMode2D.Impulse);
-            InhaleParticles.Stop();
-          
+			// Vector2 normal = _contacts[0].normal;
 
-            ExhaleParticles.Play();
-            state = State.Idle;
-            Ballstate = BallState.Free;
-            ExhaleParticles.Stop();
+			InhaleParticles.Stop();
 
+			ExhaleParticles.Play();
+			state = State.Idle;
+			ExhaleParticles.Stop();
 		}
-       
-       
+
+		if (Vector2.Distance(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position) > .5f)
+		{
+			_ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
+		}
+		else
+		{
+			_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
+			_ballGO.transform.position = gameObject.transform.Find("seta").transform.position;
+		}
+
 	}
 
 	private void OnTriggerStay2D(Collider2D col)
 	{
 		if (col.gameObject.tag == "Ball")
 		{
-            _ballcontact = col;
 			_ballGO = col.gameObject;
 			_ballInRange = true;
-           
+
 			if (state == State.Idle)
 			{
-                
 				if (Input.GetButtonDown(_inhaleBtn))
-                {
-                    
+				{
 					col.gameObject.GetComponentInChildren<BallHit>().Velocity = Vector2.zero;
-                    
-                    StartCoroutine(InhaleCooldown());
-                    
+
+					StartCoroutine(InhaleCooldown());
 					
 					state = State.Inhale;
 				}
 				else if (Input.GetButtonUp(_inhaleBtn))
 				{
-			
-                    InhaleParticles.Stop();
-					//ExhaleParticles.Play();
-                    StartCoroutine(InhaleCooldownWithoutWait());
+					InhaleParticles.Stop();
+					StartCoroutine(InhaleCooldownWithoutWait());
 				}
-                 
 			}
 		}
 	}
@@ -327,10 +259,7 @@ public class AimController : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Ball")
 		{
-
 			_ballInRange = false;
-
-            
-        }
+		}
 	}
 }

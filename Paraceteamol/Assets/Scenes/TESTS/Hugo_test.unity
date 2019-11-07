@@ -313,7 +313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &228288810
 Transform:
   m_ObjectHideFlags: 0
@@ -441,7 +441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &348648583
 Transform:
   m_ObjectHideFlags: 0
@@ -543,11 +543,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 7867437369187820323, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ball
-      objectReference: {fileID: 0}
     - target: {fileID: 7867437369863597675, guid: 9590f955c9980cc4c83b1ea019d125e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -605,51 +600,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7867437369187820322, guid: 9590f955c9980cc4c83b1ea019d125e7,
         type: 3}
-      propertyPath: StartSpeed
-      value: 10
+      propertyPath: Speed
+      value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 7867437369187820322, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: Direction.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7867437369187820322, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: Direction.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8394117473502641490, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7867437370227208479, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: Velocity.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7867437370227208479, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: Velocity.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 723104471128607930, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 723104471128607930, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.501
-      objectReference: {fileID: 0}
-    - target: {fileID: 7867437369187820327, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -909842521346542491, guid: 9590f955c9980cc4c83b1ea019d125e7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9590f955c9980cc4c83b1ea019d125e7, type: 3}
 --- !u!4 &352853569 stripped
 Transform:
@@ -724,7 +678,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -770,7 +724,7 @@ Transform:
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 685327758}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &579164130
 BoxCollider2D:
@@ -872,12 +826,12 @@ Transform:
   m_GameObject: {fileID: 685327757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1606186479}
+  - {fileID: 1037193412}
   - {fileID: 579164129}
   - {fileID: 1392727460}
-  - {fileID: 1037193412}
   - {fileID: 348648583}
   m_Father: {fileID: 1538035016}
   m_RootOrder: 2
@@ -897,7 +851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &927347936
 Transform:
   m_ObjectHideFlags: 0
@@ -925,8 +879,8 @@ GameObject:
   - component: {fileID: 1037193414}
   - component: {fileID: 1037193413}
   m_Layer: 0
-  m_Name: Ground (1)
-  m_TagString: Ground
+  m_Name: Wall (1)
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -943,7 +897,7 @@ Transform:
   m_LocalScale: {x: 36.28125, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 685327758}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1037193413
 BoxCollider2D:
@@ -1038,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1094052721
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,7 +1128,7 @@ Transform:
   m_GameObject: {fileID: 1160098458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1589771064}
   m_Father: {fileID: 1538035016}
@@ -1210,7 +1164,7 @@ Transform:
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 685327758}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1392727461
 BoxCollider2D:
@@ -1354,6 +1308,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: teclado
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768554627774725862, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963905359860709160, guid: bf9a32f6ab3fad44d9c2bba018445886,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.031691495
+      objectReference: {fileID: 0}
     - target: {fileID: 1438188848657424437, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
       propertyPath: InhaleParticles
@@ -1374,10 +1343,10 @@ PrefabInstance:
       propertyPath: InhaleCooldownTime
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4732135939977624653, guid: bf9a32f6ab3fad44d9c2bba018445886,
+    - target: {fileID: 3162965973622346199, guid: bf9a32f6ab3fad44d9c2bba018445886,
         type: 3}
-      propertyPath: teclado
-      value: 0
+      propertyPath: m_LocalRotation.z
+      value: -0.06424881
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9a32f6ab3fad44d9c2bba018445886, type: 3}
@@ -1695,7 +1664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1816702343
 Transform:
   m_ObjectHideFlags: 0
@@ -1821,7 +1790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2037864044
 Transform:
   m_ObjectHideFlags: 0

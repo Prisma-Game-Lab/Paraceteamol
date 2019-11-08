@@ -159,8 +159,7 @@ public class AimController : MonoBehaviour
 	private void FixedUpdate()
 	{
 
-        angle =this.gameObject.transform.rotation.z * 100 +20;
-        Vector2 dir = new Vector2(-Mathf.Sin(Mathf.Deg2Rad * angle),- Mathf.Cos(Mathf.Deg2Rad * angle));
+        
 
         if (state == State.Cooldown) { _canInhale = false; }
         else if (state == State.Idle) { _canInhale = true; }
@@ -204,6 +203,9 @@ public class AimController : MonoBehaviour
 				Quaternion aimRotation = Quaternion.FromToRotation(new Vector3(-16f, 0, 0), curRotation);
 				transform.rotation = aimRotation;
 			}
+
+            angle =transform.rotation.z * 100 ;
+            Vector2 dir = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle));
 		}
  
 

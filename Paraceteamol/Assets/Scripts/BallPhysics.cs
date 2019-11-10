@@ -52,6 +52,7 @@ public class BallPhysics : MonoBehaviour
 		_rb = GetComponent<Rigidbody2D>();
 		_rb.AddForce(Direction * Speed, ForceMode2D.Impulse);
 		BallSound = GetComponent<AudioSource>();
+        _startingSpeed = Speed;
 	}
 
 	private void FixedUpdate()
@@ -64,16 +65,17 @@ public class BallPhysics : MonoBehaviour
 		}
 		if (state == State.Release)  // Enable Collider & RigidBody 2D
 		{
+             
 			Speed = _startingSpeed;
 			_rb.isKinematic = false;
 			_col.enabled = true;
-			state = State.Idle;
+			 
 		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D col)
 	{
-		if (state == State.Idle)
+		if (state == State.Release)
 		{
 			if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
 			{

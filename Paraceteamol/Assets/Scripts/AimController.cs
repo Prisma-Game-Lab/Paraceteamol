@@ -152,10 +152,30 @@ public class AimController : MonoBehaviour
 		teclado = GetComponentInParent<PlayerMovement>().teclado;
 		_ballGO = GameObject.FindGameObjectWithTag("Ball");
 		state = State.Idle;
+        _ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
+
 	}
 
 	private void FixedUpdate()
 	{
+
+        
+
+        if (state == State.Cooldown) { _canInhale = false; }
+        else if (state == State.Idle) { _canInhale = true; }
+        if (_ballGO.GetComponent<BallPhysics>().state == BallPhysics.State.Held) {
+
+            if (Vector2.Distance(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position) > .5f)
+            {
+                _ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
+            }
+            else
+            {
+               
+                _ballGO.transform.position = gameObject.transform.Find("seta").transform.position;
+            }
+        
+        };
 		// Testa se vai usar teclado ou controle
 		if (teclado == true)
 		{
@@ -183,10 +203,11 @@ public class AimController : MonoBehaviour
 				Quaternion aimRotation = Quaternion.FromToRotation(new Vector3(-16f, 0, 0), curRotation);
 				transform.rotation = aimRotation;
 			}
-		}
 
-		if (state == State.Cooldown) _canInhale = false;
-		else if (state == State.Idle) _canInhale = true;
+            angle =transform.rotation.z * 100 ;
+            Vector2 dir = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Cos(Mathf.Deg2Rad * angle));
+		}
+ 
 
 		if (state == State.Idle && Input.GetButton(_inhaleBtn))
 			InhaleParticles.Play();
@@ -196,10 +217,12 @@ public class AimController : MonoBehaviour
 		if (state == State.Inhale && _ballInRange && _canInhale)
 		{
 			InhaleParticles.Stop();
+            _ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Held;
 
 			if (Input.GetButtonUp(_inhaleBtn))
 			{
 				InhaleParticles.Stop();
+                state = State.Exhale;
 				StartCoroutine(InhaleCooldownWithoutWait());
 			}
 		}
@@ -213,19 +236,15 @@ public class AimController : MonoBehaviour
 			InhaleParticles.Stop();
 
 			ExhaleParticles.Play();
+            _ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
+            _ballGO.GetComponent<BallPhysics>().Direction = dir;
+
 			state = State.Idle;
+            
 			ExhaleParticles.Stop();
 		}
 
-		if (Vector2.Distance(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position) > .5f)
-		{
-			_ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, gameObject.transform.Find("seta").transform.position, Strenght);
-		}
-		else
-		{
-			_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
-			_ballGO.transform.position = gameObject.transform.Find("seta").transform.position;
-		}
+		 
 
 	}
 

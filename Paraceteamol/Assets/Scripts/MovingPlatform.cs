@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    [Tooltip("A plataforma que se moverá")]
-    [SerializeField] private Rigidbody2D platformRb;
+    private Rigidbody2D platformRb;
     [SerializeField] private float moveSpeed = 0.5f;
+    [Tooltip("O GameObject pai dos waypoints pelos quais a plataforma trafegará")]
+    [SerializeField] private Transform waypointsParent;
 
-    [SerializeField] private Transform playersParent;
-    [Tooltip("Pontos pelos quais a plataforma se moverá")]
-    [SerializeField] List<Transform> waypoints;
+    private List<Transform> waypoints = new List<Transform>();
     private int currentWaypoint;
     private Vector2 currentMoveDirection;
 
-    // Start is called before the first frame update
     void Start()
     {
+        // Pegando referências
+        platformRb = GetComponent<Rigidbody2D>();
+        for(int i = 0 ; i < waypointsParent.childCount ; ++i)
+        {
+            waypoints.Add(waypointsParent.GetChild(i));
+        }
+
+        // Setando valores para iniciar o movimento
         transform.position = waypoints[0].position;
         currentWaypoint = 1;
         currentMoveDirection = GetDirectionBetweenPoints(waypoints[currentWaypoint].position, transform.position);
@@ -25,7 +31,6 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(waypoints[currentWaypoint].position);
         if (Vector2.Distance(transform.position, waypoints[currentWaypoint].position) > 1)
         {
             platformRb.MovePosition(platformRb.position + currentMoveDirection * moveSpeed);

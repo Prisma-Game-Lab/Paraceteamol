@@ -7,6 +7,7 @@ public class AimController : MonoBehaviour
 	[Space]
 	[SerializeField] private ParticleSystem InhaleParticles;
 	[SerializeField] private ParticleSystem ExhaleParticles;
+    [SerializeField] private GameObject cronometerSprite;
 	[Space]
 	public float Strenght = .5f;
 	//public float CooldownTimer = 0;

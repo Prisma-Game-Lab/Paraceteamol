@@ -16,19 +16,17 @@ public class PlayerMovement : MonoBehaviour
 	[Header("Controller")]
 	public string horizontalControl = "p1_horizontal";
 	public string joystickHorizontal = "p1_ps4_horizontal";
-	public string jumpButton = "p1_jump";
+    public string joystickVertical = "p1_ps4_Vertical";
+    public string jumpButton = "p1_jump";
 	[Tooltip("True if it's Player 1, false if Player 2.")] public bool PlayerOne = true;
 	[Tooltip("True if using keyboard")] public bool teclado;
-    [HideInInspector]public bool grounded = false;
+    public bool grounded = false;
 
     // Private variables
     private float _horizontal = 0;
 	private Transform _obj;
 	private Rigidbody2D _rb;
 	private AnimationCode _anim;
-    
-
-    public CharacterController controller;
 
 	private void Start()
 	{
@@ -67,29 +65,34 @@ public class PlayerMovement : MonoBehaviour
 
 		_obj.transform.position += tempVect;
 
-		Collider2D colBounds = GetComponent<Collider2D>();
-		Debug.DrawRay(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, Color.red);
-		Debug.DrawRay(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, Color.green);
-		Debug.DrawRay(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, Color.blue);
 
-		//	Debug.Log("can jump");
-
-		//if (Input.GetButton(PlayerOne ? "p1_jump" : "p2_jump"))
-		if (Input.GetButton(jumpButton) && grounded)
+		if ((Input.GetButton(jumpButton) ||  Input.GetAxis(joystickVertical) > 1) && grounded)
 		{
-            /*ycastHit2D hit1 = Physics2D.Raycast(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
-			RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
-			RaycastHit2D hit3 = Physics2D.Raycast(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
-
-			if ((hit1 || hit2 || hit3) && (hit1.transform.tag == "Ground" || hit2.transform.tag == "Ground" || hit3.transform.tag == "Ground"))
-			{
-				_rb.AddForce(new Vector2(0, 1) * JumpHeight * 10);
-				_anim.Pular();
-			}*/
-
             _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
             _anim.Pular();
         }
-	}
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.otherCollider is BoxCollider2D)
+        {
+            if (collision.collider.tag == "Ground")
+            {
+                grounded = true;
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.otherCollider is BoxCollider2D)
+        {
+            if (collision.collider.tag == "Ground")
+            {
+                grounded = false;
+            }
+        }
+    }
 
 }

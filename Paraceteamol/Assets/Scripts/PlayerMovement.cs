@@ -11,10 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource Steps;
 	public float JumpHeight = 240;
 	public float GravitySpeedModifier = 8;
-	public float Pointer = 1.5f;
 	[Space]
 	[Header("Controller")]
-	public string horizontalControl = "p1_horizontal";
+	public string horizontalControl = "p1_horizontal";  //Teclado
+    public string verticalControl = "p1_vertical";  //Teclado
 	public string joystickHorizontal = "p1_ps4_horizontal";
     public string joystickVertical = "p1_ps4_Vertical";
     public string jumpButton = "p1_jump";
@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Private variables
     private float _horizontal = 0;
+    private float _vertical = 0;
 	private Transform _obj;
 	private Rigidbody2D _rb;
 	private AnimationCode _anim;
@@ -39,10 +40,16 @@ public class PlayerMovement : MonoBehaviour
 	{
 		_rb.AddForce(new Vector2(0, -10 * GravitySpeedModifier));
 
-		if (teclado == true)
-			_horizontal = Input.GetAxis(horizontalControl);
-		else
-			_horizontal = Input.GetAxis(joystickHorizontal);
+        if (teclado == true)
+        {
+            _horizontal = Input.GetAxis(horizontalControl);
+            _vertical = Input.GetAxis(verticalControl);
+        }
+        else
+        {
+            _horizontal = Input.GetAxis(joystickHorizontal);
+            _vertical = Input.GetAxis(joystickVertical);
+        }
 
 		Vector3 tempVect = new Vector3(_horizontal, 0, 0);
 		tempVect = tempVect.normalized * MovementSpeed * Time.deltaTime;
@@ -66,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 		_obj.transform.position += tempVect;
 
 
-		if ((Input.GetButton(jumpButton) ||  Input.GetAxis(joystickVertical) > 1) && grounded)
+		if ((Input.GetButton(jumpButton) ||  _vertical > 1) && grounded)
 		{
             _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
             _anim.Pular();

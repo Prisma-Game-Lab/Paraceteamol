@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if ((Input.GetButton(JumpButton) || _vertical > 0.1f) && grounded)
+            if ((Input.GetButton(JumpButton) || _vertical > 0.9f) && grounded)
             {
                 _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
                 _anim.Pular();

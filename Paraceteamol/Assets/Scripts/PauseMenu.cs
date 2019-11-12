@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButton(pauseButton1) || Input.GetButton(pauseButton2) || Input.GetButton(pauseButton3) || Input.GetButton(pauseButton4))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown(pauseButton1) || Input.GetButtonDown(pauseButton2) || Input.GetButtonDown(pauseButton3) || Input.GetButtonDown(pauseButton4))
         {
             if (GameIsPaused)
             {

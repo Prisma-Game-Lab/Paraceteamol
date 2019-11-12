@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 	public string JoystickVertical = "p1_ps4_vertical";
 	public string JumpButton = "p1_jump";
 	[Tooltip("True if using keyboard")] public bool Keyboard;
+    [Tooltip("True to enable tapJump")] public bool tapJump;
 
 	// Private variables
 	private bool grounded = false;
@@ -77,7 +78,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if ((Input.GetButton(JumpButton) || _vertical > 0.9f) && grounded)
+            if (Input.GetButton(JumpButton) && grounded)
+            {
+                _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
+                _anim.Pular();
+            }
+            if ((tapJump == true && _vertical > 0.9f) && grounded)
             {
                 _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
                 _anim.Pular();

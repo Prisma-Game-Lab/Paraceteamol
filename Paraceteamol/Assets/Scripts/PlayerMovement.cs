@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
 	public float GravitySpeedModifier = 8;
 	[Space]
 	[Header("Controller")]
-	public string HorizontalControl = "p1_horizontal";  //Teclado
-	public string VerticalControl = "p1_vertical";  //Teclado
+	public string HorizontalControl = "p1_horizontal";  //Keyboard
+	public string VerticalControl = "p1_vertical";  //Keyboard
 	public string JoystickHorizontal = "p1_ps4_horizontal";
 	public string JoystickVertical = "p1_ps4_vertical";
 	public string JumpButton = "p1_jump";
@@ -67,11 +67,22 @@ public class PlayerMovement : MonoBehaviour
 
 		_obj.transform.position += tempVect;
 
-		if ((Input.GetButton(JumpButton) || _vertical > 1) && grounded)
-		{
-			_rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
-			_anim.Pular();
-		}
+        if (Keyboard == true)
+        {
+            if (Input.GetButton(JumpButton) && grounded)
+            {
+                _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
+                _anim.Pular();
+            }
+        }
+        else
+        {
+            if ((Input.GetButton(JumpButton) || _vertical > 0.1f) && grounded)
+            {
+                _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
+                _anim.Pular();
+            }
+        }
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)

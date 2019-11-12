@@ -8,6 +8,8 @@ public class BallPhysics : MonoBehaviour
 	public float Speed = 50;
 	[Tooltip("Direcao inicial da bola")]
 	public Vector2 Direction = Vector2.one;
+    private GameObject GameManager;
+    private MatchScript _matchScript;
 
 	private AudioSource BallSound;
 	private Rigidbody2D _rb;
@@ -50,6 +52,7 @@ public class BallPhysics : MonoBehaviour
 
 	private void Awake()
 	{
+        GameManager = GameObject.Find("GameManeger");
 		_rb = GetComponent<Rigidbody2D>();
 		_rb.AddForce(Direction * Speed, ForceMode2D.Impulse);
 		BallSound = GetComponent<AudioSource>();
@@ -81,7 +84,8 @@ public class BallPhysics : MonoBehaviour
 		switch (state)
 		{
 			case State.Idle:
-				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
+               
+				 if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
 				{
 					ReflectProjectile(_rb, col.contacts[0].normal);
 				}
@@ -95,7 +99,17 @@ public class BallPhysics : MonoBehaviour
 				break;
 		}
 	}
-
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject == GameObject.Find("Time1"))
+        {
+        GameManager.GetComponent<MatchScript>().RedTeamGol();
+        }
+        else if (col.gameObject == GameObject.Find("Time2"))
+        {
+            GameManager.GetComponent<MatchScript>().BlueTeamGol();
+        }
+    
+    }
 	private void ReflectProjectile(Rigidbody2D rb, Vector2 reflectVector)
 	{
 		Direction = Vector2.Reflect(Direction, reflectVector);

@@ -21,14 +21,14 @@ public class MatchScript : MonoBehaviour
     public GameObject RedGoal;
     public GameObject BlueGoal;
     public GameObject EndGame;
-
+    public Rigidbody2D BallRB;
     void Start()
     {
         ScoreRedTeam = 0;
         ScoreBlueTeam = 0;
-        UpdateScore(ScoreTextRedGoal, ScoreBlueTeam);
         UpdateScore(ScoreTextBlueGoal, ScoreRedTeam);
-        Confetti = gameObject.GetComponentInChildren<ParticleSystem>();
+        UpdateScore(ScoreTextRedGoal, ScoreBlueTeam);
+      
         _timer = startTime;
         Time.timeScale = 1f;
     }
@@ -37,7 +37,7 @@ public class MatchScript : MonoBehaviour
     {
         if (_timer >= 0.0f && _canCount)
         {
-
+            
             _timer -= Time.deltaTime;
 
             UIText.text = "" + Mathf.Ceil(_timer);
@@ -64,10 +64,36 @@ public class MatchScript : MonoBehaviour
         }
 
     }
+    public void RedTeamGol() {
+        ScoreRedTeam += 1;
+        UpdateScore(ScoreTextBlueGoal, ScoreRedTeam);
+        Confetti = RedGoal.GetComponentInChildren<ParticleSystem>();
+        Confetti.Play();
+        Goal.Play();
+        BallRB.gameObject.transform.position = new Vector2(0, 0);
+        BallRB.AddForce(new Vector2(0, -1) * 10, ForceMode2D.Impulse);
+        
+       
+     
+    }
+    public void BlueTeamGol()
+    {
+        ScoreBlueTeam += 1;
+        UpdateScore(ScoreTextRedGoal, ScoreBlueTeam);
+        Confetti = BlueGoal.GetComponentInChildren<ParticleSystem>();
+        Confetti.Play();
+        Goal.Play();
+        BallRB.gameObject.transform.position = new Vector2(0, 0);
+        BallRB.AddForce(new Vector2(0, -1) * 10, ForceMode2D.Impulse);
 
+
+
+    }
     public void AddScore(int score, int newScoreValue)
     {
         score += newScoreValue;
+        
+        
 
     }
 
@@ -77,24 +103,7 @@ public class MatchScript : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Ball")
-        {
-            if( _redconfetti == true)
-                Confetti = RedGoal.gameObject.GetComponentInChildren<ParticleSystem>();
-            else Confetti = BlueGoal.gameObject.GetComponentInChildren<ParticleSystem>();
-
-
-
-
-            Goal.Play();
-            Confetti = RedGoal.GetComponentInChildren<ParticleSystem>();
-            Confetti.Play();
-            other.transform.position = new Vector2(0, 0);
-            other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1) * 10, ForceMode2D.Impulse);
-        }
-    }
+    
 }
 
 

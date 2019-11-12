@@ -52,34 +52,36 @@ public class BallPhysics : MonoBehaviour
 		_rb = GetComponent<Rigidbody2D>();
 		_rb.AddForce(Direction * Speed, ForceMode2D.Impulse);
 		BallSound = GetComponent<AudioSource>();
+		_col = gameObject.GetComponent<Collider2D>();
         _startingSpeed = Speed;
 	}
 
 	private void FixedUpdate()
 	{
-		if (state == State.Held)    // Disable Collider & RigidBody 2D
+		switch (state)
 		{
-			Speed = 0;
-			_rb.isKinematic = true;
-			_col.enabled = false;
-		}
-		if (state == State.Release)  // Enable Collider & RigidBody 2D
-		{
-             
-			Speed = _startingSpeed;
-			_rb.isKinematic = false;
-			_col.enabled = true;
-			 
+			case State.Held:
+				Speed = 0;
+				_rb.isKinematic = true;
+				_col.enabled = false;
+				break;
+			case State.Release:
+				_rb.isKinematic = false;
+				_col.enabled = true;
+				Speed = _startingSpeed;
+				Direction = ReleaseDirection(GameObject.FindGameObjectWithTag("Player").transform.position);
+				state = State.Idle;
+				break;
 		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D col)
 	{
-		if (state == State.Release)
+		// the player is in this state when it is moving freely
+		if (state == State.Idle)
 		{
 			if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
 			{
-				//Debug.Log("Bola bateu em " + col.gameObject.tag);
 				ReflectProjectile(_rb, col.contacts[0].normal);
 			}
 		}
@@ -90,5 +92,12 @@ public class BallPhysics : MonoBehaviour
 		Direction = Vector2.Reflect(Direction, reflectVector);
 		rb.velocity = Speed * Direction;
 		BallSound.Play();
+	}
+
+	private Vector2 ReleaseDirection(Vector2 playerPos)
+	{
+		Vector2 dir = gameObject.transform.position;
+		dir = playerPos - dir;
+		return dir.normalized;
 	}
 }

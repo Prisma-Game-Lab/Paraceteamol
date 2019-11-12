@@ -13,6 +13,7 @@ public class BallPhysics : MonoBehaviour
 	private Rigidbody2D _rb;
 	private Collider2D _col;
 	private float _startingSpeed;
+	private Collider2D _tempCol;
 
 	#region StateMachine
 	public enum State
@@ -53,7 +54,7 @@ public class BallPhysics : MonoBehaviour
 		_rb.AddForce(Direction * Speed, ForceMode2D.Impulse);
 		BallSound = GetComponent<AudioSource>();
 		_col = gameObject.GetComponent<Collider2D>();
-        _startingSpeed = Speed;
+		_startingSpeed = Speed;
 	}
 
 	private void FixedUpdate()
@@ -62,12 +63,12 @@ public class BallPhysics : MonoBehaviour
 		{
 			case State.Held:
 				Speed = 0;
-				_rb.isKinematic = true;
-				_col.enabled = false;
+				//_rb.isKinematic = true;
+				//_col.enabled = false;
 				break;
 			case State.Release:
-				_rb.isKinematic = false;
-				_col.enabled = true;
+				//_rb.isKinematic = false;
+				//_col.enabled = true;
 				Speed = _startingSpeed;
 				Direction = ReleaseDirection(GameObject.FindGameObjectWithTag("Player").transform.position);
 				state = State.Idle;
@@ -77,13 +78,21 @@ public class BallPhysics : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D col)
 	{
-		// the player is in this state when it is moving freely
-		if (state == State.Idle)
+		switch (state)
 		{
-			if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
-			{
-				ReflectProjectile(_rb, col.contacts[0].normal);
-			}
+			case State.Idle:
+				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
+				{
+					ReflectProjectile(_rb, col.contacts[0].normal);
+				}
+				break;
+			case State.Held:
+				if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Wall"))
+					Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>(), true);
+				break;
+			case State.Release:
+				Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>(), false);
+				break;
 		}
 	}
 

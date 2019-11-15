@@ -8,11 +8,14 @@ public class BallPhysics : MonoBehaviour
 	public float Speed = 50;
 	[Tooltip("Direcao inicial da bola")]
 	public Vector2 Direction = Vector2.one;
+    private GameObject GameManager;
+    private MatchScript _matchScript;
 
 	private AudioSource BallSound;
 	private Rigidbody2D _rb;
 	private Collider2D _col;
 	private float _startingSpeed;
+	private Collider2D _tempCol;
 
 	#region StateMachine
 	public enum State
@@ -49,46 +52,75 @@ public class BallPhysics : MonoBehaviour
 
 	private void Awake()
 	{
+        GameManager = GameObject.Find("GameManeger");
 		_rb = GetComponent<Rigidbody2D>();
 		_rb.AddForce(Direction * Speed, ForceMode2D.Impulse);
 		BallSound = GetComponent<AudioSource>();
-        _startingSpeed = Speed;
+		_col = gameObject.GetComponent<Collider2D>();
+		_startingSpeed = Speed;
 	}
 
 	private void FixedUpdate()
 	{
-		if (state == State.Held)    // Disable Collider & RigidBody 2D
+		switch (state)
 		{
-			Speed = 0;
-			_rb.isKinematic = true;
-			_col.enabled = false;
-		}
-		if (state == State.Release)  // Enable Collider & RigidBody 2D
-		{
-             
-			Speed = _startingSpeed;
-			_rb.isKinematic = false;
-			_col.enabled = true;
-			 
+			case State.Held:
+				Speed = 0;
+				//_rb.isKinematic = true;
+				//_col.enabled = false;
+				break;
+			case State.Release:
+				//_rb.isKinematic = false;
+				//_col.enabled = true;
+				Speed = _startingSpeed;
+				Direction = ReleaseDirection(GameObject.FindGameObjectWithTag("Player").transform.position);
+				state = State.Idle;
+				break;
 		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D col)
 	{
-		if (state == State.Release)
+		switch (state)
 		{
-			if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
-			{
-				//Debug.Log("Bola bateu em " + col.gameObject.tag);
-				ReflectProjectile(_rb, col.contacts[0].normal);
-			}
+			case State.Idle:
+               
+				 if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
+				{
+					ReflectProjectile(_rb, col.contacts[0].normal);
+				}
+				break;
+			case State.Held:
+				if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Wall"))
+					Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>(), true);
+				break;
+			case State.Release:
+				Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>(), false);
+				break;
 		}
 	}
-
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject == GameObject.Find("Time1"))
+        {
+        GameManager.GetComponent<MatchScript>().RedTeamGol();
+        }
+        else if (col.gameObject == GameObject.Find("Time2"))
+        {
+            GameManager.GetComponent<MatchScript>().BlueTeamGol();
+        }
+    
+    }
 	private void ReflectProjectile(Rigidbody2D rb, Vector2 reflectVector)
 	{
 		Direction = Vector2.Reflect(Direction, reflectVector);
 		rb.velocity = Speed * Direction;
 		BallSound.Play();
+	}
+
+	private Vector2 ReleaseDirection(Vector2 playerPos)
+	{
+		Vector2 dir = gameObject.transform.position;
+		dir = playerPos - dir;
+		return dir.normalized;
 	}
 }

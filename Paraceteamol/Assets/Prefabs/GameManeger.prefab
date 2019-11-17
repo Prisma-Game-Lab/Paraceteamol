@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3836860997848890510}
   - component: {fileID: 3836860997848890509}
-  - component: {fileID: 6352455008359395961}
   - component: {fileID: 3787190499428240966}
   m_Layer: 0
   m_Name: GameManeger
@@ -46,18 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 0}
---- !u!114 &6352455008359395961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3836860997848890508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7a507e90b4dab46975d84c2e0d16fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3787190499428240966
 MonoBehaviour:
   m_ObjectHideFlags: 0

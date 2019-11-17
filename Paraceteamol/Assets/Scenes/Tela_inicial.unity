@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -419,87 +419,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628093983}
   m_CullTransparentMesh: 0
---- !u!1001 &653387242
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3836860997848890508, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_Name
-      value: GameManeger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 183.34589
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 135.51904
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -98.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
---- !u!114 &653387243 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3787190499428240966, guid: 7fe700a91d4c11e43a764de677ff3252,
-    type: 3}
-  m_PrefabInstance: {fileID: 653387242}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eae96b659aa0c7b4f8f1d19a7dbc9bb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &786020423
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,8 +554,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6431373, g: 0.6431373, b: 0.61960787, a: 1}
+    m_PressedColor: {r: 0.32941177, g: 0.3254902, b: 0.3254902, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -657,7 +576,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 653387243}
+      - m_Target: {fileID: 3787190499428240966, guid: 7fe700a91d4c11e43a764de677ff3252,
+          type: 3}
         m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
@@ -768,8 +688,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6431373, g: 0.6431373, b: 0.61960787, a: 1}
+    m_PressedColor: {r: 0.32941177, g: 0.3254902, b: 0.3254902, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -790,7 +710,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 653387243}
+      - m_Target: {fileID: 3787190499428240966, guid: 7fe700a91d4c11e43a764de677ff3252,
+          type: 3}
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -962,8 +883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
+  m_HorizontalAxis: p1_ps4_horizontal
+  m_VerticalAxis: p1_ps4_Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -981,8 +902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
+  m_FirstSelected: {fileID: 923607451}
+  m_sendNavigationEvents: 0
   m_DragThreshold: 10
 --- !u!4 &1549659294
 Transform:

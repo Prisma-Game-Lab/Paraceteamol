@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6431373, g: 0.61960787, b: 0.61960787, a: 1}
+    m_PressedColor: {r: 0.32941177, g: 0.3254902, b: 0.3254902, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -355,7 +355,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 821454008341873118}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3787190499428240966, guid: 7fe700a91d4c11e43a764de677ff3252,
+          type: 3}
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &2689658421923558480
@@ -706,8 +718,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6431373, g: 0.6431373, b: 0.61960787, a: 1}
+    m_PressedColor: {r: 0.33333334, g: 0.3254902, b: 0.3254902, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -727,7 +739,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4106174760262787871}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3836860997848890509, guid: 7fe700a91d4c11e43a764de677ff3252,
+          type: 3}
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &5153388531515034821
@@ -850,7 +874,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4681904592810519966}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3787190499428240966, guid: 7fe700a91d4c11e43a764de677ff3252,
+          type: 3}
+        m_MethodName: ReloadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &5832623948237348181
@@ -1485,8 +1521,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.6415094, g: 0.6203275, b: 0.6203275, a: 1}
+    m_PressedColor: {r: 0.3301887, g: 0.32551622, b: 0.32551622, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1506,7 +1542,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8674462130071608709}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3787190499428240966, guid: 7fe700a91d4c11e43a764de677ff3252,
+          type: 3}
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Tela_inicial
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1600402047268720431
@@ -1646,17 +1694,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 44.82
       objectReference: {fileID: 0}
-    - target: {fileID: 7617387575724113937, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5693464601829261873, guid: 77ed68eada844ed4ebdd84e449071eac,
-        type: 3}
-    - target: {fileID: 7617387575724113937, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9053062140152137222, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1671,6 +1708,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617387575724113937, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5693464601829261873, guid: 77ed68eada844ed4ebdd84e449071eac,
+        type: 3}
+    - target: {fileID: 7617387575724113937, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27aecfc6cc1e96648a5bfc4e0de06068, type: 3}

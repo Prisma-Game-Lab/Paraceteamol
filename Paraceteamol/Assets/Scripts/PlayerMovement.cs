@@ -4,31 +4,27 @@
 public class PlayerMovement : MonoBehaviour
 {
 	// Public variables
-	[Space]
-	public GameObject PlayerSprite;
-	[Space]
 	public float MovementSpeed = 18;
-    public AudioSource Steps;
+	public AudioSource Steps;
 	public float JumpHeight = 240;
 	public float GravitySpeedModifier = 8;
-	public float Pointer = 1.5f;
 	[Space]
 	[Header("Controller")]
-	public string horizontalControl = "p1_horizontal";
-	public string joystickHorizontal = "p1_ps4_horizontal";
-	public string jumpButton = "p1_jump";
-	[Tooltip("True if it's Player 1, false if Player 2.")] public bool PlayerOne = true;
-	[Tooltip("True if using keyboard")] public bool teclado;
-    [HideInInspector]public bool grounded = false;
+	public string HorizontalControl = "p1_horizontal";  //Keyboard
+	public string VerticalControl = "p1_vertical";  //Keyboard
+	public string JoystickHorizontal = "p1_ps4_horizontal";
+	public string JoystickVertical = "p1_ps4_vertical";
+	public string JumpButton = "p1_jump";
+	[Tooltip("True if using keyboard")] public bool Keyboard;
+    [Tooltip("True to enable tapJump")] public bool tapJump;
 
-    // Private variables
-    private float _horizontal = 0;
+	// Private variables
+	private bool grounded = false;
+	private float _horizontal = 0;
+	private float _vertical = 0;
 	private Transform _obj;
 	private Rigidbody2D _rb;
 	private AnimationCode _anim;
-    
-
-    public CharacterController controller;
 
 	private void Start()
 	{
@@ -41,55 +37,79 @@ public class PlayerMovement : MonoBehaviour
 	{
 		_rb.AddForce(new Vector2(0, -10 * GravitySpeedModifier));
 
-		if (teclado == true)
-			_horizontal = Input.GetAxis(horizontalControl);
+		if (Keyboard == true)
+		{
+			_horizontal = Input.GetAxis(HorizontalControl);
+			_vertical = Input.GetAxis(VerticalControl);
+		}
 		else
-			_horizontal = Input.GetAxis(joystickHorizontal);
+		{
+			_horizontal = Input.GetAxis(JoystickHorizontal);
+			_vertical = Input.GetAxis(JoystickVertical);
+		}
 
 		Vector3 tempVect = new Vector3(_horizontal, 0, 0);
 		tempVect = tempVect.normalized * MovementSpeed * Time.deltaTime;
 		_anim.PararDeAndar();
-        Steps.Pause();
+		Steps.Pause();
 
-        if(_horizontal < 0)
-        {
-            transform.rotation = new Quaternion(0, 180, 0, 0);
-            _anim.Andar();
-            Steps.Play();
-        }
-
-        else if(_horizontal > 0)
-        {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
-            _anim.Andar();
-            Steps.Play();
-        }
+		if (_horizontal < 0)
+		{
+			transform.rotation = new Quaternion(0, 180, 0, 0);
+			_anim.Andar();
+			Steps.Play();
+		}
+		else if (_horizontal > 0)
+		{
+			transform.rotation = new Quaternion(0, 0, 0, 0);
+			_anim.Andar();
+			Steps.Play();
+		}
 
 		_obj.transform.position += tempVect;
 
-		Collider2D colBounds = GetComponent<Collider2D>();
-		Debug.DrawRay(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, Color.red);
-		Debug.DrawRay(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, Color.green);
-		Debug.DrawRay(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, Color.blue);
-
-		//	Debug.Log("can jump");
-
-		//if (Input.GetButton(PlayerOne ? "p1_jump" : "p2_jump"))
-		if (Input.GetButton(jumpButton) && grounded)
-		{
-            /*ycastHit2D hit1 = Physics2D.Raycast(transform.position - new Vector3(.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
-			RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(0, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
-			RaycastHit2D hit3 = Physics2D.Raycast(transform.position - new Vector3(-.4f, colBounds.bounds.extents.y + 0.1f - colBounds.offset.y), Vector2.down, 0.1f);
-
-			if ((hit1 || hit2 || hit3) && (hit1.transform.tag == "Ground" || hit2.transform.tag == "Ground" || hit3.transform.tag == "Ground"))
-			{
-				_rb.AddForce(new Vector2(0, 1) * JumpHeight * 10);
-				_anim.Pular();
-			}*/
-
-            _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
-            _anim.Pular();
+        if (Keyboard == true)
+        {
+            if (Input.GetButton(JumpButton) && grounded)
+            {
+                _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
+                _anim.Pular();
+            }
+        }
+        else
+        {
+            if (Input.GetButton(JumpButton) && grounded)
+            {
+                _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
+                _anim.Pular();
+            }
+            if ((tapJump == true && _vertical > 0.9f) && grounded)
+            {
+                _rb.AddForce(new Vector2(0, 1) * JumpHeight * 5f);
+                _anim.Pular();
+            }
         }
 	}
 
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.otherCollider is BoxCollider2D)
+		{
+			if (collision.collider.tag == "Ground")
+			{
+				grounded = true;
+			}
+		}
+	}
+
+	private void OnCollisionExit2D(Collision2D collision)
+	{
+		if (collision.otherCollider is BoxCollider2D)
+		{
+			if (collision.collider.tag == "Ground")
+			{
+				grounded = false;
+			}
+		}
+	}
 }

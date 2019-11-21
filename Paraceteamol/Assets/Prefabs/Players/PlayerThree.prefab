@@ -67,6 +67,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: HorizontalControl
+      value: p3_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: VerticalControl
+      value: p3_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickHorizontal
+      value: p3_ps4_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickVertical
+      value: p3_ps4_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JumpButton
+      value: p3_jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: KeyboardHorizontal
+      value: p3_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: KeyboardVertical
+      value: p3_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickHorizontal
+      value: p3_ps4_R_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickVertical
+      value: p3_ps4_R_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: InhaleButton
+      value: p3_fire1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}
 --- !u!4 &1022426474984195787 stripped

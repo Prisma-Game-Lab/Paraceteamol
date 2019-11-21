@@ -178,7 +178,7 @@ public class AimController : MonoBehaviour
 			case State.Cooldown:
 				Debug.Log("Cooldown");
                 StartCoroutine(Cooldown());
-				break;
+                break;
 			case State.Exhale:
 				Debug.Log("Exhale");
 				_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
@@ -196,7 +196,7 @@ public class AimController : MonoBehaviour
 			switch (state)
 			{
 				case State.Idle:
-					if (Input.GetButtonDown(InhaleButton))
+					if (Input.GetButton(InhaleButton))
 					{
 						Debug.Log("Está puxando.");
 						col.GetComponent<BallPhysics>().state = BallPhysics.State.Held;

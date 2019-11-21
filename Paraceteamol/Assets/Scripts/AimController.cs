@@ -9,6 +9,7 @@ public class AimController : MonoBehaviour
 	[SerializeField] private ParticleSystem ExhaleParticles;
 	[SerializeField] private GameObject Sight;
 	[SerializeField] private GameObject Crosshair;
+    [SerializeField] private GameObject chronometer;
 	[Space]
 	public float Strenght = .5f;
 	[Tooltip("Time in seconds the player will not be able to inhale")]
@@ -110,8 +111,10 @@ public class AimController : MonoBehaviour
 	// Time the player can't use the inhale
 	private IEnumerator Cooldown()
 	{
-		yield return new WaitForSeconds(CooldownTime);
-		state = State.Idle;
+        chronometer.SetActive(true);
+        yield return new WaitForSeconds(CooldownTime);
+        chronometer.SetActive(false);
+        state = State.Idle;
 	}
 
 	private void Start()

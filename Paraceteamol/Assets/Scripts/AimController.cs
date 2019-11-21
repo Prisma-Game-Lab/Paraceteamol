@@ -177,11 +177,11 @@ public class AimController : MonoBehaviour
 				break;
 			case State.Cooldown:
 				Debug.Log("Cooldown");
+                StartCoroutine(Cooldown());
 				break;
 			case State.Exhale:
 				Debug.Log("Exhale");
 				_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
-				StartCoroutine(Cooldown());
 				state = State.Cooldown;
 				break;
 		}

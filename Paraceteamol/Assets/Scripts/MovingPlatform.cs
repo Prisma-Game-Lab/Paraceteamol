@@ -57,21 +57,4 @@ public class MovingPlatform : MonoBehaviour
 
         return currentWaypoint;
     }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.rigidbody.velocity = Vector2.zero;
-            collision.rigidbody.position = new Vector2(collision.rigidbody.position.x, transform.position.y + 2);
-        }
-    }
-    private void OnCollisionLeave2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.rigidbody.velocity = Vector2.zero;
-            collision.rigidbody.position = new Vector2(collision.rigidbody.position.x, transform.position.y);
-        }
-    }
 }

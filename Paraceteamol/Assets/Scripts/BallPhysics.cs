@@ -62,10 +62,13 @@ public class BallPhysics : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+         
+        Debug.Log(_rb.velocity);
+        Debug.Log(Speed);
 		switch (state)
 		{
 			case State.Held:
-				Speed = 0;
+                _rb.velocity = Vector2.zero;
 				//_rb.isKinematic = true;
 				//_col.enabled = false;
 				break;
@@ -73,7 +76,7 @@ public class BallPhysics : MonoBehaviour
 				//_rb.isKinematic = false;
 				//_col.enabled = true;
 				Speed = _startingSpeed;
-				Direction = ReleaseDirection(GameObject.FindGameObjectWithTag("Player").transform.position);
+				_rb.velocity = -ReleaseDirection(GameObject.FindGameObjectWithTag("Player").transform.position)*Speed ;
 				state = State.Idle;
 				break;
 		}
@@ -88,6 +91,10 @@ public class BallPhysics : MonoBehaviour
 				 if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
 				{
 					ReflectProjectile(_rb, col.contacts[0].normal);
+                    if (_rb.velocity == Vector2.zero)
+                    {
+                        _rb.velocity =Direction ;
+                    }
 				}
 				break;
 			case State.Held:

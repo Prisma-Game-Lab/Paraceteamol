@@ -117,6 +117,7 @@ public class AimController : MonoBehaviour
         state = State.Idle;
 	}
 
+
 	private void Start()
 	{
 		_keyboard = GetComponent<PlayerMovement>().Keyboard;
@@ -170,10 +171,16 @@ public class AimController : MonoBehaviour
                    
 				break;
 			case State.Inhale:
+                bool hasntSetNewPlayer = true;
 				////Debug.Log("Inhale");
 				if (Vector2.Distance(_ballGO.transform.position, Crosshair.transform.position) > .1f)
 				{
 					_ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, Crosshair.transform.position, Strenght);
+                    if (hasntSetNewPlayer)
+                    {
+                        _ballGO.GetComponent<BallPhysics>().SetPlayerCurrentlyHolding(gameObject);
+                        hasntSetNewPlayer = false;
+                    }
 				}
 				else
 				{
@@ -188,7 +195,7 @@ public class AimController : MonoBehaviour
 			case State.Exhale:
 				//Debug.Log("Exhale");
 				_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
-				state = State.Cooldown;
+                state = State.Cooldown;
 				break;
 		}
 	}
@@ -208,8 +215,6 @@ public class AimController : MonoBehaviour
 						col.GetComponent<BallPhysics>().state = BallPhysics.State.Held;
 						StartCoroutine(InhaleTimer(col.gameObject));
 						state = State.Inhale;
-
-                       
 					}
 					break;
 				case State.Inhale:

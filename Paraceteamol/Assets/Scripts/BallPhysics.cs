@@ -10,8 +10,9 @@ public class BallPhysics : MonoBehaviour
 	public Vector2 Direction = Vector2.one;
     private GameObject GameManager;
     private MatchScript _matchScript;
+    private GameObject playerCurrentlyHolding;
 
-	private AudioSource BallSound;
+    private AudioSource BallSound;
 	private Rigidbody2D _rb;
 	private Collider2D _col;
 	private float _startingSpeed;
@@ -62,9 +63,6 @@ public class BallPhysics : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-         
-        Debug.Log(_rb.velocity);
-        Debug.Log(Speed);
 		switch (state)
 		{
 			case State.Held:
@@ -76,25 +74,31 @@ public class BallPhysics : MonoBehaviour
 				//_rb.isKinematic = false;
 				//_col.enabled = true;
 				Speed = _startingSpeed;
-				_rb.velocity = -ReleaseDirection(GameObject.FindGameObjectWithTag("Player").transform.position)*Speed ;
+				_rb.velocity = -ReleaseDirection(playerCurrentlyHolding.transform.position)*Speed ;
 				state = State.Idle;
 				break;
 		}
 	}
 
-	private void OnCollisionEnter2D(Collision2D col)
+    public void SetPlayerCurrentlyHolding(GameObject player)
+    {
+        playerCurrentlyHolding = player;
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D col)
 	{
 		switch (state)
 		{
 			case State.Idle:
                
-				 if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
+				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
 				{
 					ReflectProjectile(_rb, col.contacts[0].normal);
-                    if (_rb.velocity == Vector2.zero)
-                    {
-                        _rb.velocity =Direction ;
-                    }
+
+                    if (_rb.velocity == Vector2.zero) {
+                        _rb.AddForce(Direction, ForceMode2D.Impulse);
+                    }   
 				}
 				break;
 			case State.Held:

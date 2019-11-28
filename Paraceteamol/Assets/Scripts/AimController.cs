@@ -159,12 +159,18 @@ public class AimController : MonoBehaviour
 		switch (state)
 		{
 			case State.Idle:
-				Debug.Log("Idle");
+				////Debug.Log("Idle");
 				if (Input.GetButtonDown(InhaleButton))
 					InhaleParticles.Play();
+                if (Input.GetButtonUp(InhaleButton))
+                {
+                    //Debug.Log("Parou de apertar o botão.");
+                    InhaleParticles.Stop();
+                }
+                   
 				break;
 			case State.Inhale:
-				Debug.Log("Inhale");
+				////Debug.Log("Inhale");
 				if (Vector2.Distance(_ballGO.transform.position, Crosshair.transform.position) > .1f)
 				{
 					_ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, Crosshair.transform.position, Strenght);
@@ -176,11 +182,11 @@ public class AimController : MonoBehaviour
 				}
 				break;
 			case State.Cooldown:
-				Debug.Log("Cooldown");
+				//Debug.Log("Cooldown");
                 StartCoroutine(Cooldown());
                 break;
 			case State.Exhale:
-				Debug.Log("Exhale");
+				//Debug.Log("Exhale");
 				_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
 				state = State.Cooldown;
 				break;
@@ -198,16 +204,18 @@ public class AimController : MonoBehaviour
 				case State.Idle:
 					if (Input.GetButton(InhaleButton))
 					{
-						Debug.Log("Está puxando.");
+						//Debug.Log("Está puxando.");
 						col.GetComponent<BallPhysics>().state = BallPhysics.State.Held;
 						StartCoroutine(InhaleTimer(col.gameObject));
 						state = State.Inhale;
+
+                       
 					}
 					break;
 				case State.Inhale:
 					if (Input.GetButtonUp(InhaleButton))
 					{
-						Debug.Log("Parou de apertar o botão.");
+						//Debug.Log("Parou de apertar o botão.");
 						InhaleParticles.Stop();
 						state = State.Exhale;
 					}

@@ -57,14 +57,16 @@ public class PlayerMovement : MonoBehaviour
 		{
 			transform.rotation = new Quaternion(0, 180, 0, 0);
 			_anim.Andar();
-			Steps.Play();
-		}
+            PlayPassos();
+
+        }
 		else if (_horizontal > 0)
 		{
 			transform.rotation = new Quaternion(0, 0, 0, 0);
 			_anim.Andar();
-			Steps.Play();
-		}
+            PlayPassos();
+
+        }
 
 		_obj.transform.position += tempVect;
 
@@ -90,6 +92,15 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 	}
+
+    public void PlayPassos()
+    {
+        if(grounded == true)
+        {
+            Steps.pitch = Random.Range(0.7f, 1.3f);
+            Steps.Play();
+        }
+    }
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{

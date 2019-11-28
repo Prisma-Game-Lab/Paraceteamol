@@ -367,7 +367,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ef4238745dfaba147bf0318cd0ede5a5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.43
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -491,7 +491,6 @@ MonoBehaviour:
   Sight: {fileID: 1648118403116790793}
   Crosshair: {fileID: 1904702078932469983}
   chronometer: {fileID: 2539487987251215534}
-  _ballGO: {fileID: 0}
   Strenght: 0.5
   CooldownTime: 2
   InhaleTime: 2

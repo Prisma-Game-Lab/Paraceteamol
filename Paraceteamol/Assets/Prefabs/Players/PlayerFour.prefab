@@ -115,7 +115,7 @@ PrefabInstance:
     - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: InhaleButton
-      value: p4_fire1
+      value: p4_ps4_fire1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}

@@ -53,19 +53,19 @@ public class PlayerMovement : MonoBehaviour
 		_anim.PararDeAndar();
 		Steps.Pause();
 
-		if (_horizontal < 0)
-		{
-			transform.rotation = new Quaternion(0, 180, 0, 0);
-			_anim.Andar();
+        if (_horizontal != 0)
+        {
+            _anim.Andar();
             PlayPassos();
 
-        }
-		else if (_horizontal > 0)
-		{
-			transform.rotation = new Quaternion(0, 0, 0, 0);
-			_anim.Andar();
-            PlayPassos();
-
+		    if (_horizontal < 0)
+		    {
+			    transform.rotation = new Quaternion(0, 180, 0, 0);
+            }
+		    else if (_horizontal > 0)
+		    {
+			    transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
         }
 
 		_obj.transform.position += tempVect;

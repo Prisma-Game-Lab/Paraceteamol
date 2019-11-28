@@ -63,9 +63,6 @@ public class BallPhysics : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-         
-        //Debug.Log(_rb.velocity);
-        //Debug.Log(Speed);
 		switch (state)
 		{
 			case State.Held:
@@ -95,13 +92,13 @@ public class BallPhysics : MonoBehaviour
 		{
 			case State.Idle:
                
-				 if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
+				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
 				{
 					ReflectProjectile(_rb, col.contacts[0].normal);
-                    if (_rb.velocity == Vector2.zero)
-                    {
-                        _rb.velocity = Direction ;
-                    }
+
+                    if (_rb.velocity == Vector2.zero) {
+                        _rb.AddForce(Direction, ForceMode2D.Impulse);
+                    }   
 				}
 				break;
 			case State.Held:

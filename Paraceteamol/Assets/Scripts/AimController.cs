@@ -117,6 +117,7 @@ public class AimController : MonoBehaviour
         state = State.Idle;
 	}
 
+
 	private void Start()
 	{
 		_keyboard = GetComponent<PlayerMovement>().Keyboard;
@@ -188,7 +189,7 @@ public class AimController : MonoBehaviour
 			case State.Exhale:
 				//Debug.Log("Exhale");
 				_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
-				state = State.Cooldown;
+                state = State.Cooldown;
 				break;
 		}
 	}

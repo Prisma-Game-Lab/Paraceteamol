@@ -17,7 +17,7 @@ public class BallPhysics : MonoBehaviour
 	private Collider2D _col;
 	private float _startingSpeed;
 	private Collider2D _tempCol;
-    public bool a=false;
+    
 
 	#region StateMachine
 	public enum State
@@ -65,9 +65,7 @@ public class BallPhysics : MonoBehaviour
 	private void FixedUpdate()
     {
         Direction = _rb.velocity;
-        
-                       Debug.Log(_rb.velocity);
-                      
+      
 		switch (state)
 		{
 			case State.Held:
@@ -79,7 +77,7 @@ public class BallPhysics : MonoBehaviour
 			case State.Release:
 				//_rb.isKinematic = false;
 				//_col.enabled = true;
-                a = true;
+              
 				Speed = _startingSpeed;
              
 
@@ -105,20 +103,11 @@ public class BallPhysics : MonoBehaviour
 			case State.Idle:
                
 				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
-				{
-                     
-                        
-                       Debug.Log(_rb.velocity);
-                         
-                       
-                      
-                    
-                   
+				{ 
+               
 					ReflectProjectile(_rb, col.contacts[0].normal);
 
-                    Debug.Log(_rb.velocity);
-                    
-                     
+                  
 				}
 				break;
 			case State.Held:

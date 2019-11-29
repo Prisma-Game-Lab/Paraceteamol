@@ -5,7 +5,7 @@ public class BallPhysics : MonoBehaviour
 {
 	[Header("Physics")]
 	[Tooltip("Velocidade da bola")]
-	public float Speed = 50;
+	public float Speed;
 	[Tooltip("Direcao inicial da bola")]
 	public Vector2 Direction = Vector2.one;
     private GameObject GameManager;
@@ -17,6 +17,7 @@ public class BallPhysics : MonoBehaviour
 	private Collider2D _col;
 	private float _startingSpeed;
 	private Collider2D _tempCol;
+    public bool a=false;
 
 	#region StateMachine
 	public enum State
@@ -62,21 +63,32 @@ public class BallPhysics : MonoBehaviour
 	}
 
 	private void FixedUpdate()
-	{
+    {
+        Direction = _rb.velocity;
+        
+                       Debug.Log(_rb.velocity);
+                      
 		switch (state)
 		{
 			case State.Held:
                 _rb.velocity = Vector2.zero;
 				//_rb.isKinematic = true;
 				//_col.enabled = false;
+                
 				break;
 			case State.Release:
 				//_rb.isKinematic = false;
 				//_col.enabled = true;
+                a = true;
 				Speed = _startingSpeed;
+             
+
+               
 				_rb.velocity = -ReleaseDirection(playerCurrentlyHolding.transform.position)*Speed ;
+                 
 				state = State.Idle;
 				break;
+ 
 		}
 	}
 
@@ -94,11 +106,19 @@ public class BallPhysics : MonoBehaviour
                
 				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
 				{
+                     
+                        
+                       Debug.Log(_rb.velocity);
+                         
+                       
+                      
+                    
+                   
 					ReflectProjectile(_rb, col.contacts[0].normal);
 
-                    if (_rb.velocity == Vector2.zero) {
-                        _rb.AddForce(Direction, ForceMode2D.Impulse);
-                    }   
+                    Debug.Log(_rb.velocity);
+                    
+                     
 				}
 				break;
 			case State.Held:
@@ -124,7 +144,11 @@ public class BallPhysics : MonoBehaviour
 	private void ReflectProjectile(Rigidbody2D rb, Vector2 reflectVector)
 	{
 		Direction = Vector2.Reflect(Direction, reflectVector);
-		rb.velocity = Speed * Direction;
+         
+         
+		_rb.velocity = Speed * Direction.normalized;
+         
+
 		BallSound.Play();
 	}
 
@@ -132,6 +156,6 @@ public class BallPhysics : MonoBehaviour
 	{
 		Vector2 dir = gameObject.transform.position;
 		dir = playerPos - dir;
-		return dir.normalized;
+        return dir.normalized;
 	}
 }

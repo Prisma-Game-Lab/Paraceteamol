@@ -969,7 +969,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 30.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1113,6 +1113,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164346289135504849, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164346289135504849, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164346289135504849, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164346289135504849, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164346289135504849, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1715360854158986772, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861546455732682967, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861546455732682967, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756584178593972687, guid: a7bd272d6650dc24ab04856c2e885ebc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1890
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7bd272d6650dc24ab04856c2e885ebc, type: 3}

@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -622,11 +622,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 7867437369187820324, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7867437369863597675, guid: 9590f955c9980cc4c83b1ea019d125e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -695,6 +690,11 @@ PrefabInstance:
     - target: {fileID: 7867437369187820322, guid: 9590f955c9980cc4c83b1ea019d125e7,
         type: 3}
       propertyPath: Strenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867437369187820324, guid: 9590f955c9980cc4c83b1ea019d125e7,
+        type: 3}
+      propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7867437370227208479, guid: 9590f955c9980cc4c83b1ea019d125e7,
@@ -813,6 +813,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809657359007847551, guid: 2d5bb94fbfec76f46a4506233fa818d2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -28.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426638578437303397, guid: 2d5bb94fbfec76f46a4506233fa818d2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 27.88
       objectReference: {fileID: 0}
     - target: {fileID: 3429356225558192465, guid: 2d5bb94fbfec76f46a4506233fa818d2,
         type: 3}
@@ -1390,36 +1400,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: uiTimer
-      value: 
-      objectReference: {fileID: 471766383}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: resultado
-      value: 
-      objectReference: {fileID: 471766384}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: player1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: player2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: EndGame
-      value: 
-      objectReference: {fileID: 471766386}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: startTime
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
       propertyPath: ScoreTextRedGoal
       value: 
@@ -1451,6 +1431,36 @@ PrefabInstance:
     - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
       propertyPath: startTime
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: uiTimer
+      value: 
+      objectReference: {fileID: 471766383}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: resultado
+      value: 
+      objectReference: {fileID: 471766384}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: EndGame
+      value: 
+      objectReference: {fileID: 471766386}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: startTime
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
@@ -1533,16 +1543,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5888928044102386710, guid: 5c83de4464650b14eace2ee0c58096b1,
-        type: 3}
-      propertyPath: _ballGO
-      value: 
-      objectReference: {fileID: 524977277}
-    - target: {fileID: 8028095976100219592, guid: 5c83de4464650b14eace2ee0c58096b1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.031691495
-      objectReference: {fileID: 0}
     - target: {fileID: 1324567088083354650, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -1552,6 +1552,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0642488
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888928044102386710, guid: 5c83de4464650b14eace2ee0c58096b1,
+        type: 3}
+      propertyPath: _ballGO
+      value: 
+      objectReference: {fileID: 524977277}
+    - target: {fileID: 8028095976100219592, guid: 5c83de4464650b14eace2ee0c58096b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.031691495
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c83de4464650b14eace2ee0c58096b1, type: 3}

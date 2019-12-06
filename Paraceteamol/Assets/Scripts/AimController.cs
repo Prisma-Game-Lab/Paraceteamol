@@ -32,6 +32,7 @@ public class AimController : MonoBehaviour
 	private float _horizontal;
 	private bool _keyboard;
 	private GameObject _ballGO;
+    public float _timer;
 
 	#region State
 	public enum State
@@ -41,7 +42,7 @@ public class AimController : MonoBehaviour
 		Inhale,
 		Exhale,
 	}
-	[HideInInspector]
+	 
 	public State state;
 
 	IEnumerator IdleState()
@@ -122,10 +123,31 @@ public class AimController : MonoBehaviour
 	{
 		_keyboard = GetComponent<PlayerMovement>().Keyboard;
 		state = State.Idle;
+        _timer = InhaleTime;
+        Time.timeScale = 1f;
 	}
+
 
 	private void FixedUpdate()
 	{
+         
+        if (state == State.Inhale)
+        {
+            _timer -= Time.deltaTime;
+            Debug.Log(_timer);
+            if (_timer <= 0.0f)
+            {
+                InhaleParticles.Stop();
+                
+                state = State.Exhale;
+                
+            }
+
+           
+        }
+        else
+        _timer = InhaleTime;
+
 		// Testa se vai usar teclado ou controle
 		#region Verifica Teclado
 		if (_keyboard == true)
@@ -196,6 +218,7 @@ public class AimController : MonoBehaviour
 				//Debug.Log("Exhale");
 				_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
                 state = State.Cooldown;
+                Debug.Log(state);
 				break;
 		}
 	}
@@ -213,7 +236,7 @@ public class AimController : MonoBehaviour
 					{
 						//Debug.Log("Está puxando.");
 						col.GetComponent<BallPhysics>().state = BallPhysics.State.Held;
-						StartCoroutine(InhaleTimer(col.gameObject));
+						 
 						state = State.Inhale;
 					}
 					break;
@@ -222,7 +245,9 @@ public class AimController : MonoBehaviour
 					{
 						//Debug.Log("Parou de apertar o botão.");
 						InhaleParticles.Stop();
-						state = State.Exhale;
+
+					    state = State.Exhale;
+                         
 					}
 					break;
 			}

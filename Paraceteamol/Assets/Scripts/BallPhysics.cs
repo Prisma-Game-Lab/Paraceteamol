@@ -112,7 +112,7 @@ public class BallPhysics : MonoBehaviour
 				}
 				break;
 			case State.Held:
-				if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Wall"))
+				if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("MovingPlatform"))
 					Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>(), true);
 				break;
 			case State.Release:

@@ -19,6 +19,8 @@ public class AimController : MonoBehaviour
     private GameObject Crosshair;
     [SerializeField]
     private GameObject chronometer;
+    [SerializeField]
+    private Animator sightAnimator;
     [Space]
     public float Strenght = .5f;
     [Tooltip("Time in seconds the player will not be able to inhale")]
@@ -123,6 +125,7 @@ public class AimController : MonoBehaviour
     {
         chronometer.SetActive(true);
         yield return new WaitForSeconds(CooldownTime);
+
         chronometer.SetActive(false);
         state = State.Idle;
     }
@@ -137,17 +140,17 @@ public class AimController : MonoBehaviour
        _cooldownTimer =0;
     }
 
-
+    bool cooldownAnimationCanPlay = true;
     private void FixedUpdate()
     {
         if (state == State.Cooldown)
         {
-
             chronometer.SetActive(true);
            _cooldownTimer+= Time.deltaTime;
 
             if (_cooldownTimer>=CooldownTime)
             {
+                sightAnimator.SetTrigger("Reactivate");
                 chronometer.SetActive(false);
                 state = State.Idle;
             }
@@ -163,10 +166,7 @@ public class AimController : MonoBehaviour
                 InhaleParticles.Stop();
 
                 state = State.Exhale;
-
             }
-
-
         }
         else
             _holdTimer = InhaleTime;
@@ -236,6 +236,14 @@ public class AimController : MonoBehaviour
                 }
                 break;
             case State.Cooldown:
+
+                if (cooldownAnimationCanPlay)
+                {
+                    Debug.Log(state);
+                    sightAnimator.SetTrigger("Cooldown");
+                    cooldownAnimationCanPlay = false;
+                }
+
                 //StartCoroutine(Cooldown());
                 break;
             case State.Exhale:
@@ -244,6 +252,7 @@ public class AimController : MonoBehaviour
                 //Debug.Log("Exhale");
                 _ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
                 state = State.Cooldown;
+                cooldownAnimationCanPlay = true;
                 Debug.Log(state);
                 break;
         }

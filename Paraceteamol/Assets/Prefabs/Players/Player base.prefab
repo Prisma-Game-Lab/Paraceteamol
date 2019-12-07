@@ -491,7 +491,7 @@ MonoBehaviour:
   Sight: {fileID: 1648118403116790793}
   Crosshair: {fileID: 1904702078932469983}
   chronometer: {fileID: 2539487987251215534}
-  Strenght: 0.5
+  Strenght: 2
   CooldownTime: 2
   InhaleTime: 2
   KeyboardHorizontal: p1_horizontal
@@ -499,6 +499,7 @@ MonoBehaviour:
   JoystickHorizontal: p1_ps4_R_horizontal
   JoystickVertical: p1_ps4_R_vertical
   InhaleButton: p1_fire1
+  _holdTimer: 0
   state: 0
 --- !u!1 &6658764517218289715
 GameObject:

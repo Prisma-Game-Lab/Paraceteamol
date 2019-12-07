@@ -102,7 +102,8 @@ public class BallPhysics : MonoBehaviour
 		{
 			case State.Idle:
                
-				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player"))
+				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player")
+                    || col.gameObject.CompareTag("MovingPlatform"))
 				{ 
                
 					ReflectProjectile(_rb, col.contacts[0].normal);

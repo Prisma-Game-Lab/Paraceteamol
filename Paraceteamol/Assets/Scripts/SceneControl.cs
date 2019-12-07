@@ -21,6 +21,11 @@ public class SceneControl : MonoBehaviour
 		SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 	}
 
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 	public void ExitGame()
 	{
 		Application.Quit();

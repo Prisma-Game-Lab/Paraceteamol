@@ -12,6 +12,10 @@ public class AimController : MonoBehaviour
     [SerializeField]
     private GameObject Sight;
     [SerializeField]
+    private GameObject arrowSight;
+    [SerializeField]
+    private GameObject triangleSight;
+    [SerializeField]
     private GameObject Crosshair;
     [SerializeField]
     private GameObject chronometer;
@@ -213,6 +217,8 @@ public class AimController : MonoBehaviour
                 break;
             case State.Inhale:
                 bool hasntSetNewPlayer = true;
+                triangleSight.SetActive(false);
+                arrowSight.SetActive(true);
                 ////Debug.Log("Inhale");
                 if (Vector2.Distance(_ballGO.transform.position, Crosshair.transform.position) > .1f)
                 {
@@ -230,10 +236,11 @@ public class AimController : MonoBehaviour
                 }
                 break;
             case State.Cooldown:
-                //Debug.Log("Cooldown");
                 //StartCoroutine(Cooldown());
                 break;
             case State.Exhale:
+                triangleSight.SetActive(true);
+                arrowSight.SetActive(false);
                 //Debug.Log("Exhale");
                 _ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
                 state = State.Cooldown;

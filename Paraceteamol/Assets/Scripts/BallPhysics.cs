@@ -3,7 +3,9 @@ using System.Collections;
 
 public class BallPhysics : MonoBehaviour
 {
-	[Header("Physics")]
+    [FMODUnity.EventRef]
+    public string inputsound;
+    [Header("Physics")]
 	[Tooltip("Velocidade da bola")]
 	public float Speed;
 	[Tooltip("Direcao inicial da bola")]
@@ -137,9 +139,9 @@ public class BallPhysics : MonoBehaviour
          
          
 		_rb.velocity = Speed * Direction.normalized;
-         
 
-		BallSound.Play();
+
+        FMODUnity.RuntimeManager.PlayOneShot (inputsound);
 	}
 
 	private Vector2 ReleaseDirection(Vector2 playerPos)

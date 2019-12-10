@@ -3,8 +3,10 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-	// Public variables
-	public float MovementSpeed = 18;
+    // Public variables
+    [FMODUnity.EventRef]
+    public string InputSound;
+    public float MovementSpeed = 18;
 	public AudioSource Steps;
 	public float JumpHeight = 240;
 	public float GravitySpeedModifier = 8;
@@ -56,9 +58,12 @@ public class PlayerMovement : MonoBehaviour
         if (_horizontal != 0)
         {
             _anim.Andar();
-            PlayPassos();
 
-		    if (_horizontal < 0)
+            if (grounded == true)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(InputSound);
+            }
+            if (_horizontal < 0)
 		    {
 			    transform.rotation = new Quaternion(0, 180, 0, 0);
             }

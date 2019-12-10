@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class MatchScript : MonoBehaviour
 {
-
+    [FMODUnity.EventRef]
+    public string inputmusica;
     private Text _resultado;
     private float _timer;
     private bool _doOnce = false;
@@ -24,6 +25,7 @@ public class MatchScript : MonoBehaviour
     public Rigidbody2D BallRB;
     void Start()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(inputmusica);
         ScoreRedTeam = 0;
         ScoreBlueTeam = 0;
         UpdateScore(ScoreTextBlueGoal, ScoreRedTeam);

@@ -1037,9 +1037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e8f38265cd61a4ab6b2a8d7aba0001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSound: event:/Footsteps
-  playerismoving: 0
-  walkingSpeed: 0.5
 --- !u!1 &864891547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1191921461621250280, guid: 5c83de4464650b14eace2ee0c58096b1,
@@ -1631,16 +1628,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3836860997848890509, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: PauseMenuUI
-      value: 
-      objectReference: {fileID: 471766385}
     - target: {fileID: 3836860997848890508, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: m_Name
       value: GameManeger
       objectReference: {fileID: 0}
+    - target: {fileID: 3836860997848890509, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: PauseMenuUI
+      value: 
+      objectReference: {fileID: 471766385}
     - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1788,6 +1785,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerOne
       objectReference: {fileID: 0}
+    - target: {fileID: 1191921461621250280, guid: 5c83de4464650b14eace2ee0c58096b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224524919114344056, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1851,7 +1853,7 @@ PrefabInstance:
     - target: {fileID: 224524919114344057, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
       propertyPath: Keyboard
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224524919114344057, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
@@ -1864,11 +1866,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524977277}
     - target: {fileID: 6502471883572880594, guid: 5c83de4464650b14eace2ee0c58096b1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1191921461621250280, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
       propertyPath: m_IsActive
       value: 1

@@ -187,6 +187,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2214521554557053338, guid: 83921b2057783c74596dd41b827acefd,
+        type: 3}
+      propertyPath: InputSound
+      value: event:/Footsteps
+      objectReference: {fileID: 0}
     - target: {fileID: 5485260640095702005, guid: 83921b2057783c74596dd41b827acefd,
         type: 3}
       propertyPath: _ballGO
@@ -286,6 +291,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225245539654304981, guid: 71605d9917c42b44985cf9a4a1a7643a,
+        type: 3}
+      propertyPath: InputSound
+      value: event:/Footsteps
       objectReference: {fileID: 0}
     - target: {fileID: 3954506175043970746, guid: 71605d9917c42b44985cf9a4a1a7643a,
         type: 3}
@@ -953,6 +963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Strenght
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867437369187820322, guid: 9590f955c9980cc4c83b1ea019d125e7,
+        type: 3}
+      propertyPath: inputsound
+      value: event:/Bola
       objectReference: {fileID: 0}
     - target: {fileID: 7867437370227208479, guid: 9590f955c9980cc4c83b1ea019d125e7,
         type: 3}
@@ -1743,6 +1758,10 @@ PrefabInstance:
       propertyPath: startTime
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: inputmusica
+      value: event:/Partidas OST
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
 --- !u!114 &1681195034 stripped
@@ -1958,6 +1977,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175662968244655764, guid: 1ba9b86e80d25584182e8a5807083b49,
+        type: 3}
+      propertyPath: InputSound
+      value: event:/Footsteps
       objectReference: {fileID: 0}
     - target: {fileID: 5518458836391195899, guid: 1ba9b86e80d25584182e8a5807083b49,
         type: 3}

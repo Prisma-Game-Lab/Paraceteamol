@@ -14,7 +14,6 @@ public class MapSelectionController : MonoBehaviour
 
 	private void Start()
 	{
-		ButtonList = ButtonList;
 		ButtonSelector.transform.position = ButtonList[0].transform.position;
 	}
 
@@ -43,6 +42,6 @@ public class MapSelectionController : MonoBehaviour
 		else if (_currentNum > ButtonList.Length - 1)
 			_currentNum = 0;
 
-		ButtonSelector.transform.position = Vector3.Lerp(ButtonSelector.transform.position, ButtonList[_currentNum].transform.position, 1f);
+		ButtonSelector.transform.position = ButtonList[_currentNum].transform.position;
 	}
 }

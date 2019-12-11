@@ -20,6 +20,7 @@ public class ControllerNavigator : MonoBehaviour
 		ButtonSelector.transform.position = _btnList[0].transform.position;
 	}
 
+
 	private void FixedUpdate()
 	{
 		string horizontal = "pall_ps4_horizontal";

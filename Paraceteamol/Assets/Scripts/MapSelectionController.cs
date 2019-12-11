@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControllerNavigator : MonoBehaviour
+public class MapSelectionController : MonoBehaviour
 {
 	public GameObject[] ButtonList;
+	[Space]
 	public GameObject ButtonSelector;
 
 	private GameObject[] _btnList;

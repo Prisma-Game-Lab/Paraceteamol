@@ -22,17 +22,19 @@ public class ControllerNavigator : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (Input.GetAxis("p1_ps4_horizontal") > 0 && _canSelect)
+		string horizontal = "pall_ps4_horizontal";
+
+		if (Input.GetAxis(horizontal) > 0 && _canSelect)
 		{
 			_currentNum++;
 			_canSelect = false;
 		}
-		else if (Input.GetAxis("p1_ps4_horizontal") < 0 && _canSelect)
+		else if (Input.GetAxis(horizontal) < 0 && _canSelect)
 		{
 			_currentNum--;
 			_canSelect = false;
 		}
-		else if (Input.GetAxis("p1_ps4_horizontal") == 0)
+		else if (Input.GetAxis(horizontal) == 0)
 		{
 			_canSelect = true;
 		}

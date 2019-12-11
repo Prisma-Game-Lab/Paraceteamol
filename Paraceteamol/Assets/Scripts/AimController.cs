@@ -4,6 +4,15 @@ using System.Collections.Generic;
 
 public class AimController : MonoBehaviour
 {
+    [FMODUnity.EventRef]
+    public string ExhaleSound;
+    [FMODUnity.EventRef]
+    public string InhaleSound;
+
+    public AudioSource InhaleAs;
+    public AudioSource ExhaleAs;
+
+
     [Space]
     [SerializeField]
     private ParticleSystem InhaleParticles;
@@ -46,6 +55,7 @@ public class AimController : MonoBehaviour
     public float _holdTimer;
     private float _cooldownTimer;
     private float _strenght;
+
     #region State
     public enum State
     {
@@ -216,10 +226,15 @@ public class AimController : MonoBehaviour
                 ////Debug.Log("Idle");
                 if (Input.GetButtonDown(InhaleButton))
                     InhaleParticles.Play();
+                    InhaleAs.Play();
+
                 if (Input.GetButtonUp(InhaleButton))
                 {
                     //Debug.Log("Parou de apertar o botão.");
                     InhaleParticles.Stop();
+                    ExhaleAs.Play();
+                    
+
                 }
 
                 break;

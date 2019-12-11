@@ -5,7 +5,7 @@ using UnityEngine;
 public class MatchScript : MonoBehaviour
 {
     [FMODUnity.EventRef]
-    
+    public string Inputmusica;
     private Vector2 _oldvelocity;
     private Text _resultado;
     private float _timer;
@@ -24,7 +24,6 @@ public class MatchScript : MonoBehaviour
     public GameObject BlueGoal;
     public GameObject EndGame;
     public Rigidbody2D BallRB;
-    public string Inputmusica;
     public float BallTimer;
  public IEnumerator StartCountdown()
  {

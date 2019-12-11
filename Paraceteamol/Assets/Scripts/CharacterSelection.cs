@@ -43,7 +43,9 @@ public class CharacterSelection : MonoBehaviour
         if (_horizontal < 0)
         {
             FMODUnity.RuntimeManager.PlayOneShot(ChangeLeft);
-            selecterCharacterIndex = characterList.Count - 1;
+            selecterCharacterIndex--;
+            if (selecterCharacterIndex < 0)
+                selecterCharacterIndex = characterList.Count - 1;
         }
         UpdateCharacterSelectionScreen();
     }
@@ -53,7 +55,10 @@ public class CharacterSelection : MonoBehaviour
         if (_horizontal > 0)
         {
             FMODUnity.RuntimeManager.PlayOneShot(ChangeRight);
-            selecterCharacterIndex = 0;
+            selecterCharacterIndex++;
+            if(selecterCharacterIndex > characterList.Count - 1)
+                selecterCharacterIndex = 0;
+
         }
         UpdateCharacterSelectionScreen();
     }

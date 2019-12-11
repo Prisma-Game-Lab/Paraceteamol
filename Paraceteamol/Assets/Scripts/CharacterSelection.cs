@@ -7,13 +7,16 @@ using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
+    public string JoystickHorizontal = "p1_ps4_horizontal";
     [FMODUnity.EventRef]
     public string ChangeLeft;
     [FMODUnity.EventRef]
     public string ChangeRight;
+
     private int selecterCharacterIndex;
     private Color desiredColor;
-    
+    private float _horizontal;
+
     [Header("List of character")]
     [SerializeField] List<ChacterSelectObject> characterList = new List<ChacterSelectObject>();
 
@@ -39,7 +42,7 @@ public class CharacterSelection : MonoBehaviour
     {
         if (_horizontal < 0)
         {
-            FMODUnity.RuntimeManager.PlayOneShot (ChangeLeft);
+            FMODUnity.RuntimeManager.PlayOneShot(ChangeLeft);
             selecterCharacterIndex = characterList.Count - 1;
         }
         UpdateCharacterSelectionScreen();
@@ -49,7 +52,7 @@ public class CharacterSelection : MonoBehaviour
     {
         if (_horizontal > 0)
         {
-            FMODUnity.RuntimeManager.PlayOneShot (ChangeRight);
+            FMODUnity.RuntimeManager.PlayOneShot(ChangeRight);
             selecterCharacterIndex = 0;
         }
         UpdateCharacterSelectionScreen();
@@ -62,9 +65,10 @@ public class CharacterSelection : MonoBehaviour
     }
 
     [System.Serializable]
-    public class ChacterSelectObject{
+    public class ChacterSelectObject
+    {
         public Sprite splash;
         public string characterName;
         public Color characterColor;
-   }
+    }
 }

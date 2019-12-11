@@ -7,15 +7,19 @@ using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
+
+    public string JoystickHorizontal = "p1_ps4_horizontal";
+
     private int selecterCharacterIndex;
     private Color desiredColor;
+    private float _horizontal;
 
     [Header("List of character")]
     [SerializeField] List<ChacterSelectObject> characterList = new List<ChacterSelectObject>();
 
     [Header("UI References")]
     //[SerializeField] private TextMeshProUGUI Character1_Name;
-    [SerializeField] private Image PLayer1Splash;
+    [SerializeField] private Image PLayerSplash;
     [SerializeField] private Image BackgroundColor;
 
     [Header("Sounds")]
@@ -26,29 +30,40 @@ public class CharacterSelection : MonoBehaviour
         UpdateCharacterSelectionScreen();
     }
 
+    private void FixedUpdate()
+    {
+        _horizontal = Input.GetAxis(JoystickHorizontal);
+    }
+
     private void LeftArrow()
     {
-        selecterCharacterIndex--;
-        if (selecterCharacterIndex < 0)
+        if (_horizontal < 0)
         {
-            selecterCharacterIndex = characterList.Count - 1;
+            selecterCharacterIndex--;
+            if (selecterCharacterIndex < 0)
+            {
+                selecterCharacterIndex = characterList.Count - 1;
+            }
         }
         UpdateCharacterSelectionScreen();
     }
 
     private void RightArrow()
     {
-        selecterCharacterIndex++;
-        if (selecterCharacterIndex == characterList.Count)
+        if (_horizontal > 0)
         {
-            selecterCharacterIndex = 0;
+            selecterCharacterIndex++;
+            if (selecterCharacterIndex == characterList.Count)
+            {
+                selecterCharacterIndex = 0;
+            }
         }
         UpdateCharacterSelectionScreen();
     }
 
     private void UpdateCharacterSelectionScreen()
     {
-        PLayer1Splash.sprite = characterList[selecterCharacterIndex].splash;
+        PLayerSplash.sprite = characterList[selecterCharacterIndex].splash;
         desiredColor = characterList[selecterCharacterIndex].characterColor;
     }
 

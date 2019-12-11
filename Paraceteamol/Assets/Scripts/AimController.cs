@@ -29,15 +29,15 @@ public class AimController : MonoBehaviour
     public float InhaleTime = 2;
 
     [Header("Analogico esquerdo")]
-    public string KeyboardHorizontal = "p1_horizontal";
-    public string KeyboardVertical = "p1_vertical";
+    public string KeyboardHorizontal;
+    public string KeyboardVertical;
 
     [Header("Analogico direito")]
-    public string JoystickHorizontal = "p1_ps4_R_horizontal";
-    public string JoystickVertical = "p1_ps4_R_vertical";
+    public string JoystickHorizontal;
+    public string JoystickVertical;
 
     [Header("Buttons")]
-    public string InhaleButton = "p1_fire1";
+    public string InhaleButton;
 
     private Vector2 _rightStickInput;
     private float _horizontal;
@@ -45,6 +45,7 @@ public class AimController : MonoBehaviour
     private GameObject _ballGO;
     public float _holdTimer;
     private float _cooldownTimer;
+    private float _strenght;
     #region State
     public enum State
     {
@@ -102,6 +103,7 @@ public class AimController : MonoBehaviour
         StartCoroutine((IEnumerator)info.Invoke(this, null));
     }
     #endregion
+
     /* 
      * States:
      *  Idle
@@ -111,14 +113,14 @@ public class AimController : MonoBehaviour
     */
 
     // Time that the player can keep Inhaling
-   /* private IEnumerator InhaleTimer(GameObject ballGameObject)
-    {
-        yield return new WaitForSeconds(InhaleTime);
+    /* private IEnumerator InhaleTimer(GameObject ballGameObject)
+     {
+         yield return new WaitForSeconds(InhaleTime);
 
-        InhaleParticles.Stop();
+         InhaleParticles.Stop();
 
-        state = State.Exhale;
-    }*/
+         state = State.Exhale;
+     }*/
 
     // Time the player can't use the inhale
     private IEnumerator Cooldown()
@@ -137,7 +139,8 @@ public class AimController : MonoBehaviour
         state = State.Idle;
         _holdTimer = InhaleTime;
         Time.timeScale = 1f;
-       _cooldownTimer =0;
+        _cooldownTimer = 0;
+        _strenght = Strenght;
     }
 
     bool cooldownAnimationCanPlay = true;
@@ -146,9 +149,9 @@ public class AimController : MonoBehaviour
         if (state == State.Cooldown)
         {
             chronometer.SetActive(true);
-           _cooldownTimer+= Time.deltaTime;
+            _cooldownTimer += Time.deltaTime;
 
-            if (_cooldownTimer>=CooldownTime)
+            if (_cooldownTimer >= CooldownTime)
             {
                 sightAnimator.SetTrigger("Reactivate");
                 chronometer.SetActive(false);
@@ -159,6 +162,7 @@ public class AimController : MonoBehaviour
 
         if (state == State.Inhale)
         {
+            Strenght++;
             _holdTimer -= Time.deltaTime;
 
             if (_holdTimer <= 0.0f)
@@ -169,7 +173,11 @@ public class AimController : MonoBehaviour
             }
         }
         else
+        {
             _holdTimer = InhaleTime;
+            Strenght = _strenght;
+        }
+
 
         // Testa se vai usar teclado ou controle
         #region Verifica Teclado
@@ -220,9 +228,11 @@ public class AimController : MonoBehaviour
                 triangleSight.SetActive(false);
                 arrowSight.SetActive(true);
                 ////Debug.Log("Inhale");
+
                 if (Vector2.Distance(_ballGO.transform.position, Crosshair.transform.position) > .1f)
                 {
                     _ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, Crosshair.transform.position, Strenght);
+
                     if (hasntSetNewPlayer)
                     {
                         _ballGO.GetComponent<BallPhysics>().SetPlayerCurrentlyHolding(gameObject);
@@ -233,13 +243,15 @@ public class AimController : MonoBehaviour
                 {
                     _ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Held;
                     _ballGO.transform.position = Crosshair.transform.position;
+
+
                 }
                 break;
             case State.Cooldown:
 
                 if (cooldownAnimationCanPlay)
                 {
-                    Debug.Log(state);
+                    // Debug.Log(state);
                     sightAnimator.SetTrigger("Cooldown");
                     cooldownAnimationCanPlay = false;
                 }
@@ -253,7 +265,7 @@ public class AimController : MonoBehaviour
                 _ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
                 state = State.Cooldown;
                 cooldownAnimationCanPlay = true;
-                Debug.Log(state);
+                //Debug.Log(state);
                 break;
         }
     }

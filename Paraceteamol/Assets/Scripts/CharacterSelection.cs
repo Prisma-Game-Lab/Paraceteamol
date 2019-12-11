@@ -13,7 +13,7 @@ public class CharacterSelection : MonoBehaviour
     [FMODUnity.EventRef]
     public string ChangeRight;
 
-    private int selecterCharacterIndex;
+    private int selecterCharacterIndex = 0;
     private Color desiredColor;
     private float _horizontal;
 
@@ -36,10 +36,7 @@ public class CharacterSelection : MonoBehaviour
     private void FixedUpdate()
     {
         _horizontal = Input.GetAxis(JoystickHorizontal);
-    }
 
-    private void LeftArrow()
-    {
         if (_horizontal < 0)
         {
             FMODUnity.RuntimeManager.PlayOneShot(ChangeLeft);
@@ -48,15 +45,12 @@ public class CharacterSelection : MonoBehaviour
                 selecterCharacterIndex = characterList.Count - 1;
         }
         UpdateCharacterSelectionScreen();
-    }
 
-    private void RightArrow()
-    {
         if (_horizontal > 0)
         {
             FMODUnity.RuntimeManager.PlayOneShot(ChangeRight);
             selecterCharacterIndex++;
-            if(selecterCharacterIndex > characterList.Count - 1)
+            if (selecterCharacterIndex > characterList.Count - 1)
                 selecterCharacterIndex = 0;
 
         }

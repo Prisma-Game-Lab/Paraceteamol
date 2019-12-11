@@ -42,7 +42,19 @@ PrefabInstance:
       propertyPath: InhaleButton
       value: p1_ps4_fire1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: InhaleAs
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: ExhaleAs
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7762523905516901449, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}
+    - {fileID: 327933224742563992, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}
 --- !u!4 &1377062165770024486 stripped
 Transform:

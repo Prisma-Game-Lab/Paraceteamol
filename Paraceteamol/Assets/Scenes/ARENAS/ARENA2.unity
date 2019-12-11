@@ -749,6 +749,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1001996621479469261, guid: ec3c87f5882560340a194b4e2b6bf82d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1001996621479469263, guid: ec3c87f5882560340a194b4e2b6bf82d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1182,7 +1187,7 @@ PrefabInstance:
     - target: {fileID: 4524547352259947101, guid: 0ff5b8e6bfee31748922f3b433c3b90d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4078150863488084491, guid: 0ff5b8e6bfee31748922f3b433c3b90d,
         type: 3}
@@ -1424,6 +1429,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: RedGoal
+      value: 
+      objectReference: {fileID: 1873717602}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: BlueGoal
+      value: 
+      objectReference: {fileID: 1873717601}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: EndGame
+      value: 
+      objectReference: {fileID: 155416547}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: BallRB
+      value: 
+      objectReference: {fileID: 7867437368994823362}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: ScoreTextRedGoal
+      value: 
+      objectReference: {fileID: 1888134658}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: ScoreTextBlueGoal
+      value: 
+      objectReference: {fileID: 2058238601}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: UIText
+      value: 
+      objectReference: {fileID: 179766189}
     - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: uiTimer
@@ -1865,6 +1898,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1873717599}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1873717601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5994038259579035896, guid: 4750b7cc6dbab9140ac1e6c2dd7d3a1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1873717599}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1873717602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5994038259543927475, guid: 4750b7cc6dbab9140ac1e6c2dd7d3a1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1873717599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1886970072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,6 +2236,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 1001996621479469261, guid: ec3c87f5882560340a194b4e2b6bf82d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1001996621479469263, guid: ec3c87f5882560340a194b4e2b6bf82d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2219,7 +2269,7 @@ PrefabInstance:
     - target: {fileID: 1001996621479469263, guid: ec3c87f5882560340a194b4e2b6bf82d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1001996621479469263, guid: ec3c87f5882560340a194b4e2b6bf82d,
         type: 3}
@@ -2244,18 +2294,23 @@ PrefabInstance:
     - target: {fileID: 1001996621479469263, guid: ec3c87f5882560340a194b4e2b6bf82d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1001996621921447245, guid: ec3c87f5882560340a194b4e2b6bf82d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.64
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1001996621479469262, guid: ec3c87f5882560340a194b4e2b6bf82d,
         type: 3}
       propertyPath: exitPortal
       value: 
       objectReference: {fileID: 2006666631}
+    - target: {fileID: 1001996621921447245, guid: ec3c87f5882560340a194b4e2b6bf82d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1001996621921447245, guid: ec3c87f5882560340a194b4e2b6bf82d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3c87f5882560340a194b4e2b6bf82d, type: 3}
 --- !u!1001 &7867437368994823361
@@ -2388,3 +2443,9 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8810715001563072910, guid: 9590f955c9980cc4c83b1ea019d125e7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9590f955c9980cc4c83b1ea019d125e7, type: 3}
+--- !u!50 &7867437368994823362 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7867437369187820324, guid: 9590f955c9980cc4c83b1ea019d125e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7867437368994823361}
+  m_PrefabAsset: {fileID: 0}

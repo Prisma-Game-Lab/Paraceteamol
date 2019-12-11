@@ -187,16 +187,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2214521554557053338, guid: 83921b2057783c74596dd41b827acefd,
-        type: 3}
-      propertyPath: InputSound
-      value: event:/Footsteps
-      objectReference: {fileID: 0}
     - target: {fileID: 5485260640095702005, guid: 83921b2057783c74596dd41b827acefd,
         type: 3}
       propertyPath: _ballGO
       value: 
       objectReference: {fileID: 524977277}
+    - target: {fileID: 2214521554557053338, guid: 83921b2057783c74596dd41b827acefd,
+        type: 3}
+      propertyPath: InputSound
+      value: event:/Footsteps
+      objectReference: {fileID: 0}
     - target: {fileID: 5416386254397904871, guid: 83921b2057783c74596dd41b827acefd,
         type: 3}
       propertyPath: m_IsActive
@@ -292,16 +292,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7225245539654304981, guid: 71605d9917c42b44985cf9a4a1a7643a,
-        type: 3}
-      propertyPath: InputSound
-      value: event:/Footsteps
-      objectReference: {fileID: 0}
     - target: {fileID: 3954506175043970746, guid: 71605d9917c42b44985cf9a4a1a7643a,
         type: 3}
       propertyPath: _ballGO
       value: 
       objectReference: {fileID: 524977277}
+    - target: {fileID: 7225245539654304981, guid: 71605d9917c42b44985cf9a4a1a7643a,
+        type: 3}
+      propertyPath: InputSound
+      value: event:/Footsteps
+      objectReference: {fileID: 0}
     - target: {fileID: 3590613062755924648, guid: 71605d9917c42b44985cf9a4a1a7643a,
         type: 3}
       propertyPath: m_IsActive
@@ -397,36 +397,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -1748828341076071169, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 97.437004
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044359802397733252, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -26.105896
-      objectReference: {fileID: 0}
-    - target: {fileID: 2976664407796355915, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 209.33199
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138289329666363852, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 163.843
-      objectReference: {fileID: 0}
-    - target: {fileID: -2890259731753800440, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -22.764002
-      objectReference: {fileID: 0}
-    - target: {fileID: -1170297298343402169, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -46.456
-      objectReference: {fileID: 0}
     - target: {fileID: 6978167239676507658, guid: 1cef199d0b37ea34bab25b37556db200,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -466,6 +436,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.97928995
+      objectReference: {fileID: 0}
+    - target: {fileID: -1748828341076071169, guid: 1cef199d0b37ea34bab25b37556db200,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 97.437004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2976664407796355915, guid: 1cef199d0b37ea34bab25b37556db200,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 209.33199
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138289329666363852, guid: 1cef199d0b37ea34bab25b37556db200,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 163.843
+      objectReference: {fileID: 0}
+    - target: {fileID: -2890259731753800440, guid: 1cef199d0b37ea34bab25b37556db200,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -22.764002
+      objectReference: {fileID: 0}
+    - target: {fileID: -1170297298343402169, guid: 1cef199d0b37ea34bab25b37556db200,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -46.456
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044359802397733252, guid: 1cef199d0b37ea34bab25b37556db200,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -26.105896
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 6684329979152636602, guid: 1cef199d0b37ea34bab25b37556db200,
@@ -944,11 +944,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7867437369187820324, guid: 9590f955c9980cc4c83b1ea019d125e7,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7867437369187820322, guid: 9590f955c9980cc4c83b1ea019d125e7,
         type: 3}
       propertyPath: Direction.x
@@ -968,6 +963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: inputsound
       value: event:/Bola
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867437369187820324, guid: 9590f955c9980cc4c83b1ea019d125e7,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7867437370227208479, guid: 9590f955c9980cc4c83b1ea019d125e7,
         type: 3}
@@ -1062,6 +1062,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1103600711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6035373376570288526, guid: a7bd272d6650dc24ab04856c2e885ebc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1624172138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1156770396 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2879514227077014100, guid: 0ff5b8e6bfee31748922f3b433c3b90d,
@@ -1693,6 +1699,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: ScoreTextRedGoal
+      value: 
+      objectReference: {fileID: 1408451731}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: ScoreTextBlueGoal
+      value: 
+      objectReference: {fileID: 1156770396}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: UIText
+      value: 
+      objectReference: {fileID: 471766383}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: RedGoal
+      value: 
+      objectReference: {fileID: 1103600711}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: BlueGoal
+      value: 
+      objectReference: {fileID: 1906711021}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: BallRB
+      value: 
+      objectReference: {fileID: 524977278}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: EndGame
+      value: 
+      objectReference: {fileID: 471766386}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: startTime
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
+      propertyPath: inputmusica
+      value: event:/Partidas OST
+      objectReference: {fileID: 0}
     - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: uiTimer
@@ -1723,42 +1765,6 @@ PrefabInstance:
       propertyPath: startTime
       value: 150
       objectReference: {fileID: 0}
-    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
-      propertyPath: ScoreTextRedGoal
-      value: 
-      objectReference: {fileID: 1408451731}
-    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
-      propertyPath: ScoreTextBlueGoal
-      value: 
-      objectReference: {fileID: 1156770396}
-    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
-      propertyPath: UIText
-      value: 
-      objectReference: {fileID: 471766383}
-    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
-      propertyPath: RedGoal
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
-      propertyPath: BlueGoal
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
-      propertyPath: BallRB
-      value: 
-      objectReference: {fileID: 524977278}
-    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
-      propertyPath: EndGame
-      value: 
-      objectReference: {fileID: 471766386}
-    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
-      propertyPath: startTime
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
-      propertyPath: inputmusica
-      value: event:/Partidas OST
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
 --- !u!114 &1681195034 stripped
@@ -1773,6 +1779,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abe1ffeb311a664d9c6eb5ac7055ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1906711021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6035373376399877061, guid: a7bd272d6650dc24ab04856c2e885ebc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1624172138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2013703769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1784,11 +1796,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerOne
-      objectReference: {fileID: 0}
-    - target: {fileID: 1191921461621250280, guid: 5c83de4464650b14eace2ee0c58096b1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224524919114344056, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
@@ -1845,6 +1852,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1324567088083354650, guid: 5c83de4464650b14eace2ee0c58096b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.041461132
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029202573715942455, guid: 5c83de4464650b14eace2ee0c58096b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0642488
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888928044102386710, guid: 5c83de4464650b14eace2ee0c58096b1,
+        type: 3}
+      propertyPath: _ballGO
+      value: 
+      objectReference: {fileID: 524977277}
+    - target: {fileID: 8028095976100219592, guid: 5c83de4464650b14eace2ee0c58096b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.031691495
+      objectReference: {fileID: 0}
     - target: {fileID: 1929844593118653771, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
       propertyPath: m_Enabled
@@ -1860,11 +1887,11 @@ PrefabInstance:
       propertyPath: InputSound
       value: event:/Footsteps
       objectReference: {fileID: 0}
-    - target: {fileID: 5888928044102386710, guid: 5c83de4464650b14eace2ee0c58096b1,
+    - target: {fileID: 8216286440575750223, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
-      propertyPath: _ballGO
-      value: 
-      objectReference: {fileID: 524977277}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6502471883572880594, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
       propertyPath: m_IsActive
@@ -1875,30 +1902,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3716300349112293665, guid: 5c83de4464650b14eace2ee0c58096b1,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.3372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 8216286440575750223, guid: 5c83de4464650b14eace2ee0c58096b1,
+    - target: {fileID: 1191921461621250280, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8028095976100219592, guid: 5c83de4464650b14eace2ee0c58096b1,
+    - target: {fileID: 3716300349112293665, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.031691495
-      objectReference: {fileID: 0}
-    - target: {fileID: 1324567088083354650, guid: 5c83de4464650b14eace2ee0c58096b1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.041461132
-      objectReference: {fileID: 0}
-    - target: {fileID: 3029202573715942455, guid: 5c83de4464650b14eace2ee0c58096b1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.0642488
+      propertyPath: m_Color.a
+      value: 0.3372549
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c83de4464650b14eace2ee0c58096b1, type: 3}
@@ -1975,21 +1987,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2175662968244655764, guid: 1ba9b86e80d25584182e8a5807083b49,
-        type: 3}
-      propertyPath: InputSound
-      value: event:/Footsteps
-      objectReference: {fileID: 0}
     - target: {fileID: 5518458836391195899, guid: 1ba9b86e80d25584182e8a5807083b49,
         type: 3}
       propertyPath: _ballGO
       value: 
       objectReference: {fileID: 524977277}
-    - target: {fileID: 5449585305312192745, guid: 1ba9b86e80d25584182e8a5807083b49,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 545470004323128943, guid: 1ba9b86e80d25584182e8a5807083b49,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -1999,6 +2001,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0642488
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175662968244655764, guid: 1ba9b86e80d25584182e8a5807083b49,
+        type: 3}
+      propertyPath: InputSound
+      value: event:/Footsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449585305312192745, guid: 1ba9b86e80d25584182e8a5807083b49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ba9b86e80d25584182e8a5807083b49, type: 3}

@@ -19,7 +19,7 @@ public class CharacterSelection : MonoBehaviour
 
     [Header("UI References")]
     //[SerializeField] private TextMeshProUGUI Character1_Name;
-    [SerializeField] private Image PLayer1Splash;
+    [SerializeField] private Image PLayerSplash;
     [SerializeField] private Image BackgroundColor;
 
     [Header("Sounds")]
@@ -30,10 +30,14 @@ public class CharacterSelection : MonoBehaviour
         UpdateCharacterSelectionScreen();
     }
 
+    private void FixedUpdate()
+    {
+        _horizontal = Input.GetAxis(JoystickHorizontal);
+    }
+
     private void LeftArrow()
     {
-        selecterCharacterIndex--;
-        if (selecterCharacterIndex < 0)
+        if (_horizontal < 0)
         {
             FMODUnity.RuntimeManager.PlayOneShot (ChangeLeft);
             selecterCharacterIndex = characterList.Count - 1;
@@ -43,8 +47,7 @@ public class CharacterSelection : MonoBehaviour
 
     private void RightArrow()
     {
-        selecterCharacterIndex++;
-        if (selecterCharacterIndex == characterList.Count)
+        if (_horizontal > 0)
         {
             FMODUnity.RuntimeManager.PlayOneShot (ChangeRight);
             selecterCharacterIndex = 0;
@@ -54,7 +57,7 @@ public class CharacterSelection : MonoBehaviour
 
     private void UpdateCharacterSelectionScreen()
     {
-        PLayer1Splash.sprite = characterList[selecterCharacterIndex].splash;
+        PLayerSplash.sprite = characterList[selecterCharacterIndex].splash;
         desiredColor = characterList[selecterCharacterIndex].characterColor;
     }
 

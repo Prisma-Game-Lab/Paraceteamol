@@ -7,9 +7,13 @@ using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
+    [FMODUnity.EventRef]
+    public string ChangeLeft;
+    [FMODUnity.EventRef]
+    public string ChangeRight;
     private int selecterCharacterIndex;
     private Color desiredColor;
-
+    
     [Header("List of character")]
     [SerializeField] List<ChacterSelectObject> characterList = new List<ChacterSelectObject>();
 
@@ -31,6 +35,7 @@ public class CharacterSelection : MonoBehaviour
         selecterCharacterIndex--;
         if (selecterCharacterIndex < 0)
         {
+            FMODUnity.RuntimeManager.PlayOneShot (ChangeLeft);
             selecterCharacterIndex = characterList.Count - 1;
         }
         UpdateCharacterSelectionScreen();
@@ -41,6 +46,7 @@ public class CharacterSelection : MonoBehaviour
         selecterCharacterIndex++;
         if (selecterCharacterIndex == characterList.Count)
         {
+            FMODUnity.RuntimeManager.PlayOneShot (ChangeRight);
             selecterCharacterIndex = 0;
         }
         UpdateCharacterSelectionScreen();

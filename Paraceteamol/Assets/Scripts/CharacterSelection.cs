@@ -13,9 +13,10 @@ public class CharacterSelection : MonoBehaviour
     [FMODUnity.EventRef]
     public string ChangeRight;
 
-    private int selecterCharacterIndex;
+    private int selecterCharacterIndex = 0;
     private Color desiredColor;
     private float _horizontal;
+    private bool _canSelect = true;
 
     [Header("List of character")]
     [SerializeField] List<ChacterSelectObject> characterList = new List<ChacterSelectObject>();
@@ -36,25 +37,28 @@ public class CharacterSelection : MonoBehaviour
     private void FixedUpdate()
     {
         _horizontal = Input.GetAxis(JoystickHorizontal);
-    }
 
-    private void LeftArrow()
-    {
-        if (_horizontal < 0)
+        if (_horizontal < 0f && _canSelect)
         {
             FMODUnity.RuntimeManager.PlayOneShot(ChangeLeft);
-            selecterCharacterIndex = characterList.Count - 1;
+            selecterCharacterIndex--;
+            _canSelect = false;
         }
-        UpdateCharacterSelectionScreen();
-    }
-
-    private void RightArrow()
-    {
-        if (_horizontal > 0)
+        else if (_horizontal > 0f && _canSelect)
         {
             FMODUnity.RuntimeManager.PlayOneShot(ChangeRight);
-            selecterCharacterIndex = 0;
+            selecterCharacterIndex++;
+            _canSelect = false;
         }
+        else if (_horizontal == 0)
+            _canSelect = true;
+
+        // Verifica a integridade da variavel
+        if (selecterCharacterIndex < 0)
+            selecterCharacterIndex = characterList.Count - 1;
+        else if (selecterCharacterIndex > characterList.Count - 1)
+            selecterCharacterIndex = 0;
+
         UpdateCharacterSelectionScreen();
     }
 

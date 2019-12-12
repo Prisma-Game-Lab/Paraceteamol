@@ -1039,35 +1039,6 @@ Rigidbody2D:
     type: 3}
   m_PrefabInstance: {fileID: 524977275}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &537916042 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3836860997848890508, guid: 7fe700a91d4c11e43a764de677ff3252,
-    type: 3}
-  m_PrefabInstance: {fileID: 1681195032}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &537916047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537916042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Partidas OST
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &735206186 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 224524919114344059, guid: 5c83de4464650b14eace2ee0c58096b1,
@@ -1683,16 +1654,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3836860997848890508, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: m_Name
-      value: GameManeger
-      objectReference: {fileID: 0}
     - target: {fileID: 3836860997848890509, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: PauseMenuUI
       value: 
       objectReference: {fileID: 471766385}
+    - target: {fileID: 3836860997848890508, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManeger
+      objectReference: {fileID: 0}
     - target: {fileID: 3836860997848890510, guid: 7fe700a91d4c11e43a764de677ff3252,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1748,36 +1719,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: uiTimer
-      value: 
-      objectReference: {fileID: 471766383}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: resultado
-      value: 
-      objectReference: {fileID: 471766384}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: player1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: player2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: EndGame
-      value: 
-      objectReference: {fileID: 471766386}
-    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
-        type: 3}
-      propertyPath: startTime
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
       propertyPath: ScoreTextRedGoal
       value: 
@@ -1818,6 +1759,36 @@ PrefabInstance:
       propertyPath: Inputmusica
       value: event:/Partidas OST
       objectReference: {fileID: 0}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: uiTimer
+      value: 
+      objectReference: {fileID: 471766383}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: resultado
+      value: 
+      objectReference: {fileID: 471766384}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: EndGame
+      value: 
+      objectReference: {fileID: 471766386}
+    - target: {fileID: 3836860997848890511, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: startTime
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
 --- !u!114 &1681195034 stripped
@@ -1826,7 +1797,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1681195032}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537916042}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7abe1ffeb311a664d9c6eb5ac7055ace, type: 3}

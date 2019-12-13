@@ -1372,7 +1372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.499996, y: 175.2282}
+  m_AnchoredPosition: {x: 52.499996, y: 165.48}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7124149234039316184
@@ -1520,7 +1520,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3aa63d9fd4072e141b1096994f00768c, type: 3}
+    m_Font: {fileID: 12800000, guid: 29bd1eec9f1c5bb4a97fe542b9da32de, type: 3}
     m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
@@ -1892,11 +1892,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7752723710463398165}
     m_Modifications:
-    - target: {fileID: 1476480141874558126, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
-        type: 3}
-      propertyPath: m_Name
-      value: Placar time 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5453879672667352780, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2002,6 +1997,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1476480141874558126, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
+        type: 3}
+      propertyPath: m_Name
+      value: Placar time 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4999509127324082581, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2052,6 +2052,12 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9053062140152137223, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 29bd1eec9f1c5bb4a97fe542b9da32de,
+        type: 3}
     - target: {fileID: 7617387575724113937, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
       propertyPath: m_Sprite
@@ -2078,11 +2084,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7752723710463398165}
     m_Modifications:
-    - target: {fileID: 1476480141874558126, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
-        type: 3}
-      propertyPath: m_Name
-      value: Placar time 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5453879672667352780, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2188,6 +2189,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1476480141874558126, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
+        type: 3}
+      propertyPath: m_Name
+      value: Placar time 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4999509127324082581, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2238,6 +2244,12 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 9053062140152137223, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 29bd1eec9f1c5bb4a97fe542b9da32de,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27aecfc6cc1e96648a5bfc4e0de06068, type: 3}
 --- !u!224 &1289423989295942303 stripped

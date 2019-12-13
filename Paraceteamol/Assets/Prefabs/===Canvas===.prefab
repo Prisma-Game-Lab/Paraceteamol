@@ -237,16 +237,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079818900752138824}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2509177515514694401}
+  m_Father: {fileID: 7364409653787949470}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53.8, y: -0.0000069141}
+  m_AnchoredPosition: {x: -53.8, y: -0}
   m_SizeDelta: {x: 90.5, y: 43.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2373677279779346105
@@ -1338,6 +1338,43 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Jogar Novamente
+--- !u!1 &6924051120284023227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7364409653787949470}
+  m_Layer: 5
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7364409653787949470
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924051120284023227}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8495780834345074147}
+  - {fileID: 2509177515514694401}
+  m_Father: {fileID: 7752723712085256536}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 52.499996, y: 175.2282}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7124149234039316184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,7 +1466,7 @@ GameObject:
   - component: {fileID: 229466152737576282}
   - component: {fileID: 4078150863488084491}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Numero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1445,14 +1482,13 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8495780834345074147}
-  m_Father: {fileID: 7752723712085256536}
-  m_RootOrder: 3
+  m_Children: []
+  m_Father: {fileID: 7364409653787949470}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 52.5, y: -49.9}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 129.02, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &229466152737576282
@@ -1484,7 +1520,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4b3151b318ff917408f51e5c24b59220, type: 3}
+    m_Font: {fileID: 12800000, guid: 3aa63d9fd4072e141b1096994f00768c, type: 3}
     m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
@@ -1646,7 +1682,7 @@ RectTransform:
   - {fileID: 7752723710463398165}
   - {fileID: 5190785486117586535}
   - {fileID: 8314736152670673990}
-  - {fileID: 2509177515514694401}
+  - {fileID: 7364409653787949470}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2003,12 +2039,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9053062140152137223, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 4b3151b318ff917408f51e5c24b59220,
-        type: 3}
-    - target: {fileID: 9053062140152137223, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
-        type: 3}
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
@@ -2188,12 +2218,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 8.1
       objectReference: {fileID: 0}
-    - target: {fileID: 9053062140152137223, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 4b3151b318ff917408f51e5c24b59220,
-        type: 3}
     - target: {fileID: 9053062140152137223, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
       propertyPath: m_Color.r

@@ -349,8 +349,8 @@ GameObject:
   - component: {fileID: 6208790582577823120}
   - component: {fileID: 5764481577628497570}
   - component: {fileID: 2115440132131902669}
-  - component: {fileID: 327933224742563992}
   - component: {fileID: 7762523905516901449}
+  - component: {fileID: 327933224742563992}
   m_Layer: 0
   m_Name: Player base
   m_TagString: Player
@@ -592,7 +592,7 @@ MonoBehaviour:
   InhaleButton: p1_fire1
   _holdTimer: 0
   state: 0
---- !u!82 &327933224742563992
+--- !u!82 &7762523905516901449
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -602,7 +602,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c31455d9684a2074eb412994b1161a0b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8237edfba9121a94c82774d558f814b6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -610,7 +610,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 126
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -688,7 +688,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &7762523905516901449
+--- !u!82 &327933224742563992
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -698,7 +698,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8237edfba9121a94c82774d558f814b6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c31455d9684a2074eb412994b1161a0b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -706,7 +706,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 126
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

@@ -32,11 +32,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8915885129856617504, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.68
-      objectReference: {fileID: 0}
     - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: InhaleButton
@@ -46,16 +41,31 @@ PrefabInstance:
         type: 3}
       propertyPath: InhaleAs
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2835058915892053138}
     - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: ExhaleAs
       value: 
+      objectReference: {fileID: 5219439742076641347}
+    - target: {fileID: 8915885129856617504, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.68
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7762523905516901449, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}
-    - {fileID: 327933224742563992, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}
+--- !u!82 &2835058915892053138 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7762523905516901449, guid: feb7fca989c4a0149b21c64ce79aa625,
+    type: 3}
+  m_PrefabInstance: {fileID: 5540027107890745563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5219439742076641347 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 327933224742563992, guid: feb7fca989c4a0149b21c64ce79aa625,
+    type: 3}
+  m_PrefabInstance: {fileID: 5540027107890745563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1377062165770024486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6917089167348786941, guid: feb7fca989c4a0149b21c64ce79aa625,

@@ -226,17 +226,19 @@ public class AimController : MonoBehaviour
                 ////Debug.Log("Idle");
                 if (Input.GetButtonDown(InhaleButton))
                     InhaleParticles.Play();
-                    InhaleAs.Play();
 
+                if (Input.GetButton(InhaleButton))
+                    InhaleAs.Play();
                 if (Input.GetButtonUp(InhaleButton))
                 {
                     //Debug.Log("Parou de apertar o botão.");
                     InhaleParticles.Stop();
                     ExhaleAs.Play();
+                    InhaleAs.Stop();
                     
 
                 }
-
+                
                 break;
             case State.Inhale:
                 bool hasntSetNewPlayer = true;
@@ -280,6 +282,9 @@ public class AimController : MonoBehaviour
                 _ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Release;
                 state = State.Cooldown;
                 cooldownAnimationCanPlay = true;
+                ExhaleAs.Play();
+                InhaleAs.Stop();
+                    
                 //Debug.Log(state);
                 break;
         }

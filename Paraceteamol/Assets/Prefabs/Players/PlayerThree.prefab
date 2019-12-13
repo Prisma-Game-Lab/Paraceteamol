@@ -1,85 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2817909866643066116
-PrefabInstance:
+--- !u!111 &1209135862788755641
+Animation:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1022426474984195787}
-    m_Modifications:
-    - target: {fileID: 1788796928741523248, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_Name
-      value: Tartaruga concept 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.51
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: -523175700495046161, guid: 1cef199d0b37ea34bab25b37556db200,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 6684329979152636602, guid: 1cef199d0b37ea34bab25b37556db200,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559863643322139768}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 9325a072b5c47204ca98e4c9073d052e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 9325a072b5c47204ca98e4c9073d052e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &4944876863831239936
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559863643322139768}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a960153467965b4a952461e99c47a99, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5894662728884527158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,4 +159,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6917089167348786941, guid: feb7fca989c4a0149b21c64ce79aa625,
     type: 3}
   m_PrefabInstance: {fileID: 5894662728884527158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7237850985696141068
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1022426474984195787}
+    m_Modifications:
+    - target: {fileID: 2979862986278198132, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_Name
+      value: Tartaruga concept 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275055149295898027, guid: 39fa38791253c934c8f85202f885154d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 39fa38791253c934c8f85202f885154d, type: 3}
+--- !u!1 &5559863643322139768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2979862986278198132, guid: 39fa38791253c934c8f85202f885154d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7237850985696141068}
   m_PrefabAsset: {fileID: 0}

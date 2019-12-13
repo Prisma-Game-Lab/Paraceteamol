@@ -568,21 +568,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JoystickHorizontal: p1_ps4_horizontal
+  JoystickSelection: p1_ps4_confirm
+  hasChosen: 0
+  chosenChar: 
   ChangeLeft: "event:/Mudar Sele\xE7\xE3o"
   ChangeRight: "event:/Mudar Sele\xE7\xE3o"
   characterList:
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: 8565539615794128561, guid: fcdd342f21693574e9e22e71caffe935,
+      type: 3}
+    characterName: Vovo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: -6550635914939843240, guid: 21e76028abe2ac64faa5926c0a6d17ed,
+      type: 3}
+    characterName: Fantasma
     characterColor: {r: 0, g: 0, b: 0, a: 0}
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: 5456439711077749865, guid: 1f744fc41b7c1f645b51f65cf6278cb1,
+      type: 3}
+    characterName: Tartaruga
     characterColor: {r: 0, g: 0, b: 0, a: 0}
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: 2719932799449261532, guid: 62dffb0427e6ee046acdff229549a0b8,
+      type: 3}
+    characterName: Robo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
+  PLayerOp: []
   PLayerSplash: {fileID: 1611270107}
   BackgroundColor: {fileID: 1768272884}
   backgroundMusic: {fileID: 0}
@@ -1249,7 +1257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.020019531, y: -0.7899933}
+  m_AnchoredPosition: {x: 0.020019531, y: -0.79000854}
   m_SizeDelta: {x: 8.04, y: 1.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635008230
@@ -1325,7 +1333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.6000061, y: -2.0899963}
+  m_AnchoredPosition: {x: -1.5999756, y: -2.0899963}
   m_SizeDelta: {x: 15.6, y: 4.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &856251949
@@ -1837,21 +1845,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JoystickHorizontal: p3_ps4_horizontal
+  JoystickSelection: p1_ps4_confirm
+  hasChosen: 0
+  chosenChar: 
   ChangeLeft: "event:/Mudar Sele\xE7\xE3o"
   ChangeRight: "event:/Mudar Sele\xE7\xE3o"
   characterList:
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: 8565539615794128561, guid: fcdd342f21693574e9e22e71caffe935,
+      type: 3}
+    characterName: Vovo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: -6550635914939843240, guid: 21e76028abe2ac64faa5926c0a6d17ed,
+      type: 3}
+    characterName: Fantasma
     characterColor: {r: 0, g: 0, b: 0, a: 0}
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: 5456439711077749865, guid: 1f744fc41b7c1f645b51f65cf6278cb1,
+      type: 3}
+    characterName: Tartaruga
     characterColor: {r: 0, g: 0, b: 0, a: 0}
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: 2719932799449261532, guid: 62dffb0427e6ee046acdff229549a0b8,
+      type: 3}
+    characterName: Robo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
+  PLayerOp: []
   PLayerSplash: {fileID: 1634936992}
   BackgroundColor: {fileID: 185464326}
   backgroundMusic: {fileID: 0}
@@ -2135,7 +2151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.7200012, y: -1.0899963}
+  m_AnchoredPosition: {x: 0.7199707, y: -1.0899963}
   m_SizeDelta: {x: 6.53, y: 2.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1509271223
@@ -3076,21 +3092,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JoystickHorizontal: p2_ps4_horizontal
+  JoystickSelection: p1_ps4_confirm
+  hasChosen: 0
+  chosenChar: 
   ChangeLeft: "event:/Mudar Sele\xE7\xE3o"
   ChangeRight: "event:/Mudar Sele\xE7\xE3o"
   characterList:
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: 8565539615794128561, guid: fcdd342f21693574e9e22e71caffe935,
+      type: 3}
+    characterName: Vovo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: -6550635914939843240, guid: 21e76028abe2ac64faa5926c0a6d17ed,
+      type: 3}
+    characterName: Fantasma
     characterColor: {r: 0, g: 0, b: 0, a: 0}
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: 5456439711077749865, guid: 1f744fc41b7c1f645b51f65cf6278cb1,
+      type: 3}
+    characterName: Tartaruga
     characterColor: {r: 0, g: 0, b: 0, a: 0}
-  - splash: {fileID: 0}
-    characterName: 
+  - splash: {fileID: 2719932799449261532, guid: 62dffb0427e6ee046acdff229549a0b8,
+      type: 3}
+    characterName: Robo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
+  PLayerOp: []
   PLayerSplash: {fileID: 1642115458}
   BackgroundColor: {fileID: 1708836469}
   backgroundMusic: {fileID: 0}
@@ -3914,9 +3938,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JoystickHorizontal: p4_ps4_horizontal
+  JoystickSelection: p1_ps4_confirm
+  hasChosen: 0
+  chosenChar: 
   ChangeLeft: "event:/Mudar Sele\xE7\xE3o"
   ChangeRight: "event:/Mudar Sele\xE7\xE3o"
-  characterList: []
+  characterList:
+  - splash: {fileID: 8565539615794128561, guid: fcdd342f21693574e9e22e71caffe935,
+      type: 3}
+    characterName: Vovo
+    characterColor: {r: 0, g: 0, b: 0, a: 0}
+  - splash: {fileID: -6550635914939843240, guid: 21e76028abe2ac64faa5926c0a6d17ed,
+      type: 3}
+    characterName: Fantasma
+    characterColor: {r: 0, g: 0, b: 0, a: 0}
+  - splash: {fileID: 5456439711077749865, guid: 1f744fc41b7c1f645b51f65cf6278cb1,
+      type: 3}
+    characterName: Tartaruga
+    characterColor: {r: 0, g: 0, b: 0, a: 0}
+  - splash: {fileID: 2719932799449261532, guid: 62dffb0427e6ee046acdff229549a0b8,
+      type: 3}
+    characterName: Robo
+    characterColor: {r: 0, g: 0, b: 0, a: 0}
+  PLayerOp: []
   PLayerSplash: {fileID: 1369194233}
   BackgroundColor: {fileID: 1158855510}
   backgroundMusic: {fileID: 0}

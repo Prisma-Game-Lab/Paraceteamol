@@ -8,6 +8,10 @@ using UnityEngine.UI;
 public class CharacterSelection : MonoBehaviour
 {
     public string JoystickHorizontal = "p1_ps4_horizontal";
+    public string JoystickSelection = "p1_ps4_confirm";
+    public bool hasChosen = false;
+    public string chosenChar;
+
     [FMODUnity.EventRef]
     public string ChangeLeft;
     [FMODUnity.EventRef]
@@ -20,6 +24,7 @@ public class CharacterSelection : MonoBehaviour
 
     [Header("List of character")]
     [SerializeField] List<ChacterSelectObject> characterList = new List<ChacterSelectObject>();
+    [SerializeField] private GameObject[] PLayerOp;
 
     [Header("UI References")]
     //[SerializeField] private TextMeshProUGUI Character1_Name;

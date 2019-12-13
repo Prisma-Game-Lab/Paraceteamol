@@ -9,6 +9,7 @@ public class CharacterSelection : MonoBehaviour
 {
     public string JoystickHorizontal = "p1_ps4_horizontal";
     public string JoystickSelection = "p1_ps4_confirm";
+    public string JoystickBack = "p1_ps4_cancel";
     public bool hasChosen = false;
     public string chosenChar;
 
@@ -41,30 +42,45 @@ public class CharacterSelection : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _horizontal = Input.GetAxis(JoystickHorizontal);
+        if (_canSelect)
+        {
+            _horizontal = Input.GetAxis(JoystickHorizontal);
 
-        if (_horizontal < 0f && _canSelect)
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(ChangeLeft);
-            selecterCharacterIndex--;
-            _canSelect = false;
+            if (_horizontal < 0f && _canSelect)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(ChangeLeft);
+                selecterCharacterIndex--;
+                _canSelect = false;
+            }
+            else if (_horizontal > 0f && _canSelect)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(ChangeRight);
+                selecterCharacterIndex++;
+                _canSelect = false;
+            }
+            else if (_horizontal == 0)
+                _canSelect = true;
+
+            // Verifica a integridade da variavel
+            if (selecterCharacterIndex < 0)
+                selecterCharacterIndex = characterList.Count - 1;
+            else if (selecterCharacterIndex > characterList.Count - 1)
+                selecterCharacterIndex = 0;
+
+            UpdateCharacterSelectionScreen();
+            if (Input.GetButtonDown(JoystickSelection))
+            {
+                if (selecterCharacterIndex == 0)
+                    chosenChar = "Vovo";
+                else if (selecterCharacterIndex == 1)
+                    chosenChar = "Fantasma";
+                else if (selecterCharacterIndex == 2)
+                    chosenChar = "Robo";
+                _canSelect = false;
+            }
         }
-        else if (_horizontal > 0f && _canSelect)
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(ChangeRight);
-            selecterCharacterIndex++;
-            _canSelect = false;
-        }
-        else if (_horizontal == 0)
+        if(Input.GetButtonDown(JoystickSelection))
             _canSelect = true;
-
-        // Verifica a integridade da variavel
-        if (selecterCharacterIndex < 0)
-            selecterCharacterIndex = characterList.Count - 1;
-        else if (selecterCharacterIndex > characterList.Count - 1)
-            selecterCharacterIndex = 0;
-
-        UpdateCharacterSelectionScreen();
     }
 
     private void UpdateCharacterSelectionScreen()

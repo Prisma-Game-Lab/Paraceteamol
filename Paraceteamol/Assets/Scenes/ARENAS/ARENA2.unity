@@ -1275,13 +1275,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341813477}
-  m_LocalRotation: {x: -0, y: -0, z: 0.18950793, w: 0.98187923}
+  m_LocalRotation: {x: -0, y: -0, z: -0.050622962, w: 0.99871784}
   m_LocalPosition: {x: 2.1, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 409161440}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 21.848001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.8030005}
 --- !u!1001 &1345029562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1754,6 +1754,16 @@ PrefabInstance:
       propertyPath: PauseMenuUI
       value: 
       objectReference: {fileID: 560277507}
+    - target: {fileID: 3836860997848890509, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: soundPause
+      value: event:/Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836860997848890509, guid: 7fe700a91d4c11e43a764de677ff3252,
+        type: 3}
+      propertyPath: soundResume
+      value: event:/Resume
+      objectReference: {fileID: 0}
     - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
       propertyPath: RedGoal
       value: 
@@ -2406,7 +2416,7 @@ Transform:
   m_Children:
   - {fileID: 868469771}
   m_Father: {fileID: 409161439}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1886970074
 MonoBehaviour:

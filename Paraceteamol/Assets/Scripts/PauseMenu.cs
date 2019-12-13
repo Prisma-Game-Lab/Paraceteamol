@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [FMODUnity.EventRef]
+    public string soundPause;
+    [FMODUnity.EventRef]
+    public string soundResume;
 
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
@@ -21,12 +25,15 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown(pauseButton1) || Input.GetButtonDown(pauseButton2) || Input.GetButtonDown(pauseButton3) || Input.GetButtonDown(pauseButton4))
         {
+            
             if (GameIsPaused)
             {
+                FMODUnity.RuntimeManager.PlayOneShot(soundResume);
                 Resume();
             }
             else
             {
+                FMODUnity.RuntimeManager.PlayOneShot(soundPause);
                 Pause();
             }
         }

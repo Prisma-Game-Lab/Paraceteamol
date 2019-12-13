@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MapSelectionController : MonoBehaviour
 {
+    [FMODUnity.EventRef]
+    public string SelectionSound;
 	public GameObject[] ButtonList;
 	[Space]
 	public GameObject ButtonSelector;
@@ -24,12 +26,15 @@ public class MapSelectionController : MonoBehaviour
 	{
 		if (Input.GetAxis(_horizontal) > 0 && _canSelect)
 		{
+            FMODUnity.RuntimeManager.PlayOneShot(SelectionSound);
 			_currentNum++;
 			_canSelect = false;
 		}
 		else if (Input.GetAxis(_horizontal) < 0 && _canSelect)
 		{
-			_currentNum--;
+            FMODUnity.RuntimeManager.PlayOneShot(SelectionSound);
+
+            _currentNum--;
 			_canSelect = false;
 		}
 		else if (Input.GetAxis(_horizontal) == 0)

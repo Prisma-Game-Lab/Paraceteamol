@@ -11,6 +11,8 @@ public class MapSelectionController : MonoBehaviour
 
 	private int _currentNum = 0;
 	private bool _canSelect = true;
+	private string _horizontal = "pall_ps4_horizontal";
+	private string _confirm = "pall_ps4_confirm";
 
 	private void Start()
 	{
@@ -20,19 +22,17 @@ public class MapSelectionController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		string horizontal = "pall_ps4_horizontal";
-
-		if (Input.GetAxis(horizontal) > 0 && _canSelect)
+		if (Input.GetAxis(_horizontal) > 0 && _canSelect)
 		{
 			_currentNum++;
 			_canSelect = false;
 		}
-		else if (Input.GetAxis(horizontal) < 0 && _canSelect)
+		else if (Input.GetAxis(_horizontal) < 0 && _canSelect)
 		{
 			_currentNum--;
 			_canSelect = false;
 		}
-		else if (Input.GetAxis(horizontal) == 0)
+		else if (Input.GetAxis(_horizontal) == 0)
 		{
 			_canSelect = true;
 		}
@@ -43,5 +43,14 @@ public class MapSelectionController : MonoBehaviour
 			_currentNum = 0;
 
 		ButtonSelector.transform.position = ButtonList[_currentNum].transform.position;
+
+		if (Input.GetButton(_confirm))
+			BtnClick(_currentNum);
+	}
+
+	private void BtnClick(int curNum)
+	{
+		//Debug.Log("Click on " + ButtonList[curNum].name);
+		ButtonList[curNum].GetComponent<Button>().onClick.Invoke();
 	}
 }

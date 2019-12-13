@@ -5,7 +5,8 @@ using UnityEngine;
 public class MatchScript : MonoBehaviour
 {
     [FMODUnity.EventRef]
-    public string inputmusica;
+    public string Inputmusica;
+    private Vector2 _oldvelocity;
     private Text _resultado;
     private float _timer;
     private bool _doOnce = false;
@@ -23,17 +24,32 @@ public class MatchScript : MonoBehaviour
     public GameObject BlueGoal;
     public GameObject EndGame;
     public Rigidbody2D BallRB;
+    public float BallTimer;
+ public IEnumerator StartCountdown()
+ {
+     
+        
+         yield return new WaitForSeconds(BallTimer);
+
+
+         BallRB.velocity = _oldvelocity;
+         BallRB.AddForce(new Vector2(0, -1) * 10, ForceMode2D.Impulse);
+
+     
+ }
+
     void Start()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(inputmusica);
+        FMODUnity.RuntimeManager.PlayOneShot(Inputmusica);
         ScoreRedTeam = 0;
         ScoreBlueTeam = 0;
         UpdateScore(ScoreTextBlueGoal, ScoreRedTeam);
         UpdateScore(ScoreTextRedGoal, ScoreBlueTeam);
-      
+        _oldvelocity = BallRB.velocity;
         _timer = startTime;
         Time.timeScale = 1f;
     }
+
 
     void FixedUpdate()
     {
@@ -53,11 +69,11 @@ public class MatchScript : MonoBehaviour
 
             if (ScoreRedTeam > ScoreBlueTeam)
             {
-                _resultado.text = "Player 1 won";
+                _resultado.text = "Time 1 ganhou!";
             }
             else if (ScoreRedTeam < ScoreBlueTeam)
             {
-                _resultado.text = "Player 2 won";
+                _resultado.text = "Time 2 ganhou!";
             }
             else
             {
@@ -66,16 +82,22 @@ public class MatchScript : MonoBehaviour
         }
 
     }
+    private void GoalEffects() {
+        Confetti.Play();
+        Goal.Play();
+        BallRB.gameObject.transform.position = new Vector2(0, 0);
+        BallRB.velocity = new Vector2(0, 0);
+        StartCoroutine(StartCountdown());
+
+
+    }
+
     public void RedTeamGol() {
         ScoreRedTeam += 1;
         UpdateScore(ScoreTextBlueGoal, ScoreRedTeam);
         Confetti = RedGoal.GetComponentInChildren<ParticleSystem>();
-        Confetti.Play();
-        Goal.Play();
-        BallRB.gameObject.transform.position = new Vector2(0, 0);
-        BallRB.AddForce(new Vector2(0, -1) * 10, ForceMode2D.Impulse);
-        
-       
+        GoalEffects();
+      
      
     }
     public void BlueTeamGol()
@@ -83,11 +105,8 @@ public class MatchScript : MonoBehaviour
         ScoreBlueTeam += 1;
         UpdateScore(ScoreTextRedGoal, ScoreBlueTeam);
         Confetti = BlueGoal.GetComponentInChildren<ParticleSystem>();
-        Confetti.Play();
-        Goal.Play();
-        BallRB.gameObject.transform.position = new Vector2(0, 0);
-        BallRB.AddForce(new Vector2(0, -1) * 10, ForceMode2D.Impulse);
-
+        GoalEffects();
+      
 
 
     }

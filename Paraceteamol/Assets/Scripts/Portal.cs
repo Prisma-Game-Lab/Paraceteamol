@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-
+    [FMODUnity.EventRef]
+    public string soundPortal;
     public GameObject exitPoint;
     public Portal exitPortal;
 
@@ -18,6 +19,7 @@ public class Portal : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Ball")){
             Debug.Log("Player entrou em portal");
+            FMODUnity.RuntimeManager.PlayOneShot(soundPortal);
             col.transform.position = exitPortal.exitPoint.transform.position;
         }
     }

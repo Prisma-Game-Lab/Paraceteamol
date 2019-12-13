@@ -1210,7 +1210,7 @@ GameObject:
   - component: {fileID: 3112875890965373276}
   - component: {fileID: 8793714627082967514}
   m_Layer: 0
-  m_Name: == MapSelectionCanvas 1
+  m_Name: == MapSelectionCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

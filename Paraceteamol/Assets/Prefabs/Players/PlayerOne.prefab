@@ -47,10 +47,36 @@ PrefabInstance:
       propertyPath: ExhaleAs
       value: 
       objectReference: {fileID: 5219439742076641347}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -526037030603357081, guid: f1bc2383b8fb3b54aa599d424f3d0a16,
+        type: 3}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.012949424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.79407454
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9150943
+      objectReference: {fileID: 0}
     - target: {fileID: 8915885129856617504, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.11372549
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}
@@ -79,11 +105,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1377062165770024486}
     m_Modifications:
-    - target: {fileID: 1143465142787843893, guid: da47f30cc9514ce41846a9d6501a23af,
-        type: 3}
-      propertyPath: m_Name
-      value: "velhinha vers\xE3o final 4"
-      objectReference: {fileID: 0}
     - target: {fileID: 1322383275893243968, guid: da47f30cc9514ce41846a9d6501a23af,
         type: 3}
       propertyPath: m_RootOrder
@@ -128,6 +149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.23647042
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143465142787843893, guid: da47f30cc9514ce41846a9d6501a23af,
+        type: 3}
+      propertyPath: m_Name
+      value: "velhinha vers\xE3o final 4"
       objectReference: {fileID: 0}
     - target: {fileID: 936675641355594950, guid: da47f30cc9514ce41846a9d6501a23af,
         type: 3}

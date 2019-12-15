@@ -396,8 +396,8 @@ MonoBehaviour:
     characterName: Robo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   PLayerOp:
-  - {fileID: 2175662968244655766, guid: ef36ed269cf847f40ba0d7004511033e, type: 3}
-  - {fileID: 2214521554557053336, guid: 64b5c36be8d2cb94886106a5086aad59, type: 3}
+  - {fileID: 2175662968244655766, guid: 2163bf6635b10f54ab958db7d25481fb, type: 3}
+  - {fileID: 2214521554557053336, guid: 3980bf72978d0e744ba22599d46a5dc2, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   PLayerSplash: {fileID: 517677074999967090}
@@ -832,8 +832,8 @@ MonoBehaviour:
     characterName: Robo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   PLayerOp:
-  - {fileID: 2175662968244655766, guid: f154662ef50a6c148a7e1983871883e3, type: 3}
-  - {fileID: 2214521554557053336, guid: 24bce11e4cf89724fa42e17cb1a8fb11, type: 3}
+  - {fileID: 2175662968244655766, guid: cf6083a8b66ca8c44a0f030598294ab8, type: 3}
+  - {fileID: 2214521554557053336, guid: 41c49dbf3b7015544afae59fd0bb8d61, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   PLayerSplash: {fileID: 517677075770861585}
@@ -2010,8 +2010,8 @@ MonoBehaviour:
     characterName: Robo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   PLayerOp:
-  - {fileID: 2175662968244655766, guid: b3deaeb19b194164eb7f9680031bbe4b, type: 3}
-  - {fileID: 2214521554557053336, guid: ce9710fad8fc02e4aacba3754940ad40, type: 3}
+  - {fileID: 2175662968244655766, guid: 120959c07d9657c409047a7acd0ec948, type: 3}
+  - {fileID: 2214521554557053336, guid: 789ade7f4d54ba641a806ea2a543e651, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   PLayerSplash: {fileID: 517677075278419622}
@@ -2136,8 +2136,8 @@ MonoBehaviour:
     characterName: Robo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   PLayerOp:
-  - {fileID: 2175662968244655766, guid: 87d8815aa12244e40acf597828adfed9, type: 3}
-  - {fileID: 2214521554557053336, guid: 6e3b0a23d33496147b63fab664ade8d9, type: 3}
+  - {fileID: 2175662968244655766, guid: cc099ad51ba72fe439a720f0db1e8c0e, type: 3}
+  - {fileID: 2214521554557053336, guid: fede70b982395d94e965e5ab5e636722, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   PLayerSplash: {fileID: 517677074949162533}

@@ -10,9 +10,9 @@ public class CharacterSelection : MonoBehaviour
     public string JoystickHorizontal = "p1_ps4_horizontal";
     public string JoystickSelection = "p1_ps4_confirm";
     public string JoystickBack = "p1_ps4_cancel";
-    public bool hasChosen = false;
-    public string chosenChar;
-    public bool hasSelected = false;
+    public bool hasChosen = false;  //Identifica se o jogaodr já escolheu o personagem
+    public string chosenChar;  //Identifica o jogador escolhido
+    public bool hasSelected = false;  //Bool usada para impedi o sprite de mudar quando o personagem for escolhido
 
     [FMODUnity.EventRef]
     public string ChangeLeft;

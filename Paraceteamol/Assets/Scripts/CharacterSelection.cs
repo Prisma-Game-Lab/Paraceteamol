@@ -12,6 +12,7 @@ public class CharacterSelection : MonoBehaviour
     public string JoystickBack = "p1_ps4_cancel";
     public bool hasChosen = false;
     public string chosenChar;
+    public bool hasSelected = false;
 
     [FMODUnity.EventRef]
     public string ChangeLeft;
@@ -22,10 +23,12 @@ public class CharacterSelection : MonoBehaviour
     private Color desiredColor;
     private float _horizontal;
     private bool _canSelect = true;
+    
+    
 
     [Header("List of character")]
     [SerializeField] List<ChacterSelectObject> characterList = new List<ChacterSelectObject>();
-    [SerializeField] private GameObject[] PLayerOp;
+    public GameObject[] PLayerOp;
 
     [Header("UI References")]
     //[SerializeField] private TextMeshProUGUI Character1_Name;
@@ -42,17 +45,19 @@ public class CharacterSelection : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_canSelect)
+        if (!hasSelected)
         {
             _horizontal = Input.GetAxis(JoystickHorizontal);
 
-            if (_horizontal < 0f && _canSelect)
+            //esquerda
+            if (_horizontal < -0.1f && _canSelect)
             {
                 FMODUnity.RuntimeManager.PlayOneShot(ChangeLeft);
                 selecterCharacterIndex--;
                 _canSelect = false;
             }
-            else if (_horizontal > 0f && _canSelect)
+            //direita
+            else if (_horizontal > 0.1f && _canSelect)
             {
                 FMODUnity.RuntimeManager.PlayOneShot(ChangeRight);
                 selecterCharacterIndex++;
@@ -68,7 +73,9 @@ public class CharacterSelection : MonoBehaviour
                 selecterCharacterIndex = 0;
 
             UpdateCharacterSelectionScreen();
-            if (Input.GetButtonDown(JoystickSelection))
+
+            //se o jogador pressionar X será salvo o personagem que ele escolheu e uma bool para indicar que já ouve a selação vira true
+            if (Input.GetButton(JoystickSelection))
             {
                 if (selecterCharacterIndex == 0)
                     chosenChar = "Vovo";
@@ -76,11 +83,18 @@ public class CharacterSelection : MonoBehaviour
                     chosenChar = "Fantasma";
                 else if (selecterCharacterIndex == 2)
                     chosenChar = "Robo";
-                _canSelect = false;
+                hasSelected = true;
+                hasChosen = true;
+                Debug.Log("Jogador escolheu");
             }
         }
-        if(Input.GetButtonDown(JoystickSelection))
-            _canSelect = true;
+
+        // se o jogador pressionar "O" ele voltar a poder selecionar um personagem e a bool vira false
+        if (Input.GetButton(JoystickBack))
+        {
+            hasSelected = false;
+            hasChosen = false;
+        }
     }
 
     private void UpdateCharacterSelectionScreen()

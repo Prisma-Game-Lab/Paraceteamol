@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598527847611773908}
   m_LocalRotation: {x: -0.67039514, y: 0.22487865, z: -0.22487865, w: 0.67039514}
-  m_LocalPosition: {x: -72, y: -29, z: 50.7}
+  m_LocalPosition: {x: -72, y: -414, z: 50.7}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2780728504367649986}
@@ -4761,11 +4761,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6345048058518950473}
     m_Modifications:
-    - target: {fileID: 8024124115904289997, guid: 3e1c2795a506776429e328d78faad893,
-        type: 3}
-      propertyPath: m_Name
-      value: Confetti Cone direita
-      objectReference: {fileID: 0}
     - target: {fileID: 2412334363110489424, guid: 3e1c2795a506776429e328d78faad893,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4820,6 +4815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -88.02801
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024124115904289997, guid: 3e1c2795a506776429e328d78faad893,
+        type: 3}
+      propertyPath: m_Name
+      value: Confetti Cone direita
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e1c2795a506776429e328d78faad893, type: 3}

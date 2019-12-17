@@ -1238,6 +1238,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 52.55
       objectReference: {fileID: 0}
+    - target: {fileID: 6713892029967253400, guid: df17f856fe913be43a2ac86ea759eaad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.63
+      objectReference: {fileID: 0}
     - target: {fileID: 6113876220650357104, guid: df17f856fe913be43a2ac86ea759eaad,
         type: 3}
       propertyPath: m_Enabled
@@ -1253,6 +1258,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 7790336766866013665, guid: df17f856fe913be43a2ac86ea759eaad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 421a65bef859e4343bddc092647076a2, type: 2}
     - target: {fileID: 5052507056064230038, guid: df17f856fe913be43a2ac86ea759eaad,
         type: 3}
       propertyPath: m_SortingOrder
@@ -1268,6 +1278,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 2798282856004245303, guid: df17f856fe913be43a2ac86ea759eaad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 421a65bef859e4343bddc092647076a2, type: 2}
     - target: {fileID: 6113876220650357109, guid: df17f856fe913be43a2ac86ea759eaad,
         type: 3}
       propertyPath: scoreText

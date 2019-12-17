@@ -1340,6 +1340,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 28.66
       objectReference: {fileID: 0}
+    - target: {fileID: 7660101098042734972, guid: 2d5bb94fbfec76f46a4506233fa818d2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.63
+      objectReference: {fileID: 0}
     - target: {fileID: 7186186311924338121, guid: 2d5bb94fbfec76f46a4506233fa818d2,
         type: 3}
       propertyPath: m_Enabled
@@ -2680,6 +2685,11 @@ PrefabInstance:
       propertyPath: _ballGO
       value: 
       objectReference: {fileID: 524977277}
+    - target: {fileID: 8028095976100219592, guid: 5c83de4464650b14eace2ee0c58096b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.031691495
+      objectReference: {fileID: 0}
     - target: {fileID: 1324567088083354650, guid: 5c83de4464650b14eace2ee0c58096b1,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -2689,11 +2699,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0642488
-      objectReference: {fileID: 0}
-    - target: {fileID: 8028095976100219592, guid: 5c83de4464650b14eace2ee0c58096b1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.031691495
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c83de4464650b14eace2ee0c58096b1, type: 3}

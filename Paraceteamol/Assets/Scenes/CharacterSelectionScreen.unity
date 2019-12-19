@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -348,6 +348,21 @@ PrefabInstance:
     - target: {fileID: 517677075441823187, guid: 0b2f4c168816371408557896229b0026,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069418977513510079, guid: 0b2f4c168816371408557896229b0026,
+        type: 3}
+      propertyPath: Event
+      value: "event:/Musica sele\xE7\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069418977513510079, guid: 0b2f4c168816371408557896229b0026,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069418977513510079, guid: 0b2f4c168816371408557896229b0026,
+        type: 3}
+      propertyPath: OverrideMaxDistance
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1155162222966488619, guid: 0b2f4c168816371408557896229b0026,

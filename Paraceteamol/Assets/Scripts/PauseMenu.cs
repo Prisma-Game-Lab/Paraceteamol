@@ -25,7 +25,6 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown(pauseButton1) || Input.GetButtonDown(pauseButton2) || Input.GetButtonDown(pauseButton3) || Input.GetButtonDown(pauseButton4))
         {
-            
             if (GameIsPaused)
             {
                 FMODUnity.RuntimeManager.PlayOneShot(soundResume);

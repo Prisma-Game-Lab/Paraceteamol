@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 97360975}
   - component: {fileID: 97360976}
+  - component: {fileID: 97360977}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -246,12 +247,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f05942efb2cc448ae9453281655ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Selection: "event:/Mudar Sele\xE7\xE3o"
+  Confirm: event:/Confirmar
   ButtonList:
   - {fileID: 923607451}
   - {fileID: 1560372141}
   - {fileID: 1745566255}
   - {fileID: 1177437767}
   ButtonSelector: {fileID: 1529745335}
+--- !u!114 &97360977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97360974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Menu
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &149702187
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class TitleScreenController : MonoBehaviour
 {
-	public GameObject[] ButtonList;
+    [FMODUnity.EventRef]
+    public string Selection;
+    [FMODUnity.EventRef]
+    public string Confirm;
+
+    public GameObject[] ButtonList;
 	[Space]
 	public GameObject ButtonSelector;
 
@@ -23,17 +28,19 @@ public class TitleScreenController : MonoBehaviour
 	{
 		if (Input.GetAxis(_vertical) < 0 && _canSelect)
 		{
-			_currentNum++;
+            FMODUnity.RuntimeManager.PlayOneShot(Selection);
+            _currentNum++;
 			_canSelect = false;
 		}
 		else if (Input.GetAxis(_vertical) > 0 && _canSelect)
 		{
-			_currentNum--;
+            FMODUnity.RuntimeManager.PlayOneShot(Selection);
+            _currentNum--;
 			_canSelect = false;
 		}
 		else if (Input.GetAxis(_vertical) == 0)
 		{
-			_canSelect = true;
+            _canSelect = true;
 		}
 
 		if (_currentNum < 0)
@@ -44,7 +51,8 @@ public class TitleScreenController : MonoBehaviour
 		ButtonSelector.transform.position = ButtonList[_currentNum].transform.position;
 
 		if (Input.GetButton(_confirm))
-			BtnClick(_currentNum);
+            FMODUnity.RuntimeManager.PlayOneShot(Confirm);
+            BtnClick(_currentNum);
 	}
 
 	private void BtnClick(int curNum)

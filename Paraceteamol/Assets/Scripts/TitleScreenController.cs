@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MapSelectionController : MonoBehaviour
+public class TitleScreenController : MonoBehaviour
 {
-    [FMODUnity.EventRef]
-    public string SelectionSound;
 	public GameObject[] ButtonList;
 	[Space]
 	public GameObject ButtonSelector;
 
 	private int _currentNum = 0;
 	private bool _canSelect = true;
-	private string _horizontal = "pall_ps4_horizontal";
+	private string _vertical = "pall_ps4_vertical";
 	private string _confirm = "pall_ps4_confirm";
 
 	private void Start()
@@ -21,23 +19,19 @@ public class MapSelectionController : MonoBehaviour
 		ButtonSelector.transform.position = ButtonList[0].transform.position;
 	}
 
-
 	private void FixedUpdate()
 	{
-		if (Input.GetAxis(_horizontal) > 0 && _canSelect)
+		if (Input.GetAxis(_vertical) < 0 && _canSelect)
 		{
-            FMODUnity.RuntimeManager.PlayOneShot(SelectionSound);
 			_currentNum++;
 			_canSelect = false;
 		}
-		else if (Input.GetAxis(_horizontal) < 0 && _canSelect)
+		else if (Input.GetAxis(_vertical) > 0 && _canSelect)
 		{
-            FMODUnity.RuntimeManager.PlayOneShot(SelectionSound);
-
-            _currentNum--;
+			_currentNum--;
 			_canSelect = false;
 		}
-		else if (Input.GetAxis(_horizontal) == 0)
+		else if (Input.GetAxis(_vertical) == 0)
 		{
 			_canSelect = true;
 		}

@@ -34,9 +34,7 @@ public class CharacterSelection : MonoBehaviour
     //[SerializeField] private TextMeshProUGUI Character1_Name;
     [SerializeField] private Image PLayerSplash;
     [SerializeField] private Image BackgroundColor;
-
-    [Header("Sounds")]
-    [SerializeField] private AudioClip backgroundMusic;
+    [SerializeField] private GameObject PLayerSpawn;
 
     private void Start()
     {
@@ -78,11 +76,13 @@ public class CharacterSelection : MonoBehaviour
             if (Input.GetButton(JoystickSelection))
             {
                 if (selecterCharacterIndex == 0)
-                    chosenChar = "Vovo";
+                    Instantiate(PLayerOp[0], PLayerSpawn.transform.position,  PLayerSpawn.transform.rotation);
                 else if (selecterCharacterIndex == 1)
-                    chosenChar = "Fantasma";
+                    Instantiate(PLayerOp[1], PLayerSpawn.transform.position,  PLayerSpawn.transform.rotation);
                 else if (selecterCharacterIndex == 2)
-                    chosenChar = "Robo";
+                    Instantiate(PLayerOp[2], PLayerSpawn.transform.position,  PLayerSpawn.transform.rotation);
+                else if (selecterCharacterIndex == 3)
+                    Instantiate(PLayerOp[3], PLayerSpawn.transform.position,  PLayerSpawn.transform.rotation);
                 hasSelected = true;
                 hasChosen = true;
                 Debug.Log("Jogador escolheu");
@@ -90,11 +90,11 @@ public class CharacterSelection : MonoBehaviour
         }
 
         // se o jogador pressionar "O" ele voltar a poder selecionar um personagem e a bool vira false
-        if (Input.GetButton(JoystickBack))
+        /*if (Input.GetButton(JoystickBack))
         {
             hasSelected = false;
             hasChosen = false;
-        }
+        }*/
     }
 
     private void UpdateCharacterSelectionScreen()

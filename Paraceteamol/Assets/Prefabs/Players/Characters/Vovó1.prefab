@@ -12,6 +12,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Vov\xF31"
       objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: HorizontalControl
+      value: p1_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: VerticalControl
+      value: p1_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickHorizontal
+      value: p1_ps4_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickVertical
+      value: p1_ps4_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JumpButton
+      value: p1_jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: Keyboard
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,31 +96,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: HorizontalControl
-      value: p3_horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: VerticalControl
-      value: p3_vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JoystickHorizontal
-      value: p3_ps4_horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JoystickVertical
-      value: p3_ps4_vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JumpButton
-      value: p3_jump
       objectReference: {fileID: 0}
     - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}

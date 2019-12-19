@@ -92,7 +92,14 @@ public class BallPhysics : MonoBehaviour
 		{
 			case State.Idle:
 				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("MovingPlatform"))
+				{
+					if (col.gameObject.CompareTag("Player"))
+					{
+						// Bota aqui pra tocar o som.
+					}
+
 					ReflectProjectile(_rb, col.contacts[0].normal);
+				}
 				break;
 			case State.Held:
 				if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("MovingPlatform"))

@@ -89,12 +89,6 @@ public class CharacterSelection : MonoBehaviour
             }
         }
 
-        // se o jogador pressionar "O" ele voltar a poder selecionar um personagem e a bool vira false
-        /*if (Input.GetButton(JoystickBack))
-        {
-            hasSelected = false;
-            hasChosen = false;
-        }*/
     }
 
     private void UpdateCharacterSelectionScreen()

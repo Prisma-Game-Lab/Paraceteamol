@@ -14,7 +14,6 @@ public class SceneControl : MonoBehaviour
 	[SerializeField] private GameObject PlacarUI;
 	[SerializeField] private GameObject TimerUI;
 
-	//private string _confirm = "pall_ps4_options";
 	private bool HasSelecterChar = true;
 	private bool aux = true;
 
@@ -33,10 +32,8 @@ public class SceneControl : MonoBehaviour
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 
-		//if (Input.GetButton(_confirm) && HasSelecterChar)
-		if (aux == true && characterSelectionsScript[0].hasChosen == true /*&& characterSelectionsScript[1].hasChosen == true && characterSelectionsScript[2].hasChosen == true && characterSelectionsScript[3].hasChosen == true*/)
+		if (aux == true && characterSelectionsScript[0].hasChosen == true && characterSelectionsScript[1].hasChosen == true && characterSelectionsScript[2].hasChosen == true && characterSelectionsScript[3].hasChosen == true)
 		{
-			//HasSelecterChar = false;
 			CharacterSelectionUI.SetActive(false);
 			PlacarUI.SetActive(true);
 			TimerUI.SetActive(true);

@@ -1355,7 +1355,7 @@ PrefabInstance:
       objectReference: {fileID: 179766189}
     - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
       propertyPath: Inputmusica
-      value: event:/Partidas OST
+      value: ' '
       objectReference: {fileID: 0}
     - target: {fileID: 1442928850, guid: 7fe700a91d4c11e43a764de677ff3252, type: 3}
       propertyPath: startTime

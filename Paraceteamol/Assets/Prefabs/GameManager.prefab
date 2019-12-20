@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1442928851}
   - component: {fileID: 1442928850}
   - component: {fileID: 8340051520953394411}
+  - component: {fileID: 1697518035988383886}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abe1ffeb311a664d9c6eb5ac7055ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPause: 
+  soundResume: 
   PauseMenuUI: {fileID: 0}
 --- !u!114 &3787190499428240966
 MonoBehaviour:
@@ -61,6 +64,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResetKey: 263
+  characterSelectionsScript: []
+  CharacterSelectionUI: {fileID: 0}
+  PlacarUI: {fileID: 0}
+  TimerUI: {fileID: 0}
 --- !u!82 &1442928851
 AudioSource:
   m_ObjectHideFlags: 0
@@ -182,6 +189,7 @@ MonoBehaviour:
   EndGame: {fileID: 0}
   BallRB: {fileID: 0}
   BallTimer: 0
+  BallTimerText: {fileID: 0}
 --- !u!82 &8340051520953394411
 AudioSource:
   m_ObjectHideFlags: 0
@@ -278,3 +286,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1697518035988383886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3836860997848890508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Partidas OST
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0

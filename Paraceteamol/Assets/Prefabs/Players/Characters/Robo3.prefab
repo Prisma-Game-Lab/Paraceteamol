@@ -169,6 +169,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robo3
       objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: HorizontalControl
+      value: p3_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: VerticalControl
+      value: p3_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickHorizontal
+      value: p3_ps4_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickVertical
+      value: p3_ps4_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JumpButton
+      value: p3_jump
+      objectReference: {fileID: 0}
     - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -223,31 +248,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: HorizontalControl
-      value: p3_horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: VerticalControl
-      value: p3_vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JoystickHorizontal
-      value: p3_ps4_horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JoystickVertical
-      value: p3_ps4_vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JumpButton
-      value: p3_jump
       objectReference: {fileID: 0}
     - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
@@ -313,7 +313,7 @@ PrefabInstance:
     - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.13725491
+      value: 0.34117648
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}
@@ -330,11 +330,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8378058763759817866}
     m_Modifications:
-    - target: {fileID: 878951170109492137, guid: 767b3c3a0bf208c4482bd3f63c66af46,
-        type: 3}
-      propertyPath: m_Name
-      value: robo novo longo
-      objectReference: {fileID: 0}
     - target: {fileID: 6815467084720864177, guid: 767b3c3a0bf208c4482bd3f63c66af46,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -399,6 +394,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 878951170109492137, guid: 767b3c3a0bf208c4482bd3f63c66af46,
+        type: 3}
+      propertyPath: m_Name
+      value: robo novo longo
       objectReference: {fileID: 0}
     - target: {fileID: 7288897438833492755, guid: 767b3c3a0bf208c4482bd3f63c66af46,
         type: 3}

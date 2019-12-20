@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1061280620258474437}
     m_Modifications:
-    - target: {fileID: 1864356935923520373, guid: 30a912bafdcdf0a44a98aced4a6a2699,
-        type: 3}
-      propertyPath: m_Name
-      value: fantasminha 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5544026496397638832, guid: 30a912bafdcdf0a44a98aced4a6a2699,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -82,6 +77,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2372045
       objectReference: {fileID: 0}
+    - target: {fileID: 1864356935923520373, guid: 30a912bafdcdf0a44a98aced4a6a2699,
+        type: 3}
+      propertyPath: m_Name
+      value: fantasminha 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30a912bafdcdf0a44a98aced4a6a2699, type: 3}
 --- !u!1001 &5855808623326125880
@@ -95,6 +95,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fantasma3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: HorizontalControl
+      value: p3_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: VerticalControl
+      value: p3_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickHorizontal
+      value: p3_ps4_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickVertical
+      value: p3_ps4_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JumpButton
+      value: p3_jump
       objectReference: {fileID: 0}
     - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
@@ -151,31 +176,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: HorizontalControl
-      value: p3_horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: VerticalControl
-      value: p3_vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JoystickHorizontal
-      value: p3_ps4_horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JoystickVertical
-      value: p3_ps4_vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JumpButton
-      value: p3_jump
-      objectReference: {fileID: 0}
     - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: KeyboardHorizontal
@@ -225,22 +225,22 @@ PrefabInstance:
     - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.13725491
+      value: 0.34117648
       objectReference: {fileID: 0}
     - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.8301887
+      value: 0.83137256
       objectReference: {fileID: 0}
     - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.029116495
+      value: 0.02745098
       objectReference: {fileID: 0}
     - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.019579919
+      value: 0.019607844
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}

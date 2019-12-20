@@ -2082,9 +2082,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadMenu
-        m_Mode: 1
+      - m_Target: {fileID: 3787190499428240966, guid: 7fe700a91d4c11e43a764de677ff3252,
+          type: 3}
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2102,6 +2103,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7752723710463398165}
     m_Modifications:
+    - target: {fileID: 1476480141874558126, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
+        type: 3}
+      propertyPath: m_Name
+      value: Placar time 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5453879672667352780, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2207,11 +2213,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1476480141874558126, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
-        type: 3}
-      propertyPath: m_Name
-      value: Placar time 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4999509127324082581, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2294,6 +2295,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7752723710463398165}
     m_Modifications:
+    - target: {fileID: 1476480141874558126, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
+        type: 3}
+      propertyPath: m_Name
+      value: Placar time 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5453879672667352780, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2398,11 +2404,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1476480141874558126, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
-        type: 3}
-      propertyPath: m_Name
-      value: Placar time 2
       objectReference: {fileID: 0}
     - target: {fileID: 4999509127324082581, guid: 27aecfc6cc1e96648a5bfc4e0de06068,
         type: 3}

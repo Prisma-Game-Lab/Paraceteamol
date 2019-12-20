@@ -21,11 +21,13 @@ public class TitleScreenController : MonoBehaviour
 
 	private void Start()
 	{
+        Time.timeScale = 1f;
 		ButtonSelector.transform.position = ButtonList[0].transform.position;
 	}
 
 	private void FixedUpdate()
 	{
+        
 		if (Input.GetAxis(_vertical) < 0 && _canSelect)
 		{
             FMODUnity.RuntimeManager.PlayOneShot(Selection);

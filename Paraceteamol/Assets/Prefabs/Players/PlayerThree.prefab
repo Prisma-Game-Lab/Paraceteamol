@@ -37,6 +37,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3286849348388133444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132073008880427345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d5d10d6701c6b4e92ca7449db6b818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5971702268715134642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,18 +64,6 @@ MonoBehaviour:
   m_Solvers:
   - {fileID: 3490852073547931667}
   m_Weight: 1
---- !u!114 &3286849348388133444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132073008880427345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63d5d10d6701c6b4e92ca7449db6b818, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2001617003319954719
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,11 +195,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022426474984195787}
     m_Modifications:
-    - target: {fileID: 1788796928741523248, guid: 9da82cde6caf0044296a37c447a87491,
-        type: 3}
-      propertyPath: m_Name
-      value: Tartaruga concept 3
-      objectReference: {fileID: 0}
     - target: {fileID: -523175700495046161, guid: 9da82cde6caf0044296a37c447a87491,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,6 +259,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788796928741523248, guid: 9da82cde6caf0044296a37c447a87491,
+        type: 3}
+      propertyPath: m_Name
+      value: Tartaruga concept 3
       objectReference: {fileID: 0}
     - target: {fileID: 6978167239676507658, guid: 9da82cde6caf0044296a37c447a87491,
         type: 3}
@@ -433,6 +433,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InhaleButton
       value: p3_ps4_fire1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.15294118
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}

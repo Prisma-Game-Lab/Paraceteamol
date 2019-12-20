@@ -70,27 +70,27 @@ PrefabInstance:
     - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: HorizontalControl
-      value: p3_horizontal
+      value: p2_horizontal
       objectReference: {fileID: 0}
     - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: VerticalControl
-      value: p3_vertical
+      value: p2_vertical
       objectReference: {fileID: 0}
     - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: JoystickHorizontal
-      value: p3_ps4_horizontal
+      value: p2_ps4_horizontal
       objectReference: {fileID: 0}
     - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: JoystickVertical
-      value: p3_ps4_vertical
+      value: p2_ps4_vertical
       objectReference: {fileID: 0}
     - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: JumpButton
-      value: p3_jump
+      value: p2_jump
       objectReference: {fileID: 0}
     - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}

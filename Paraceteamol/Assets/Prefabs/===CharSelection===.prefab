@@ -888,11 +888,11 @@ MonoBehaviour:
   PLayerOp:
   - {fileID: 2214521554557053336, guid: 977334e0c2e7dba418874384ab66e97f, type: 3}
   - {fileID: 2175662968244655766, guid: e9310eb6a148f864aa9c2d0a13d8b04d, type: 3}
-  - {fileID: 2175662968244655766, guid: cf6083a8b66ca8c44a0f030598294ab8, type: 3}
+  - {fileID: 2175662968244655766, guid: 2163bf6635b10f54ab958db7d25481fb, type: 3}
   - {fileID: 7225245539654304983, guid: cd05e3f1c52637d42b02369db060953f, type: 3}
   PLayerSplash: {fileID: 7973369157944670544}
   BackgroundColor: {fileID: 270592528703821536}
-  backgroundMusic: {fileID: 0}
+  PLayerSpawn: {fileID: 0}
 --- !u!1 &1153570871227254651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,7 +2654,7 @@ MonoBehaviour:
   - {fileID: 7225245539654304983, guid: cd05e3f1c52637d42b02369db060953f, type: 3}
   PLayerSplash: {fileID: 2454433324586444441}
   BackgroundColor: {fileID: 8724917780629185763}
-  backgroundMusic: {fileID: 0}
+  PLayerSpawn: {fileID: 0}
 --- !u!1 &6279009679466328549
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,11 +3057,11 @@ MonoBehaviour:
   PLayerOp:
   - {fileID: 7225245539654304983, guid: 425e1bc7af01e95418c2fe0991ca40ee, type: 3}
   - {fileID: 2214521554557053336, guid: ba1eea300435b334e9720969039bfae7, type: 3}
-  - {fileID: 2175662968244655766, guid: cf6083a8b66ca8c44a0f030598294ab8, type: 3}
+  - {fileID: 2175662968244655766, guid: 120959c07d9657c409047a7acd0ec948, type: 3}
   - {fileID: 2175662968244655766, guid: e9310eb6a148f864aa9c2d0a13d8b04d, type: 3}
   PLayerSplash: {fileID: 4073415278132654991}
   BackgroundColor: {fileID: 8157590952604188992}
-  backgroundMusic: {fileID: 0}
+  PLayerSpawn: {fileID: 0}
 --- !u!1 &8163492201160343179
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,12 +3494,12 @@ MonoBehaviour:
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   PLayerOp:
   - {fileID: 2175662968244655766, guid: 4e4675fa0b73a3b4c8c18a6f51bee499, type: 3}
-  - {fileID: 2214521554557053336, guid: fede70b982395d94e965e5ab5e636722, type: 3}
+  - {fileID: 2175662968244655766, guid: cc099ad51ba72fe439a720f0db1e8c0e, type: 3}
   - {fileID: 2214521554557053336, guid: 977334e0c2e7dba418874384ab66e97f, type: 3}
   - {fileID: 7225245539654304983, guid: cd05e3f1c52637d42b02369db060953f, type: 3}
   PLayerSplash: {fileID: 8689043939827950089}
   BackgroundColor: {fileID: 2950886914497678307}
-  backgroundMusic: {fileID: 0}
+  PLayerSpawn: {fileID: 0}
 --- !u!1 &8979752615999831516
 GameObject:
   m_ObjectHideFlags: 0

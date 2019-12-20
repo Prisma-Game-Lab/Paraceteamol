@@ -54,7 +54,7 @@ public class AimController : MonoBehaviour
 	public float _holdTimer;
 	private float _cooldownTimer;
 	private float _strenght;
-
+ 
 	#region State
 	public enum State
 	{
@@ -241,21 +241,25 @@ public class AimController : MonoBehaviour
 				bool hasntSetNewPlayer = true;
 				triangleSight.SetActive(false);
 				arrowSight.SetActive(true);
-				if (Vector2.Distance(_ballGO.transform.position, Crosshair.transform.position) > .1f)
-				{
-					_ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, Crosshair.transform.position, Strenght);
+                 
+                 
+                    if (Vector2.Distance(_ballGO.transform.position, Crosshair.transform.position) > .1f)
+                    {
+                        _ballGO.transform.position = Vector3.MoveTowards(_ballGO.transform.position, Crosshair.transform.position, Strenght);
 
-					if (hasntSetNewPlayer)
-					{
-						_ballGO.GetComponent<BallPhysics>().SetPlayerCurrentlyHolding(gameObject);
-						hasntSetNewPlayer = false;
-					}
-				}
-				else
-				{
-					_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Held;
-					_ballGO.transform.position = Crosshair.transform.position;
-				}
+                        if (hasntSetNewPlayer)
+                        {
+                            _ballGO.GetComponent<BallPhysics>().SetPlayerCurrentlyHolding(gameObject);
+                            hasntSetNewPlayer = false;
+                        }
+                    }
+                    else
+                    {
+                        _ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Held;
+                        _ballGO.transform.position = Crosshair.transform.position;
+                    }
+                
+                
 				break;
 			case State.Cooldown:
 				if (cooldownAnimationCanPlay)
@@ -287,8 +291,12 @@ public class AimController : MonoBehaviour
 				case State.Idle:
 					if (Input.GetButton(InhaleButton))
 					{
+                        if (_ballGO.GetComponent<BallPhysics>().state != BallPhysics.State.Held)
+                        {
 						_ballGO.GetComponent<BallPhysics>().state = BallPhysics.State.Held;
-						state = State.Inhale;
+                         
+                            state = State.Inhale;
+                        }
 					}
 					break;
 				case State.Inhale:

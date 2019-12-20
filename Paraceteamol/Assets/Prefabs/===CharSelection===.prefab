@@ -887,9 +887,9 @@ MonoBehaviour:
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   PLayerOp:
   - {fileID: 2214521554557053336, guid: 977334e0c2e7dba418874384ab66e97f, type: 3}
-  - {fileID: 2175662968244655766, guid: e9310eb6a148f864aa9c2d0a13d8b04d, type: 3}
+  - {fileID: 2175662968244655766, guid: 4667dd497249798409604656e1c553d8, type: 3}
   - {fileID: 2175662968244655766, guid: 2163bf6635b10f54ab958db7d25481fb, type: 3}
-  - {fileID: 7225245539654304983, guid: cd05e3f1c52637d42b02369db060953f, type: 3}
+  - {fileID: 7225245539654304983, guid: a3678ac5051fe364fa9833b2e5d47c2b, type: 3}
   PLayerSplash: {fileID: 7973369157944670544}
   BackgroundColor: {fileID: 270592528703821536}
   PLayerSpawn: {fileID: 0}
@@ -1794,7 +1794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.024993896}
+  m_AnchoredPosition: {x: 0, y: -0.024963379}
   m_SizeDelta: {x: 0, y: 0.049988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9020871156576845324
@@ -2649,9 +2649,9 @@ MonoBehaviour:
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   PLayerOp:
   - {fileID: 2175662968244655766, guid: cf6083a8b66ca8c44a0f030598294ab8, type: 3}
-  - {fileID: 2175662968244655766, guid: e9310eb6a148f864aa9c2d0a13d8b04d, type: 3}
+  - {fileID: 2175662968244655766, guid: 3a4d6f58b49735f4cbf7a36461437608, type: 3}
   - {fileID: 2214521554557053336, guid: 41c49dbf3b7015544afae59fd0bb8d61, type: 3}
-  - {fileID: 7225245539654304983, guid: cd05e3f1c52637d42b02369db060953f, type: 3}
+  - {fileID: 7225245539654304983, guid: d8948443e1ead274285766b4f6cba745, type: 3}
   PLayerSplash: {fileID: 2454433324586444441}
   BackgroundColor: {fileID: 8724917780629185763}
   PLayerSpawn: {fileID: 0}
@@ -3055,10 +3055,10 @@ MonoBehaviour:
     characterName: Tartaruga
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   PLayerOp:
-  - {fileID: 7225245539654304983, guid: 425e1bc7af01e95418c2fe0991ca40ee, type: 3}
+  - {fileID: 7225245539654304983, guid: f2908ea49dbdbb3408e28fcb25bfaf32, type: 3}
   - {fileID: 2214521554557053336, guid: ba1eea300435b334e9720969039bfae7, type: 3}
   - {fileID: 2175662968244655766, guid: 120959c07d9657c409047a7acd0ec948, type: 3}
-  - {fileID: 2175662968244655766, guid: e9310eb6a148f864aa9c2d0a13d8b04d, type: 3}
+  - {fileID: 2175662968244655766, guid: eaf5b64015d5de04086eebecea3698dd, type: 3}
   PLayerSplash: {fileID: 4073415278132654991}
   BackgroundColor: {fileID: 8157590952604188992}
   PLayerSpawn: {fileID: 0}
@@ -3493,10 +3493,10 @@ MonoBehaviour:
     characterName: Robo
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   PLayerOp:
-  - {fileID: 2175662968244655766, guid: 4e4675fa0b73a3b4c8c18a6f51bee499, type: 3}
+  - {fileID: 2175662968244655766, guid: 96cb93b21613c914b864bb81d8b98cc8, type: 3}
   - {fileID: 2175662968244655766, guid: cc099ad51ba72fe439a720f0db1e8c0e, type: 3}
-  - {fileID: 2214521554557053336, guid: 977334e0c2e7dba418874384ab66e97f, type: 3}
-  - {fileID: 7225245539654304983, guid: cd05e3f1c52637d42b02369db060953f, type: 3}
+  - {fileID: 2214521554557053336, guid: fede70b982395d94e965e5ab5e636722, type: 3}
+  - {fileID: 2175662968244655766, guid: 96cb93b21613c914b864bb81d8b98cc8, type: 3}
   PLayerSplash: {fileID: 8689043939827950089}
   BackgroundColor: {fileID: 2950886914497678307}
   PLayerSpawn: {fileID: 0}

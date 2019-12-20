@@ -7,12 +7,38 @@ public class SceneControl : MonoBehaviour
 {
 	[Tooltip("Botão do teclado usado para resetar a scene.")]
 	public KeyCode ResetKey;
+	public CharacterSelection[] characterSelectionsScript;
+
+	[Header("UI")]
+	[SerializeField] private GameObject CharacterSelectionUI;
+	[SerializeField] private GameObject PlacarUI;
+	[SerializeField] private GameObject TimerUI;
+
+	private bool HasSelecterChar = true;
+	private bool aux = true;
+
+	private void Start()
+	{
+		CharacterSelectionUI.SetActive(true);
+		PlacarUI.SetActive(false);
+		TimerUI.SetActive(false);
+		Time.timeScale = 0f;
+	}
 
 	private void FixedUpdate()
 	{
 		if (Input.GetKeyDown(ResetKey))
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
+
+		if (aux == true && characterSelectionsScript[0].hasChosen == true && characterSelectionsScript[1].hasChosen == true && characterSelectionsScript[2].hasChosen == true && characterSelectionsScript[3].hasChosen == true)
+		{
+			CharacterSelectionUI.SetActive(false);
+			PlacarUI.SetActive(true);
+			TimerUI.SetActive(true);
+			Time.timeScale = 1f;
+			aux = false;
 		}
 	}
 
@@ -21,10 +47,10 @@ public class SceneControl : MonoBehaviour
 		SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 	}
 
-    public void ReloadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+	public void ReloadScene()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
 
 	public void ExitGame()
 	{

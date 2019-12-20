@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1061280620258474437}
     m_Modifications:
-    - target: {fileID: 1864356935923520373, guid: 30a912bafdcdf0a44a98aced4a6a2699,
-        type: 3}
-      propertyPath: m_Name
-      value: fantasminha 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5544026496397638832, guid: 30a912bafdcdf0a44a98aced4a6a2699,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 5544026496397638832, guid: 30a912bafdcdf0a44a98aced4a6a2699,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.19
+      value: -5.29
       objectReference: {fileID: 0}
     - target: {fileID: 5544026496397638832, guid: 30a912bafdcdf0a44a98aced4a6a2699,
         type: 3}
@@ -70,17 +65,22 @@ PrefabInstance:
     - target: {fileID: 5544026496397638832, guid: 30a912bafdcdf0a44a98aced4a6a2699,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2372045
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 5544026496397638832, guid: 30a912bafdcdf0a44a98aced4a6a2699,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2372045
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 5544026496397638832, guid: 30a912bafdcdf0a44a98aced4a6a2699,
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2372045
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864356935923520373, guid: 30a912bafdcdf0a44a98aced4a6a2699,
+        type: 3}
+      propertyPath: m_Name
+      value: fantasminha 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30a912bafdcdf0a44a98aced4a6a2699, type: 3}
@@ -95,6 +95,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: HorizontalControl
+      value: p2_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: VerticalControl
+      value: p2_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickHorizontal
+      value: p2_ps4_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickVertical
+      value: p2_ps4_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JumpButton
+      value: p2_jump
       objectReference: {fileID: 0}
     - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
@@ -151,31 +176,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: HorizontalControl
-      value: p2_horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: VerticalControl
-      value: p2_vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JoystickHorizontal
-      value: p2_ps4_horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JoystickVertical
-      value: p2_ps4_vertical
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
-        type: 3}
-      propertyPath: JumpButton
-      value: p2_jump
-      objectReference: {fileID: 0}
     - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
         type: 3}
       propertyPath: KeyboardHorizontal
@@ -200,6 +200,47 @@ PrefabInstance:
         type: 3}
       propertyPath: InhaleButton
       value: p2_ps4_fire1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7276046642508184206, guid: de1bbfd1e296024408bdf499b6168dc9,
+        type: 3}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.04004982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.04004982
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.029116495
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.019579919
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}

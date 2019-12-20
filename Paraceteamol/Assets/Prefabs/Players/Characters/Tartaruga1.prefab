@@ -1,0 +1,247 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3322151646269069432
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1022426474984195787}
+    m_Modifications:
+    - target: {fileID: 4221969617592235995, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_Name
+      value: Tartaruga concept 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555316719584370948, guid: a3637a27f27828a4ab44d20208a81f87,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.39
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3637a27f27828a4ab44d20208a81f87, type: 3}
+--- !u!1001 &5894662728884527158
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5764481577628497568, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Name
+      value: Tartaruga1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: HorizontalControl
+      value: p3_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: VerticalControl
+      value: p3_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickHorizontal
+      value: p3_ps4_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickVertical
+      value: p3_ps4_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497570, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JumpButton
+      value: p3_jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764481577628497571, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: KeyboardHorizontal
+      value: p1_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: KeyboardVertical
+      value: p1_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickHorizontal
+      value: p1_ps4_R_horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: JoystickVertical
+      value: p1_ps4_R_vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115440132131902669, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: InhaleButton
+      value: p1_ps4_fire1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -526037030603357081, guid: f1bc2383b8fb3b54aa599d424f3d0a16,
+        type: 3}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.015686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.79607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343610169797470309, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.91764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.03529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.6784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183070774555265530, guid: feb7fca989c4a0149b21c64ce79aa625,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: feb7fca989c4a0149b21c64ce79aa625, type: 3}
+--- !u!4 &1022426474984195787 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6917089167348786941, guid: feb7fca989c4a0149b21c64ce79aa625,
+    type: 3}
+  m_PrefabInstance: {fileID: 5894662728884527158}
+  m_PrefabAsset: {fileID: 0}

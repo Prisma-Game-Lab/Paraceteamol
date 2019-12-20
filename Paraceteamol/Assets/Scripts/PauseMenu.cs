@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [FMODUnity.EventRef]
+    public string soundPause;
+    [FMODUnity.EventRef]
+    public string soundResume;
 
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
@@ -23,10 +27,12 @@ public class PauseMenu : MonoBehaviour
         {
             if (GameIsPaused)
             {
+                FMODUnity.RuntimeManager.PlayOneShot(soundResume);
                 Resume();
             }
             else
             {
+                FMODUnity.RuntimeManager.PlayOneShot(soundPause);
                 Pause();
             }
         }

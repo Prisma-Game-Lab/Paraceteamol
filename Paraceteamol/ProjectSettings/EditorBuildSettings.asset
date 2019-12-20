@@ -9,14 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Tela_inicial.unity
     guid: d106c002733ac3841880aea58c1dee77
   - enabled: 1
+    path: Assets/Scenes/CharacterSelectionScreen.unity
+    guid: 6e23e7d5c6d496f4aa1eb01c64a09458
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 3625de1797afa324280d7793ea8dbce7
+  - enabled: 1
+    path: Assets/Scenes/MapSelection.unity
+    guid: bba063b050ece3644a60d75883a9ee8d
+  - enabled: 1
+    path: Assets/Scenes/ARENAS/ARENA1.unity
+    guid: 8903610f09549e141a3cc0db815fc232
+  - enabled: 1
     path: Assets/Scenes/ARENAS/ARENA2.unity
     guid: 483ef225375650a4cb886220e75c356f
-  - enabled: 1
-    path: Assets/Scenes/Map_Selection.unity
-    guid: b4f47b04afabe0a4ea4018735ba3b960
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/ARENAS/ARENA3.unity
     guid: a47dcf6da6dffdd44b62fdd904cf00ad
@@ -27,6 +33,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ARENAS/ARENA5.unity
     guid: b4be7b1827936114d8113d74aabaca9e
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
-    guid: ed6925ea535afa348ad7ade3b2864c2a
+    path: Assets/Scenes/Credits.unity
+    guid: 2d32298d09e6870428299bb876b9df92
   m_configObjects: {}

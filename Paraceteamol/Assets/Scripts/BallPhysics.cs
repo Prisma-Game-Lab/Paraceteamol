@@ -3,21 +3,23 @@ using System.Collections;
 
 public class BallPhysics : MonoBehaviour
 {
+	[FMODUnity.EventRef]
+	public string inputsound;
 	[Header("Physics")]
 	[Tooltip("Velocidade da bola")]
 	public float Speed;
 	[Tooltip("Direcao inicial da bola")]
 	public Vector2 Direction = Vector2.one;
-    private GameObject GameManager;
-    private MatchScript _matchScript;
-    private GameObject playerCurrentlyHolding;
+	private GameObject GameManager;
+	private MatchScript _matchScript;
+	private GameObject playerCurrentlyHolding;
 
-    private AudioSource BallSound;
+	private AudioSource BallSound;
 	private Rigidbody2D _rb;
 	private Collider2D _col;
 	private float _startingSpeed;
 	private Collider2D _tempCol;
-    
+
 
 	#region StateMachine
 	public enum State
@@ -54,7 +56,7 @@ public class BallPhysics : MonoBehaviour
 
 	private void Awake()
 	{
-        GameManager = GameObject.Find("GameManeger");
+		GameManager = GameObject.Find("GameManeger");
 		_rb = GetComponent<Rigidbody2D>();
 		_rb.AddForce(Direction * Speed, ForceMode2D.Impulse);
 		BallSound = GetComponent<AudioSource>();
@@ -63,52 +65,40 @@ public class BallPhysics : MonoBehaviour
 	}
 
 	private void FixedUpdate()
-    {
-        Direction = _rb.velocity;
-      
+	{
+		Direction = _rb.velocity;
+
 		switch (state)
 		{
 			case State.Held:
-                _rb.velocity = Vector2.zero;
-				//_rb.isKinematic = true;
-				//_col.enabled = false;
-                
+				_rb.velocity = Vector2.zero;
 				break;
 			case State.Release:
-				//_rb.isKinematic = false;
-				//_col.enabled = true;
-              
 				Speed = _startingSpeed;
-             
-
-               
-				_rb.velocity = -ReleaseDirection(playerCurrentlyHolding.transform.position)*Speed ;
-                 
+				_rb.velocity = -ReleaseDirection(playerCurrentlyHolding.transform.position) * Speed;
 				state = State.Idle;
 				break;
- 
 		}
 	}
 
-    public void SetPlayerCurrentlyHolding(GameObject player)
-    {
-        playerCurrentlyHolding = player;
-    }
+	public void SetPlayerCurrentlyHolding(GameObject player)
+	{
+		playerCurrentlyHolding = player;
+	}
 
-
-    private void OnCollisionEnter2D(Collision2D col)
+	private void OnCollisionEnter2D(Collision2D col)
 	{
 		switch (state)
 		{
 			case State.Idle:
-               
-				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player")
-                    || col.gameObject.CompareTag("MovingPlatform"))
-				{ 
-               
-					ReflectProjectile(_rb, col.contacts[0].normal);
+				if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("MovingPlatform"))
+				{
+					if (col.gameObject.CompareTag("Player"))
+					{
+						// Bota aqui pra tocar o som.
+					}
 
-                  
+					ReflectProjectile(_rb, col.contacts[0].normal);
 				}
 				break;
 			case State.Held:
@@ -120,32 +110,30 @@ public class BallPhysics : MonoBehaviour
 				break;
 		}
 	}
-    private void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject == GameObject.Find("Time1"))
-        {
-        GameManager.GetComponent<MatchScript>().RedTeamGol();
-        }
-        else if (col.gameObject == GameObject.Find("Time2"))
-        {
-            GameManager.GetComponent<MatchScript>().BlueTeamGol();
-        }
-    
-    }
+
+	private void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.gameObject == GameObject.Find("Time1"))
+		{
+			GameManager.GetComponent<MatchScript>().RedTeamGol();
+		}
+		else if (col.gameObject == GameObject.Find("Time2"))
+		{
+			GameManager.GetComponent<MatchScript>().BlueTeamGol();
+		}
+	}
+
 	private void ReflectProjectile(Rigidbody2D rb, Vector2 reflectVector)
 	{
 		Direction = Vector2.Reflect(Direction, reflectVector);
-         
-         
 		_rb.velocity = Speed * Direction.normalized;
-         
-
-		BallSound.Play();
+		FMODUnity.RuntimeManager.PlayOneShot(inputsound);
 	}
 
 	private Vector2 ReleaseDirection(Vector2 playerPos)
 	{
 		Vector2 dir = gameObject.transform.position;
 		dir = playerPos - dir;
-        return dir.normalized;
+		return dir.normalized;
 	}
 }

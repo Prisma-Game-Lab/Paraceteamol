@@ -12,6 +12,7 @@ TagManager:
   - BallCollider
   - Aim
   - TurnedWall
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

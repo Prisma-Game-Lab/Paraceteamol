@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d46c0222b099e47a9b3b20c08b5efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPortal: event:/Portal
   exitPoint: {fileID: 1001996621921447244}
   exitPortal: {fileID: 0}
 --- !u!1 &1001996621921447244

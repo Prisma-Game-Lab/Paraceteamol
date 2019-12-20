@@ -50,10 +50,13 @@ public class TitleScreenController : MonoBehaviour
 
 		ButtonSelector.transform.position = ButtonList[_currentNum].transform.position;
 
-		if (Input.GetButton(_confirm))
+        if (Input.GetButton(_confirm))
+        {
             FMODUnity.RuntimeManager.PlayOneShot(Confirm);
             BtnClick(_currentNum);
+        }
 	}
+
 
 	private void BtnClick(int curNum)
 	{
